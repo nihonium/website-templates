@@ -28,7 +28,7 @@ const source = require('vinyl-source-stream');
 const babelify = require('babelify');
 
 // 画像
-const changed  = require('gulp-changed');
+const changed = require('gulp-changed');
 const imagemin = require('gulp-imagemin');
 
 // ファイル名変更
@@ -39,93 +39,95 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 
 // タスクを順次実行
-gulp.task('default', function(callback) {
-    return runSequence(['clean', 'copy','html','css','image', 'js'], callback);
+gulp.task('default', function (callback) {
+    return runSequence(['clean', 'pdf', 'html', 'css', 'image', 'js'], callback);
 });
 
 // .pdfの複製
-gulp.task('copy', function() {
-    return (gulp.src(['assets/pdf/*.pdf']))
-    // フォルダ以下に保存
-    .pipe(gulp.dest('dist/assets_v2/pdf/'));
+gulp.task('pdf', function () {
+    return (
+        gulp.src(['assets/pdf/*.pdf']))
+        // フォルダ以下に保存
+        .pipe(gulp.dest('dist/assets/pdf/')
+    );
 });
 
 // dist配下のファイルを削除
-gulp.task('clean', function() {
-  return del(['dist/**', '!dist', '!dist/.vscode']);
+gulp.task('clean', function () {
+    return del(['dist/**', '!dist', '!dist/.vscode']);
 });
 
 // CSSタスクを作成する
-gulp.task('css', function() {
+gulp.task('css', function () {
     // ファイルを取得
     return (
         gulp.src(['assets/library/sass/**/*.scss', '!assets/library/sass/**/_*.scss'])
-        // コンパイルを実行
-        .pipe(plumber({
-            errorHandler: notify.onError('<%= error.message %>')
-        }))
-        .pipe(sass())
-        .pipe(csscomb())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(mediaqueries())
-        .on('error', function(e){
-          console.log(e);
-        })
-        // フォルダ以下に保存
-        .pipe(gulp.dest('dist/assets_v2/css/'))
+            // コンパイルを実行
+            .pipe(plumber({
+                errorHandler: notify.onError('<%= error.message %>')
+            }))
+            .pipe(sass())
+            .pipe(csscomb())
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false
+            }))
+            .pipe(mediaqueries())
+            .on('error', function (e) {
+                console.log(e);
+            })
+            // フォルダ以下に保存
+            .pipe(gulp.dest('dist/assets/css/'))
     );
 });
 
 // HTMLタスクを生成する
-gulp.task('html', function() {
+gulp.task('html', function () {
     // ファイルを取得
     return (gulp.src(['assets/html/**/*.ejs', '!assets/**/_*.ejs']))
         // コンパイルを実行
         .pipe(plumber(
-            {errorHandler: notify.onError('<%= error.message %>')}
+            { errorHandler: notify.onError('<%= error.message %>') }
         ))
         .pipe(ejs(
             {},
-            {rmWhitespace: true},
-            {ext: '.html'}
+            { rmWhitespace: true },
+            { ext: '.html' }
         ))
         .pipe(htmlhint('.htmlhintrc'))
         .pipe(htmlhint.reporter())
-        .on('error', function(e){
-          console.log(e);
+        .on('error', function (e) {
+            console.log(e);
         })
         // フォルダ以下に保存
         .pipe(gulp.dest('dist/'))
 });
 
 // JavaScriptタスクを生成する
-gulp.task('js', function(callback) {
+gulp.task('js', function (callback) {
     return runSequence('js-browserify', 'js-uglify', callback);
 });
 
-gulp.task('js-browserify', function() {
+gulp.task('js-browserify', function () {
     // forEachは返り値がundefinedの為、処理したい内容を変数に格納する
     // https://teratail.com/questions/214687
     // https://teratail.com/questions/180992
     let gulpData;
 
-    config.js.concat.forEach(function(item, index, arr) {
+    config.js.concat.forEach(function (item, index, arr) {
         // あらかじめ、返す用の変数に格納しておく
-        const gulpInnerData = browserify (
+        const gulpInnerData = browserify(
             {
                 entries: item.source,
                 extensions: ['.js']
             }
         )
-        .bundle()
-        .on('error', function(e){
-          console.log(e);
-        })
-        .pipe(source(item.publish))
-        .pipe(gulp.dest('dist/assets_v2/js/'))
+            .bundle()
+            .on('error', function (e) {
+                console.log(e);
+            })
+            .pipe(source(item.publish))
+            .pipe(gulp.dest('dist/assets/js/'))
 
         // 走査の最後なら、上スコープの変数に格納
         if (index + 1 === arr.length) {
@@ -137,45 +139,45 @@ gulp.task('js-browserify', function() {
     return gulpData;
 });
 
-gulp.task('js-uglify', function() {
+gulp.task('js-uglify', function () {
     // ファイルを取得
     return (
-        gulp.src(['./dist/assets_v2/js/**/*.js'])
-        // コンパイルを実行
-        .pipe(plumber(
-            {
-                errorHandler: notify.onError('<%= error.message %>')
-            }
-        ))
-        .pipe(babel({
-            presets: ['@babel/preset-env']
-        }))
-        .pipe(uglify())
-        .on('error', function(e){
-          console.log(e);
-        })
-        // フォルダ以下に保存
-        .pipe(gulp.dest('dist/assets_v2/js/'))
+        gulp.src(['./dist/assets/js/**/*.js'])
+            // コンパイルを実行
+            .pipe(plumber(
+                {
+                    errorHandler: notify.onError('<%= error.message %>')
+                }
+            ))
+            .pipe(babel({
+                presets: ['@babel/preset-env']
+            }))
+            .pipe(uglify())
+            .on('error', function (e) {
+                console.log(e);
+            })
+            // フォルダ以下に保存
+            .pipe(gulp.dest('dist/assets/js/'))
     );
 });
 
 // 画像タスクを生成する
-gulp.task('image', function() {
+gulp.task('image', function () {
     gulp.src('assets/library/image/**/*.+(jpg|jpeg|png|svg|ico|gif)')
-    // コンパイルを実行
-    .pipe(changed('dist/assets_v2/image/'))
-    .pipe(imagemin(
-        [
-            imagemin.jpegtran({progressive: true}),
-            imagemin.optipng({optimizationLevel: 5})
-            // imagemin.svgo({
-            //     plugins: [
-            //         {removeViewBox: true},
-            //         {cleanupIDs: false}
-            //     ]
-            // })
-        ]
-    ))
-    // フォルダ以下に保存
-    .pipe(gulp.dest('dist/assets_v2/image/'));
+        // コンパイルを実行
+        .pipe(changed('dist/assets/image/'))
+        .pipe(imagemin(
+            [
+                imagemin.jpegtran({ progressive: true }),
+                imagemin.optipng({ optimizationLevel: 5 })
+                // imagemin.svgo({
+                //     plugins: [
+                //         {removeViewBox: true},
+                //         {cleanupIDs: false}
+                //     ]
+                // })
+            ]
+        ))
+        // フォルダ以下に保存
+        .pipe(gulp.dest('dist/assets/image/'));
 });
