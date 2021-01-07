@@ -25,14 +25,14 @@ const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
-const babelify = require('babelify');
+// const babelify = require('babelify');
 
 // 画像
 const changed = require('gulp-changed');
 const imagemin = require('gulp-imagemin');
 
 // ファイル名変更
-const rename = require('gulp-rename');
+// const rename = require('gulp-rename');
 
 // エラー出力
 const plumber = require('gulp-plumber');
@@ -46,9 +46,18 @@ gulp.task('default', function (callback) {
 // .pdfの複製
 gulp.task('pdf', function () {
     return (
-        gulp.src(['src/pdf/*.pdf']))
+        gulp.src(['src/assets/pdf/*.pdf']))
         // フォルダ以下に保存
         .pipe(gulp.dest('dest/assets/pdf/')
+    );
+});
+
+// vendorの複製
+gulp.task('vendor', function () {
+    return (
+        gulp.src(['src/assets/vendor/**/']))
+        // フォルダ以下に保存
+        .pipe(gulp.dest('dest/assets/vendor/')
     );
 });
 
