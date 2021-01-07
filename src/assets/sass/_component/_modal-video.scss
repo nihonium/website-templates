@@ -1,0 +1,23 @@
+// モーダル(You Tube)用
+
+.modal-video {
+  .mfp-close {
+    opacity: 1;
+    color: #fff;
+
+    @include view-at("pc") {
+      font-size: 48px;
+      width: 64px;
+      height: 64px;
+      top: -60px;
+    }
+  }
+
+  &-link {
+    display: block;
+
+    @include view-at("pc") {
+      @include pcHover();
+    }
+  }
+}

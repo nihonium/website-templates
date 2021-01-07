@@ -1,0 +1,18 @@
+@mixin link-color {
+  @content;
+
+  &:active,
+  &:focus,
+  &:visited,
+  &:hover {
+    @content;
+  }
+}
+
+@mixin pcHover {
+  transition: opacity 0.25s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

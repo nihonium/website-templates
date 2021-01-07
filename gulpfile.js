@@ -46,22 +46,22 @@ gulp.task('default', function (callback) {
 // .pdfの複製
 gulp.task('pdf', function () {
     return (
-        gulp.src(['assets/pdf/*.pdf']))
+        gulp.src(['src/pdf/*.pdf']))
         // フォルダ以下に保存
-        .pipe(gulp.dest('dist/assets/pdf/')
+        .pipe(gulp.dest('dest/assets/pdf/')
     );
 });
 
-// dist配下のファイルを削除
+// dest配下のファイルを削除
 gulp.task('clean', function () {
-    return del(['dist/**', '!dist', '!dist/.vscode']);
+    return del(['dest/**', '!dest', '!dest/.vscode']);
 });
 
 // CSSタスクを作成する
 gulp.task('css', function () {
     // ファイルを取得
     return (
-        gulp.src(['assets/library/sass/**/*.scss', '!assets/library/sass/**/_*.scss'])
+        gulp.src(['src/assets/sass/**/*.scss', '!src/assets/sass/**/_*.scss'])
             // コンパイルを実行
             .pipe(plumber({
                 errorHandler: notify.onError('<%= error.message %>')
@@ -77,14 +77,14 @@ gulp.task('css', function () {
                 console.log(e);
             })
             // フォルダ以下に保存
-            .pipe(gulp.dest('dist/assets/css/'))
+            .pipe(gulp.dest('dest/assets/css/'))
     );
 });
 
 // HTMLタスクを生成する
 gulp.task('html', function () {
     // ファイルを取得
-    return (gulp.src(['assets/html/**/*.ejs', '!assets/**/_*.ejs']))
+    return (gulp.src(['src/html/**/*.ejs', '!src/**/_*.ejs']))
         // コンパイルを実行
         .pipe(plumber(
             { errorHandler: notify.onError('<%= error.message %>') }
@@ -100,7 +100,7 @@ gulp.task('html', function () {
             console.log(e);
         })
         // フォルダ以下に保存
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('dest/'))
 });
 
 // JavaScriptタスクを生成する
@@ -127,7 +127,7 @@ gulp.task('js-browserify', function () {
                 console.log(e);
             })
             .pipe(source(item.publish))
-            .pipe(gulp.dest('dist/assets/js/'))
+            .pipe(gulp.dest('dest/assets/js/'))
 
         // 走査の最後なら、上スコープの変数に格納
         if (index + 1 === arr.length) {
@@ -142,7 +142,7 @@ gulp.task('js-browserify', function () {
 gulp.task('js-uglify', function () {
     // ファイルを取得
     return (
-        gulp.src(['./dist/assets/js/**/*.js'])
+        gulp.src(['./dest/assets/js/**/*.js'])
             // コンパイルを実行
             .pipe(plumber(
                 {
@@ -157,19 +157,19 @@ gulp.task('js-uglify', function () {
                 console.log(e);
             })
             // フォルダ以下に保存
-            .pipe(gulp.dest('dist/assets/js/'))
+            .pipe(gulp.dest('dest/assets/js/'))
     );
 });
 
 // 画像タスクを生成する
 gulp.task('image', function () {
-    gulp.src('assets/library/image/**/*.+(jpg|jpeg|png|svg|ico|gif)')
+    gulp.src('src/assets/img/**/*.+(jpg|jpeg|png|svg|ico|gif)')
         // コンパイルを実行
-        .pipe(changed('dist/assets/image/'))
+        .pipe(changed('dest/assets/img/'))
         .pipe(imagemin(
             [
                 imagemin.jpegtran({ progressive: true }),
-                imagemin.optipng({ optimizationLevel: 5 })
+                imagemin.optipng({ optimizationLevel: 6 })
                 // imagemin.svgo({
                 //     plugins: [
                 //         {removeViewBox: true},
@@ -179,5 +179,5 @@ gulp.task('image', function () {
             ]
         ))
         // フォルダ以下に保存
-        .pipe(gulp.dest('dist/assets/image/'));
+        .pipe(gulp.dest('dest/assets/img/'));
 });
