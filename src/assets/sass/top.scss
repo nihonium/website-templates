@@ -1,0 +1,12 @@
+/*
+ * トップ
+ */
+
+@import "_component/variables";
+@import "_component/view-at";
+@import "_component/link-color";
+
+// パンくず(h1用)
+.breadcrumb {
+  display: none;
+}
