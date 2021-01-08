@@ -40,7 +40,12 @@ const notify = require('gulp-notify');
 
 // タスクを順次実行
 gulp.task('default', function (callback) {
-    return runSequence(['clean', 'pdf', 'html', 'css', 'image', 'js'], callback);
+    return runSequence(['copy', 'html', 'css', 'image', 'js'], callback);
+});
+
+// 複製タスクを実行
+gulp.task('copy', function (callback) {
+    return runSequence(['vendor', 'pdf'], callback);
 });
 
 // .pdfの複製
@@ -55,7 +60,7 @@ gulp.task('pdf', function () {
 // vendorの複製
 gulp.task('vendor', function () {
     return (
-        gulp.src(['src/assets/vendor/**/']))
+        gulp.src(['src/assets/vendor/**/', '!src/assets/vendor/_archives/']))
         // フォルダ以下に保存
         .pipe(gulp.dest('dest/assets/vendor/')
     );
