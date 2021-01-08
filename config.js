@@ -21,15 +21,15 @@ module.exports = {
         concat: [
             {
                 source: [
-                    'src/assets/js/unit/_modal_inline.js',
                     'src/assets/js/unit/_url-hash.js',
+                    'src/assets/js/unit/_smooth-scrolling.js',
                     'src/assets/js/target/common.js'
                 ],
                 publish: 'common.js'
             },
             {
                 source: [
-                    'src/assets/js/unit/_modal_video.js'
+                    'src/assets/js/target/top.js'
                 ],
                 publish: 'top.js'
             }

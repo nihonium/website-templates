@@ -1,3 +1,3 @@
 {
-    console.log('top');
+    console.log('common.js');
 }

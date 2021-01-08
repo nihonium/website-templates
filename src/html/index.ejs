@@ -19,17 +19,17 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="<%= pageCanonical %>">
     <%# 共通CSS %>
-    <%- include(ejsRoot + '_component/common/css', {root: ejsRoot}); %>
+    <%- include(ejsRoot + '_component/_common/_css', {root: ejsRoot}); %>
     <!-- ページ独自CSS -->
     <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/top.css">
     <%# OGP %>
-    <%- include(ejsRoot + '_component/common/ogp', {root: ejsRoot, ogType: 'website', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
+    <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'website', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
     <%# Googleタグマネージャー %>
-    <%- include(ejsRoot + '_component/common/gtm') %>
+    <%- include(ejsRoot + '_component/_common/_gtm') %>
 </head>
 
 <body>
-    <%- include(ejsRoot + '_component/common/header', {root: ejsRoot, page: 'top'}) %>
+    <%- include(ejsRoot + '_component/_common/_header', {root: ejsRoot, page: 'top'}) %>
     <!-- /header -->
 
     <div class="breadcrumb">
@@ -41,10 +41,10 @@
     </main>
     <!-- /main -->
 
-    <%- include(ejsRoot + '_component/common/footer', {root: ejsRoot, page: 'top'}); %>
+    <%- include(ejsRoot + '_component/_common/_footer', {root: ejsRoot, page: 'top'}); %>
     <!-- /footer -->
     <%# 共通JS %>
-    <%- include(ejsRoot + '_component/common/js', {root: ejsRoot}); %>
+    <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
     <%# ページ独自JSがある場合は、下記に記述 %>
 </body>
 
