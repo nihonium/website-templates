@@ -1,0 +1,47 @@
+<%# ejsRootは都度変更する %>
+<% const ejsRoot = ''; %>
+<%
+    const pageTitle = "下層ページ | hoge";
+    const pageDescription = "下層ページのディスクプリクション | hoge";
+    const pageCanonical = "https://www.hoge.jp/hoge/";
+%>
+
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- pageTitle %></title>
+    <meta name="description" content="<%= pageDescription %>">
+    <meta name="keywords" content="hoge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="<%= pageCanonical %>">
+    <%# 共通CSS %>
+    <%- include(ejsRoot + '_component/_common/_css', {root: ejsRoot}); %>
+    <!-- ページ独自CSS -->
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/top.css">
+    <%# OGP %>
+    <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'article', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
+    <%# Googleタグマネージャー %>
+    <%- include(ejsRoot + '_component/_common/_gtm') %>
+</head>
+
+<body>
+    <%- include(ejsRoot + '_component/_common/_header', {root: ejsRoot, page: 'page'}) %>
+    <!-- /header -->
+
+    <main class="l-main">
+        main area
+    </main>
+    <!-- /main -->
+
+    <%- include(ejsRoot + '_component/_common/_footer', {root: ejsRoot, page: 'page'}); %>
+    <!-- /footer -->
+    <%# 共通JS %>
+    <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
+    <%# ページ独自JSがある場合は、下記に記述 %>
+</body>
+
+</html>
