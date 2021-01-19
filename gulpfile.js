@@ -97,12 +97,14 @@ gulp.task('css', function () {
 
 // HTMLタスクを生成する
 gulp.task('html', function () {
+    var data = JSON.parse(fs.readFileSync('src/html/json/_common/_view_at.json'));
     // ファイルを取得
     return (gulp.src(['src/html/**/*.ejs', '!src/**/_*.ejs']))
         // コンパイルを実行
         .pipe(plumber(
             { errorHandler: notify.onError('<%= error.message %>') }
         ))
+        .pipe(ejs(data))
         .pipe(ejs(
             {},
             { rmWhitespace: true },
