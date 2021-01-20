@@ -557,10 +557,6 @@ img {
   height: auto;
 }
 
-.l-nowrap {
-  display: inline-block;
-}
-
 .l-mt10 {
   margin-top: 10px;
 }
@@ -593,8 +589,25 @@ img {
   margin-top: 80px;
 }
 
+.l-nowrap {
+  display: inline-block;
+}
+
+.l-kerning {
+  -webkit-font-feature-settings: "palt";
+  font-feature-settings: "palt";
+}
+
 .l-align-center {
   text-align: center;
+}
+
+.l-align-left {
+  text-align: left;
+}
+
+.l-align-right {
+  text-align: right;
 }
 
 .l-link {

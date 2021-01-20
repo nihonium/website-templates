@@ -39,11 +39,6 @@ img {
 }
 
 .l {
-  // テキスト改行禁止
-  &-nowrap {
-    display: inline-block;
-  }
-
   // 表示・非表示
   &-hide {
     &-pc {
@@ -128,9 +123,29 @@ img {
     }
   }
 
-  // テキスト中央揃え
-  &-align-center {
-    text-align: center;
+  // テキスト改行禁止
+  &-nowrap {
+    display: inline-block;
+  }
+
+  // テキスト自動カーニング
+  &-kerning {
+    font-feature-settings: "palt";
+  }
+
+  // テキスト揃え
+  &-align {
+    &-center {
+      text-align: center;
+    }
+
+    &-left {
+      text-align: left;
+    }
+
+    &-right {
+      text-align: right;
+    }
   }
 
   // テキストリンク
