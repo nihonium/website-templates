@@ -17,19 +17,52 @@ const fbTOP = fbURL + 'https%3A%2F%2Fwww.hoge.co.jp%2Fhoge%2F';
 %>
 
 <header id="header" class="l-header">
-    <div class="l-header__content">
-        header
-        <ul>
-            <li>
-                <a href="<% if (page === 'top') { %><%- twTOP %><% } %>" target="_blank">
-                    Twitter
+    <nav class="l-header__content">
+        <div class="l-header-logo">
+            <a class="l-header-logo__item" href="<% if (page === 'top') { %>./<% } else { %><%- root %><% } %>">
+                <img src="https://placehold.jp/b5b5b5/ffffff/180x48.png?text=LOGO" alt="">
+            </a>
+        </div>
+        <button class="l-header-menu" data-menu-btn></button>
+        <div class="l-header-box" data-header-nav>
+            <div class="l-header-box__content">
+                <button class="l-header-close" data-header-close></button>
+                <a class="l-header-sp-logo" href="<% if (page === 'top') { %>./<% } else { %><%- root %><% } %>">
+                    <img src="https://placehold.jp/b5b5b5/ffffff/180x48.png?text=LOGO" alt="">
                 </a>
-            </li>
-            <li>
-                <a href="<% if (page === 'top') { %><%- fbTOP %><% } %>" target="_blank">
-                    Facebook
-                </a>
-            </li>
-        </ul>
-    </div>
+                <ul class="l-header-list">
+                    <li>
+                        <a class="l-header-list-item" href="hoge">ダミーテキスト</a>
+                    </li>
+                    <li>
+                        <a class="l-header-list-item" href="hoge">ダミーテキスト</a>
+                    </li>
+                    <li>
+                        <a class="l-header-list-item" href="hoge">ダミーテキスト</a>
+                    </li>
+                    <li>
+                        <a class="l-header-list-item" href="hoge">ダミーテキスト</a>
+                    </li>
+                    <li>
+                        <a class="l-header-list-item" href="hoge">ダミーテキスト</a>
+                    </li>
+                    <li>
+                        <a class="l-header-list-item" href="hoge">ダミーテキスト</a>
+                    </li>
+                </ul>
+                <ul class="l-header-sns">
+                    <li>
+                        <a class="l-header-sns-item" href="<% if (page === 'top') { %><%- twTOP %><% } %>" target="_blank">
+                            <img src="https://placehold.jp/00ccff/ffffff/48x48.png?text=Twitter" alt="Twitter">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="l-header-sns-item" href="<% if (page === 'top') { %><%- fbTOP %><% } %>" target="_blank">
+                            <img src="https://placehold.jp/4800ff/ffffff/48x48.png?text=Facebook" alt="Facebook">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>

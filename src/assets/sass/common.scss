@@ -211,4 +211,213 @@ img {
       }
     }
   }
+
+  /*
+  * ヘッター
+  */
+  &-header {
+    background: #fff;
+
+    &__content {
+      display: flex;
+      align-items: center;
+
+      @media screen and (min-width: $mq-nav) {
+        justify-content: space-between;
+        height: 80px;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.6%;
+        padding-right: 1%;
+      }
+
+      @media screen and (max-width: $mq-nav - 1) {
+        justify-content: space-between;
+        height: 60px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    &-logo {
+      @media screen and (min-width: $mq-nav) {
+        width: 13.281%;
+        max-width: 170px;
+      }
+
+      @media screen and (max-width: $mq-nav - 1) {
+        width: 120px;
+      }
+
+      &__item {
+        display: block;
+      }
+    }
+
+    &-menu {
+      @media screen and (min-width: $mq-nav) {
+        display: none;
+      }
+
+      @media screen and (max-width: $mq-nav - 1) {
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin-left: 24px;
+        background: url("https://placehold.jp/000000/ffffff/48x48.png?text=menu");
+        background-repeat: no-repeat;
+        background-size: 32px auto;
+      }
+    }
+
+    &-close {
+      @media screen and (min-width: $mq-nav) {
+        display: none;
+      }
+
+      @media screen and (max-width: $mq-nav - 1) {
+        position: absolute;
+        background-image: url("https://placehold.jp/ffffff/000000/48x48.png?text=close");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 32px;
+        height: 32px;
+        top: 12px;
+        right: 14px;
+      }
+    }
+
+    &-sp-logo {
+      @media screen and (min-width: $mq-nav) {
+        display: none;
+      }
+
+      @media screen and (max-width: $mq-nav - 1) {
+        position: absolute;
+        width: 120px;
+        left: 15px;
+        top: 14px;
+      }
+    }
+
+    &-box {
+      @media screen and (max-width: $mq-nav - 1) {
+        position: fixed;
+        display: none;
+        background: rgba($color: #000, $alpha: 0.95);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        overflow-y: scroll;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        padding-bottom: 10px;
+      }
+
+      &__content {
+        @media screen and (max-width: $mq-nav - 1) {
+          padding-top: 20%;
+          padding-bottom: 10%;
+        }
+      }
+    }
+
+    &-list {
+      @media screen and (min-width: $mq-nav) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      @media screen and (max-width: $mq-nav - 1) {
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      li {
+        @media screen and (min-width: $mq-nav) {
+          margin-left: 13px;
+          margin-right: 13px;
+        }
+
+        @media screen and (max-width: $mq-nav - 1) {
+          text-align: center;
+        }
+
+        &:not(:first-child) {
+          @media screen and (max-width: $mq-nav - 1) {
+            margin-top: 20px;
+          }
+        }
+      }
+
+      &-item {
+        font-weight: 700;
+        font-size: 14px;
+
+        @media screen and (min-width: $mq-nav) {
+          letter-spacing: 0.05em;
+          @include pcHover();
+
+          @include link-color {
+            color: #000;
+          }
+        }
+
+        @media screen and (max-width: $mq-nav - 1) {
+          color: #fff;
+          font-size: 16px;
+
+          @include link-color {
+            color: #fff;
+          }
+        }
+      }
+
+      &-sp {
+        @media screen and (min-width: $mq-nav) {
+          display: none;
+        }
+
+        @media screen and (max-width: $mq-nav - 1) {
+          max-width: 280px;
+          margin-left: auto;
+          margin-right: auto;
+
+          &__item {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &-sns {
+      @media screen and (min-width: $mq-nav) {
+        display: none;
+      }
+
+      @media screen and (max-width: $mq-nav - 1) {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      li {
+        @media screen and (max-width: $mq-nav - 1) {
+          margin-left: 10px;
+          margin-right: 10px;
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      &-item {
+        display: block;
+      }
+    }
+  }
 }
