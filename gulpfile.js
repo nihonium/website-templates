@@ -60,7 +60,7 @@ gulp.task('pdf', function () {
 // vendorの複製
 gulp.task('vendor', function () {
     return (
-        gulp.src(['src/assets/vendor/**/', '!src/assets/vendor/_archives/']))
+        gulp.src(['src/assets/vendor/**/', '!src/assets/vendor/_archives/', '!src/assets/vendor/_archives/**/']))
         // フォルダ以下に保存
         .pipe(gulp.dest('dest/assets/vendor/')
     );
