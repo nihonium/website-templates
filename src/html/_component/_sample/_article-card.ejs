@@ -1,0 +1,56 @@
+<%
+    const articleList = [
+        {
+            thumbnail: 'assets/img/common/300x240.png',
+            alt: 'サムネイル画像',
+            class: 'info',
+            label: 'お知らせ',
+            title: 'ダミーテキスト',
+            text: 'ダミーテキスト。このテキストはダミーですこのテキストはダミーです...'
+        },
+        {
+            thumbnail: 'assets/img/common/300x240.png',
+            alt: 'サムネイル画像',
+            class: 'info',
+            label: 'お知らせ',
+            title: 'ダミーテキスト',
+            text: 'ダミーテキスト。このテキストはダミーですこのテキストはダミーです...'
+        },
+        {
+            thumbnail: 'assets/img/common/300x240.png',
+            alt: 'サムネイル画像',
+            class: 'info',
+            label: 'お知らせ',
+            title: 'ダミーテキスト',
+            text: 'ダミーテキスト。このテキストはダミーですこのテキストはダミーです...'
+        },
+        {
+            thumbnail: 'assets/img/common/300x240.png',
+            alt: 'サムネイル画像',
+            class: 'info',
+            label: 'お知らせ',
+            title: 'ダミーテキスト',
+            text: 'ダミーテキスト。このテキストはダミーですこのテキストはダミーです...'
+        }
+    ];
+%>
+
+<div class="article-card">
+    <div class="article-card__content">
+        <% articleList.forEach((v,i) => { %>
+            <a class="article-card__item" href="">
+                <div class="article-card__head">
+                    <img src="<%- root %><%- v.thumbnail %>" alt="<%- v.alt %>">
+                </div>
+                <dl class="article-card__body">
+                    <dt>
+                        <span class="article-card-label article-card-label--<%- v.class %>"><%- v.label %></span>その<%- i+1 %> | <%- v.title %>
+                    </dt>
+                    <dd>
+                        <p class="article-card__text"><%- v.text %></p>
+                    </dd>
+                </dl>
+            </a>
+        <% }) %>
+    </div>
+</div>

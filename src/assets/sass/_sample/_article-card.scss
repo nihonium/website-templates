@@ -1,0 +1,60 @@
+/*
+ * 記事一覧(カード型)
+ */
+.article-card {
+  @include view-at("pc") {
+    margin-left: auto;
+    margin-left: auto;
+  }
+
+  &__content {
+    @include view-at("pc") {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
+    @include view-at("sp") {
+      margin-top: 40px;
+    }
+  }
+
+  &__item {
+    @include view-at("pc") {
+      width: calc(33.333% - 20px);
+      margin-top: 30px;
+      margin-left: 10px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+    }
+
+    @include view-at("sp") {
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__body {
+    padding: 15px;
+  }
+
+  &-label {
+    display: inline-block;
+    font-weight: 600;
+    padding: .5em .8em;
+    font-size: .7em;
+    margin-right: 10px;
+
+    &--info {
+      color: #fff;
+      background: crimson;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+  }
+}
