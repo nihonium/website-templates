@@ -25,8 +25,8 @@ const fbTOP = fbURL + 'https%3A%2F%2Fwww.hoge.co.jp%2Fhoge%2F';
         </div>
         <button class="c-header-menu" data-menu-btn></button>
         <div class="c-header-box" data-header-nav>
-            <div class="c-header-box__content">
-                <button class="c-header-close" data-header-close></button>
+            <nav class="c-header-box__content" aria-label="サイト内メニュー">
+                <button class="c-header-close" aria-label="閉じる" data-header-close></button>
                 <a class="c-header-sp-logo" href="<% if (page === 'top') { %>./<% } else { %><%- root %><% } %>">
                     <img src="https://placehold.jp/b5b5b5/ffffff/180x48.png?text=LOGO" alt="">
                 </a>
@@ -62,7 +62,7 @@ const fbTOP = fbURL + 'https%3A%2F%2Fwww.hoge.co.jp%2Fhoge%2F';
                         </a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </nav>
 </header>
