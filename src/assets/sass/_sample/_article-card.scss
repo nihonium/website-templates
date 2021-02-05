@@ -47,10 +47,27 @@
     padding: .5em .8em;
     font-size: .7em;
     margin-right: 10px;
+    color: #555;
+    background: #ccc;
 
     &--info {
       color: #fff;
       background: crimson;
+    }
+
+    &--product {
+      color: #fff;
+      background: #0000cd;
+    }
+
+    &--service {
+      color: #fff;
+      background: #008080;
+    }
+
+    &--other {
+      color: #222;
+      background: #b0c4de;
     }
   }
 

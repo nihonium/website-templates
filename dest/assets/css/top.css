@@ -18,11 +18,28 @@
   padding: .5em .8em;
   font-size: .7em;
   margin-right: 10px;
+  color: #555;
+  background: #ccc;
 }
 
 .article-card-label--info {
   color: #fff;
   background: crimson;
+}
+
+.article-card-label--product {
+  color: #fff;
+  background: #0000cd;
+}
+
+.article-card-label--service {
+  color: #fff;
+  background: #008080;
+}
+
+.article-card-label--other {
+  color: #222;
+  background: #b0c4de;
 }
 
 .article-card__text {
@@ -45,6 +62,7 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    padding-top: 20px;
     margin-left: -10px;
     margin-right: -10px;
   }
@@ -59,6 +77,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .article-card__content {
+    margin-top: 40px;
+  }
+
   .article-card__item:not(:first-child) {
     margin-top: 20px;
   }
