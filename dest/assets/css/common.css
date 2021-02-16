@@ -31,10 +31,10 @@
 
 html {
   line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
   /* 2 */
   -webkit-tap-highlight-color: transparent;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
   /* 3*/
 }
 
@@ -81,10 +81,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: inherit;
   margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 /* Lists (enumeration)
@@ -92,9 +92,9 @@ h6 {
 
 ul,
 ol {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 /* Lists (definition)
@@ -117,17 +117,17 @@ dd {
  */
 
 hr {
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
   /* 1 */
   overflow: visible;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  clear: both;
+  /* 1 */
+  height: 0;
+  margin: 0;
   /* 2 */
   border: 0;
   border-top: 1px solid;
-  margin: 0;
-  clear: both;
 }
 
 /**
@@ -155,8 +155,8 @@ address {
 
 a {
   background-color: transparent;
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 /**
@@ -212,10 +212,10 @@ small {
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
   position: relative;
+  font-size: 75%;
   vertical-align: baseline;
+  line-height: 0;
 }
 
 sub {
@@ -253,14 +253,14 @@ input,
 optgroup,
 select,
 textarea {
-  vertical-align: middle;
-  color: inherit;
-  font: inherit;
+  margin: 0;
+  padding: 0;
   border: 0;
   background: transparent;
-  padding: 0;
-  margin: 0;
   outline: 0;
+  color: inherit;
+  font: inherit;
+  vertical-align: middle;
 }
 
 /**
@@ -268,10 +268,10 @@ textarea {
  */
 
 select {
+  border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 0;
 }
 
 /**
@@ -325,8 +325,8 @@ button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
 [type='submit']::-moz-focus-inner {
-  border-style: none;
   padding: 0;
+  border-style: none;
 }
 
 /**
@@ -345,10 +345,10 @@ button:-moz-focusring,
  */
 
 fieldset {
+  min-width: 0;
   margin: 0;
   padding: 0;
   border: 0;
-  min-width: 0;
 }
 
 /**
@@ -359,13 +359,13 @@ fieldset {
  */
 
 legend {
-  color: inherit;
   /* 2 */
   display: table;
   /* 1 */
   max-width: 100%;
   /* 1 */
   padding: 0;
+  color: inherit;
   /* 3 */
   white-space: normal;
   /* 1 */
@@ -416,9 +416,9 @@ textarea {
  */
 
 [type='search'] {
-  -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
+  -webkit-appearance: textfield;
   /* 2 */
 }
 
@@ -436,9 +436,9 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
   /* 1 */
   font: inherit;
+  -webkit-appearance: button;
   /* 2 */
 }
 
@@ -497,8 +497,8 @@ summary {
    ========================================================================== */
 
 table {
-  border-collapse: collapse;
   border-spacing: 0;
+  border-collapse: collapse;
 }
 
 caption {
@@ -511,8 +511,8 @@ th {
 }
 
 th {
-  text-align: left;
   font-weight: bold;
+  text-align: left;
 }
 
 /* Misc
@@ -552,8 +552,8 @@ body.is-active {
 }
 
 img {
-  width: 100%;
   max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -617,8 +617,8 @@ img {
 }
 
 .c-link {
-  text-decoration: underline;
   color: #f00;
+  text-decoration: underline;
 }
 
 .c-link:active,
@@ -640,16 +640,16 @@ img {
 }
 
 .c-list li::before {
-  content: "※";
   position: absolute;
-  color: inherit;
   top: 0;
   left: 0;
+  color: inherit;
+  content: "※";
 }
 
 .c-section__content {
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 .c-header {
@@ -670,8 +670,8 @@ img {
 }
 
 .c-header-list-item {
-  font-weight: 700;
   font-size: 14px;
+  font-weight: 700;
 }
 
 .c-header-sns-item {
@@ -698,27 +698,27 @@ img {
 
   .c-section__content {
     max-width: 1020px;
-    padding-left: 10px;
     padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .c-header__content {
+    max-width: 1280px;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1%;
+    padding-left: 1.6%;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    height: 80px;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.6%;
-    padding-right: 1%;
   }
 
   .c-header-logo {
-    width: 13.281%;
     max-width: 170px;
+    width: 13.281%;
   }
 
   .c-header-menu {
@@ -734,10 +734,10 @@ img {
   }
 
   .c-header-list {
-    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: 100%;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -747,15 +747,15 @@ img {
   }
 
   .c-header-list li {
-    margin-left: 13px;
     margin-right: 13px;
+    margin-left: 13px;
   }
 
   .c-header-list-item {
+    color: #000;
     letter-spacing: .05em;
     -webkit-transition: opacity .25s ease;
     transition: opacity .25s ease;
-    color: #000;
   }
 
   .c-header-list-item:hover {
@@ -780,12 +780,12 @@ img {
 
 @media screen and (max-width: 1199px) {
   .c-header__content {
+    height: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    height: 60px;
-    padding-left: 15px;
-    padding-right: 15px;
   }
 
   .c-header-logo {
@@ -804,34 +804,34 @@ img {
 
   .c-header-close {
     position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
     background-image: url("https://placehold.jp/ffffff/000000/48x48.png?text=close");
     background-repeat: no-repeat;
     background-size: contain;
-    width: 32px;
-    height: 32px;
-    top: 12px;
-    right: 14px;
   }
 
   .c-header-sp-logo {
     position: absolute;
-    width: 120px;
-    left: 15px;
     top: 14px;
+    left: 15px;
+    width: 120px;
   }
 
   .c-header-box {
-    position: fixed;
     display: none;
-    background: rgba(0, 0, 0, .95);
-    top: 0;
-    left: 0;
-    bottom: 0;
     overflow-y: scroll;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
     padding-bottom: 10px;
+    background: rgba(0, 0, 0, .95);
   }
 
   .c-header-box__content {
@@ -840,8 +840,8 @@ img {
   }
 
   .c-header-list {
-    margin-top: 10px;
     width: 100%;
+    margin-top: 10px;
   }
 
   .c-header-list li {
@@ -854,8 +854,8 @@ img {
 
   .c-header-list-item {
     color: #fff;
-    font-size: 16px;
     color: #fff;
+    font-size: 16px;
   }
 
   .c-header-list-item:active,
@@ -867,8 +867,8 @@ img {
 
   .c-header-list-sp {
     max-width: 280px;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
   }
 
   .c-header-list-sp__item {
@@ -876,10 +876,10 @@ img {
   }
 
   .c-header-sns {
-    margin-top: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-top: 30px;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -889,10 +889,10 @@ img {
   }
 
   .c-header-sns li {
-    margin-left: 10px;
-    margin-right: 10px;
     width: 48px;
     height: 48px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
 
@@ -935,7 +935,7 @@ img {
   }
 
   .c-section__content {
-    width: calc(100% - 40px);
     max-width: 480px;
+    width: calc(100% - 40px);
   }
 }

@@ -14,32 +14,32 @@
 
 .article-card-label {
   display: inline-block;
-  font-weight: 600;
-  padding: .5em .8em;
-  font-size: .7em;
   margin-right: 10px;
-  color: #555;
+  padding: .5em .8em;
   background: #ccc;
+  color: #555;
+  font-size: .7em;
+  font-weight: 600;
 }
 
 .article-card-label--info {
-  color: #fff;
   background: crimson;
+  color: #fff;
 }
 
 .article-card-label--product {
-  color: #fff;
   background: #0000cd;
+  color: #fff;
 }
 
 .article-card-label--service {
-  color: #fff;
   background: #008080;
+  color: #fff;
 }
 
 .article-card-label--other {
-  color: #222;
   background: #b0c4de;
+  color: #222;
 }
 
 .article-card__text {
@@ -60,18 +60,18 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-right: -10px;
+    margin-left: -10px;
+    padding-top: 20px;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    padding-top: 20px;
-    margin-left: -10px;
-    margin-right: -10px;
   }
 
   .article-card__item {
     width: calc(33.333% - 20px);
     margin-top: 30px;
-    margin-left: 10px;
     margin-right: 10px;
+    margin-left: 10px;
     border: 1px solid #ccc;
   }
 }
