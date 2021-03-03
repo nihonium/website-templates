@@ -1,5 +1,39 @@
 // モーダル(You Tube)用
 .modal-video {
+  // フェードイン処理
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.2s ease-out;
+
+    &.mfp-ready {
+      opacity: 0.8;
+    }
+
+    &.mfp-removing {
+      opacity: 0;
+    }
+  }
+
+  &.mfp-wrap {
+    .mfp-content {
+      opacity: 0;
+      transition: all 0.2s ease-out;
+    }
+
+    &.mfp-ready {
+      .mfp-content {
+        opacity: 1;
+      }
+    }
+
+    &.mfp-removing {
+      .mfp-content {
+        opacity: 0;
+      }
+    }
+  }
+
+  // 閉じるボタン
   .mfp-close {
     opacity: 1;
     color: #fff;
@@ -9,6 +43,14 @@
       width: 64px;
       height: 64px;
       top: -60px;
+    }
+  }
+
+  // 左右の余白
+  .mfp-container {
+    @include view-at("sp") {
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 
