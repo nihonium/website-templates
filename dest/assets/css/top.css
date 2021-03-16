@@ -8,10 +8,6 @@
  * 記事一覧(カード型)
  */
 
-.article-card__body {
-  padding: 15px;
-}
-
 .article-card-label {
   display: inline-block;
   margin-right: 10px;
@@ -46,6 +42,11 @@
   margin-top: 20px;
 }
 
+.article-card__data {
+  display: inline-block;
+  color: #ccc;
+}
+
 .breadcrumb {
   display: none;
 }
@@ -74,14 +75,40 @@
     margin-left: 10px;
     border: 1px solid #ccc;
   }
+
+  .article-card__body {
+    padding: 15px;
+  }
+
+  .article-card__data {
+    margin-top: 20px;
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 767px) {
+  .article-card {
+    padding-top: 20px;
+  }
+
   .article-card__content {
     margin-top: 40px;
   }
 
+  .article-card__item {
+    display: block;
+  }
+
   .article-card__item:not(:first-child) {
-    margin-top: 20px;
+    margin-top: 30px;
+  }
+
+  .article-card__body {
+    padding-top: 15px;
+  }
+
+  .article-card__data {
+    margin-top: 10px;
+    font-size: 10px;
   }
 }
