@@ -4,6 +4,49 @@
  * 共通スタイル
  */
 
+/*
+ * 記事一覧(カード型)
+ */
+
+.c-article-card-label {
+  display: inline-block;
+  margin-right: 10px;
+  padding: .5em .8em;
+  background: #ccc;
+  color: #555;
+  font-size: .7em;
+  font-weight: 600;
+}
+
+.c-article-card-label--info {
+  background: crimson;
+  color: #fff;
+}
+
+.c-article-card-label--product {
+  background: #0000cd;
+  color: #fff;
+}
+
+.c-article-card-label--service {
+  background: #008080;
+  color: #fff;
+}
+
+.c-article-card-label--other {
+  background: #b0c4de;
+  color: #222;
+}
+
+.c-article-card__text {
+  margin-top: 20px;
+}
+
+.c-article-card__data {
+  display: inline-block;
+  color: #ccc;
+}
+
 /*! de-style.css v1.0.5 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 
 /* Reset box-model
@@ -679,6 +722,39 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+  .c-article-card {
+    margin-left: auto;
+    margin-left: auto;
+  }
+
+  .c-article-card__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: -10px;
+    margin-left: -10px;
+    padding-top: 20px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .c-article-card__item {
+    width: calc(33.333% - 20px);
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .c-article-card__body {
+    padding: 15px;
+  }
+
+  .c-article-card__data {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
   body {
     font-size: 16px;
   }
@@ -897,6 +973,31 @@ img {
 }
 
 @media screen and (max-width: 767px) {
+  .c-article-card {
+    padding-top: 20px;
+  }
+
+  .c-article-card__content {
+    margin-top: 40px;
+  }
+
+  .c-article-card__item {
+    display: block;
+  }
+
+  .c-article-card__item:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  .c-article-card__body {
+    padding-top: 15px;
+  }
+
+  .c-article-card__data {
+    margin-top: 10px;
+    font-size: 10px;
+  }
+
   body {
     font-size: 14px;
   }
