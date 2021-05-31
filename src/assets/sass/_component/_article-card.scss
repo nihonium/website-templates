@@ -26,6 +26,9 @@
   }
 
   &__item {
+    display: flex;
+    flex-direction: column;
+
     @include view-at("pc") {
       width: calc(33.333% - 20px);
       margin-top: 30px;
@@ -35,21 +38,43 @@
     }
 
     @include view-at("sp") {
-      display: block;
-
       &:not(:first-child) {
         margin-top: 30px;
       }
     }
   }
 
+  &__head {
+    @include view-at("pc") {
+      flex-shrink: 0;
+    }
+  }
+
   &__body {
     @include view-at("pc") {
       padding: 15px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-content: stretch;
     }
 
     @include view-at("sp") {
       padding-top: 15px;
+    }
+
+    dt {
+      @include view-at("pc") {
+        flex-shrink: 0;
+      }
+    }
+
+    dd {
+      @include view-at("pc") {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 
@@ -85,6 +110,10 @@
 
   &__text {
     margin-top: 20px;
+
+    @include view-at("pc") {
+      flex-grow: 1;
+    }
   }
 
   &__data {

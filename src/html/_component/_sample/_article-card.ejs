@@ -5,7 +5,7 @@
             alt: 'サムネイル画像',
             class: 'info',
             label: 'お知らせ',
-            title: 'ダミーテキスト',
+            title: 'ダミーテキスト 2行になった時のテスト',
             text: 'ダミーテキスト。このテキストはダミーですこのテキストはダミーです...'
         },
         {
@@ -14,7 +14,7 @@
             class: 'product',
             label: '製品情報',
             title: 'ダミーテキスト',
-            text: 'ダミーテキスト。このテキストはダミーですこのテキストはダミーです...'
+            text: 'ダミーテキスト。このテキストはダミーですこのテキストはダミーです...ダミーテキスト。このテキストはダミーですこのテキストはダミーです...ダミーテキスト。このテキストはダミーですこのテキストはダミーです...'
         },
         {
             thumbnail: 'assets/img/common/300x240.png',
@@ -44,7 +44,8 @@
                 </div>
                 <dl class="c-article-card__body">
                     <dt>
-                        <span class="c-article-card-label c-article-card-label--<%- v.class %>"><%- v.label %></span>その<%- i+1 %> | <%- v.title %>
+                        <span class="c-article-card-label c-article-card-label--<%- v.class %>"><%- v.label %></span>
+                        <span>その<%- i+1 %> | <%- v.title %></span>
                     </dt>
                     <dd>
                         <p class="c-article-card__text"><%- v.text %></p>

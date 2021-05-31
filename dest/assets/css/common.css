@@ -8,6 +8,16 @@
  * 記事一覧(カード型)
  */
 
+.c-article-card__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c-article-card-label {
   display: inline-block;
   margin-right: 10px;
@@ -746,8 +756,45 @@ img {
     border: 1px solid #ccc;
   }
 
+  .c-article-card__head {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+
   .c-article-card__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
     padding: 15px;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+  }
+
+  .c-article-card__body dt {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+
+  .c-article-card__body dd {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .c-article-card__text {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
   }
 
   .c-article-card__data {
@@ -979,10 +1026,6 @@ img {
 
   .c-article-card__content {
     margin-top: 40px;
-  }
-
-  .c-article-card__item {
-    display: block;
   }
 
   .c-article-card__item:not(:first-child) {
