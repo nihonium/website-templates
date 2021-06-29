@@ -1,0 +1,68 @@
+<%# ejsRootは都度変更する %>
+<% const ejsRoot = '../'; %>
+<%
+    const pageTitle = "記事ページ | hoge";
+    const pageDescription = "記事ページのディスクプリクション | hoge";
+    const pageCanonical = "https://www.hoge.jp/";
+%>
+
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- pageTitle %></title>
+    <meta name="description" content="<%= pageDescription %>">
+    <meta name="keywords" content="hoge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="<%= pageCanonical %>">
+    <%# 共通CSS %>
+    <%- include(ejsRoot + '_component/_common/_css', {root: ejsRoot}); %>
+    <!-- ページ独自CSS -->
+    <%# OGP %>
+    <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'article', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
+    <%# Googleタグマネージャー %>
+    <%- include(ejsRoot + '_component/_common/_gtm') %>
+</head>
+
+<body>
+    <%- include(ejsRoot + '_component/_common/_header', {root: ejsRoot, page: 'single'}) %>
+    <!-- /header -->
+
+    <div class="c-breadcrumb">
+        <h1>hoge</h1>
+    </div>
+
+    <main class="c-main">
+        <div class="c-section">
+            <section class="c-section__content">
+                <h2 class="c-article-title">
+                    <a href="#" class="c-article-title-label">お知らせ</a><br>
+                    <span class="c-article-title-main">ダミータイトルこのタイトルはダミーです</span>
+                </h2>
+                <figure class="c-article-figure">
+                    <img src="https://placehold.jp/1000x300.png" alt="画像">
+                    <figcaption class="c-article-figure__text">
+                        ダミーテキスト。このテキストはダミーです。
+                    </figcaption>
+                </figure>
+                <div class="c-article-text">
+                    親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。<br>
+                    <br>
+                    （青空文庫より）
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- /main -->
+
+    <%- include(ejsRoot + '_component/_common/_footer', {root: ejsRoot, page: 'single'}); %>
+    <!-- /footer -->
+    <%# 共通JS %>
+    <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
+    <%# ページ独自JSがある場合は、下記に記述 %>
+</body>
+
+</html>

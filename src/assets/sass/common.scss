@@ -6,6 +6,7 @@
 @import "_component/view-at";
 @import "_component/link-color";
 @import "_component/article-card";
+@import "_component/article";
 @import "_component/destyle";
 
 html {
@@ -40,6 +41,11 @@ img {
 }
 
 .c {
+  // パンくず(h1用)
+  &-breadcrumb {
+    display: none;
+  }
+
   // 表示・非表示
   &-hide {
     &-pc {

@@ -1,0 +1,79 @@
+/*
+ * 記事ページ
+ */
+.c-article {
+  &-title {
+    font-weight: 600;
+
+    &-label {
+      display: inline-block;
+      padding: .5em .8em;
+      background: #ccc;
+      color: #555;
+
+      @include view-at("pc") {
+        font-size: 12px;
+      }
+      @include view-at("sp") {
+        font-size: 10px;
+      }
+    }
+
+    &-main {
+      display: inline-block;
+      margin-top: 10px;
+
+      @include view-at("pc") {
+        font-size: 24px;
+      }
+
+      @include view-at("sp") {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-figure {
+    position: relative;
+
+    @include view-at("pc") {
+      margin-top: 30px;
+    }
+
+    @include view-at("sp") {
+      margin-top: 20px;
+    }
+
+    &__text {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($color: #000000, $alpha: .7);
+      color: #fff;
+
+      @include view-at("pc") {
+        font-size: 14px;
+        padding: 15px;
+      }
+
+      @include view-at("sp") {
+        font-size: 12px;
+        padding: 5px;
+      }
+    }
+  }
+
+  &-text {
+    @include view-at("pc") {
+      margin-top: 50px;
+      font-size: 18px;
+    }
+
+    @include view-at("sp") {
+      margin-top: 40px;
+      font-size: 16px;
+    }
+  }
+}

@@ -57,6 +57,40 @@
   color: #ccc;
 }
 
+/*
+ * 記事ページ
+ */
+
+.c-article-title {
+  font-weight: 600;
+}
+
+.c-article-title-label {
+  display: inline-block;
+  padding: .5em .8em;
+  background: #ccc;
+  color: #555;
+}
+
+.c-article-title-main {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.c-article-figure {
+  position: relative;
+}
+
+.c-article-figure__text {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+}
+
 /*! de-style.css v1.0.5 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 
 /* Reset box-model
@@ -616,6 +650,10 @@ img {
   */
 }
 
+.c-breadcrumb {
+  display: none;
+}
+
 .c-mt10 {
   margin-top: 10px;
 }
@@ -800,6 +838,28 @@ img {
   .c-article-card__data {
     margin-top: 20px;
     font-size: 12px;
+  }
+
+  .c-article-title-label {
+    font-size: 12px;
+  }
+
+  .c-article-title-main {
+    font-size: 24px;
+  }
+
+  .c-article-figure {
+    margin-top: 30px;
+  }
+
+  .c-article-figure__text {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .c-article-text {
+    margin-top: 50px;
+    font-size: 18px;
   }
 
   body {
@@ -1039,6 +1099,28 @@ img {
   .c-article-card__data {
     margin-top: 10px;
     font-size: 10px;
+  }
+
+  .c-article-title-label {
+    font-size: 10px;
+  }
+
+  .c-article-title-main {
+    font-size: 18px;
+  }
+
+  .c-article-figure {
+    margin-top: 20px;
+  }
+
+  .c-article-figure__text {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .c-article-text {
+    margin-top: 40px;
+    font-size: 16px;
   }
 
   body {
