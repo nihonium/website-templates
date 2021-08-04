@@ -91,24 +91,24 @@
   color: #fff;
 }
 
-/*! de-style.css v1.0.5 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+/*! destyle.css v2.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 
-/* Reset box-model
-   ========================================================================== */
+/* Reset box-model and set borders */
 
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+/* ============================================ */
 
+*,
 ::before,
 ::after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
 }
 
-/* Document
-   ========================================================================== */
+/* Document */
+
+/* ============================================ */
 
 /**
  * 1. Correct the line height in all browsers.
@@ -125,8 +125,9 @@ html {
   /* 3*/
 }
 
-/* Sections
-   ========================================================================== */
+/* Sections */
+
+/* ============================================ */
 
 /**
  * Remove the margin in all browsers.
@@ -144,8 +145,9 @@ main {
   display: block;
 }
 
-/* Vertical rhythm
-   ========================================================================== */
+/* Vertical rhythm */
+
+/* ============================================ */
 
 p,
 table,
@@ -159,8 +161,9 @@ dl {
   margin: 0;
 }
 
-/* Headings
-   ========================================================================== */
+/* Headings */
+
+/* ============================================ */
 
 h1,
 h2,
@@ -174,8 +177,9 @@ h6 {
   line-height: inherit;
 }
 
-/* Lists (enumeration)
-   ========================================================================== */
+/* Lists (enumeration) */
+
+/* ============================================ */
 
 ul,
 ol {
@@ -184,8 +188,9 @@ ol {
   padding: 0;
 }
 
-/* Lists (definition)
-   ========================================================================== */
+/* Lists (definition) */
+
+/* ============================================ */
 
 dt {
   font-weight: bold;
@@ -195,8 +200,9 @@ dd {
   margin-left: 0;
 }
 
-/* Grouping content
-   ========================================================================== */
+/* Grouping content */
+
+/* ============================================ */
 
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -213,8 +219,8 @@ hr {
   height: 0;
   margin: 0;
   /* 2 */
-  border: 0;
-  border-top: 1px solid;
+  border-top-width: 1px;
+  color: inherit;
 }
 
 /**
@@ -233,8 +239,9 @@ address {
   font-style: inherit;
 }
 
-/* Text-level semantics
-   ========================================================================== */
+/* Text-level semantics */
+
+/* ============================================ */
 
 /**
  * Remove the gray background on active links in IE 10.
@@ -252,8 +259,6 @@ a {
  */
 
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
   text-decoration: underline;
   /* 2 */
   -webkit-text-decoration: underline dotted;
@@ -313,27 +318,28 @@ sup {
   top: -.5em;
 }
 
-/* Embedded content
-   ========================================================================== */
+/* Embedded content */
+
+/* ============================================ */
 
 /**
- * Remove the border on images inside links in IE 10.
+ * Prevent vertical alignment issues.
  */
 
-img {
-  border-style: none;
-  vertical-align: bottom;
-}
-
+img,
 embed,
 object,
 iframe {
-  border: 0;
   vertical-align: bottom;
 }
 
-/* Forms
-   ========================================================================== */
+/* Forms */
+
+/* ============================================ */
+
+/**
+ * Reset form fields to make them styleable
+ */
 
 button,
 input,
@@ -342,23 +348,32 @@ select,
 textarea {
   margin: 0;
   padding: 0;
-  border: 0;
+  border-radius: 0;
   background: transparent;
   outline: 0;
   color: inherit;
   font: inherit;
+  text-align: inherit;
   vertical-align: middle;
-}
-
-/**
- * Remove all Style fro select elements. Does not quite work cross-browser
- */
-
-select {
-  border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+/**
+ * Reset radio and checkbox appearance to preserve their look in iOS.
+ */
+
+[type="checkbox"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+}
+
+[type="radio"] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+  appearance: radio;
 }
 
 /**
@@ -388,9 +403,9 @@ select {
  */
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -398,9 +413,9 @@ button,
 }
 
 button[disabled],
-[type='button'][disabled],
-[type='reset'][disabled],
-[type='submit'][disabled] {
+[type="button"][disabled],
+[type="reset"][disabled],
+[type="submit"][disabled] {
   cursor: default;
 }
 
@@ -409,9 +424,9 @@ button[disabled],
  */
 
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
@@ -421,10 +436,26 @@ button::-moz-focus-inner,
  */
 
 button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
+}
+
+/**
+ * Remove arrow in IE10 & IE11
+ */
+
+select::-ms-expand {
+  display: none;
+}
+
+/**
+ * Remove padding
+ */
+
+option {
+  padding: 0;
 }
 
 /**
@@ -435,7 +466,6 @@ fieldset {
   min-width: 0;
   margin: 0;
   padding: 0;
-  border: 0;
 }
 
 /**
@@ -475,45 +505,28 @@ textarea {
 }
 
 /**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type='checkbox'],
-[type='radio'] {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
+ * 1. Correct the outline style in Safari.
  */
 
-[type='search'] {
-  /* 1 */
+[type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: textfield;
-  /* 2 */
+  /* 1 */
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 
-[type='search']::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -530,30 +543,6 @@ textarea {
 }
 
 /**
- * Fix placeholder font properties inheritance.
- */
-
-::-webkit-input-placeholder {
-  font: inherit;
-}
-
-:-ms-input-placeholder {
-  font: inherit;
-}
-
-::-ms-input-placeholder {
-  font: inherit;
-}
-
-::-moz-placeholder {
-  font: inherit;
-}
-
-::placeholder {
-  font: inherit;
-}
-
-/**
  * Clickable labels
  */
 
@@ -561,8 +550,9 @@ label[for] {
   cursor: pointer;
 }
 
-/* Interactive
-   ========================================================================== */
+/* Interactive */
+
+/* ============================================ */
 
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
@@ -580,8 +570,17 @@ summary {
   display: list-item;
 }
 
-/* Table
-   ========================================================================== */
+/*
+ * Remove outline for editable content.
+ */
+
+[contenteditable] {
+  outline: none;
+}
+
+/* Table */
+
+/* ============================================ */
 
 table {
   border-spacing: 0;
@@ -594,6 +593,7 @@ caption {
 
 td,
 th {
+  padding: 0;
   vertical-align: top;
 }
 
@@ -602,8 +602,9 @@ th {
   text-align: left;
 }
 
-/* Misc
-   ========================================================================== */
+/* Misc */
+
+/* ============================================ */
 
 /**
  * Add the correct display in IE 10+.
