@@ -761,6 +761,18 @@ img {
   display: block;
 }
 
+.c-header-box.is-animation {
+  -webkit-transition: opacity .3s, visibility 0s ease .3s;
+  transition: opacity .3s, visibility 0s ease .3s;
+}
+
+.c-header-box.is-show {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
 .c-header-list-item {
   font-size: 14px;
   font-weight: 700;
@@ -917,6 +929,13 @@ img {
     display: none;
   }
 
+  .c-header-box {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+
   .c-header-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1005,7 +1024,7 @@ img {
   }
 
   .c-header-box {
-    display: none;
+    visibility: hidden;
     overflow-y: scroll;
     position: fixed;
     z-index: 1000;
@@ -1016,6 +1035,7 @@ img {
     height: 100%;
     padding-bottom: 10px;
     background: rgba(0, 0, 0, .95);
+    opacity: 0;
   }
 
   .c-header-box__content {

@@ -309,9 +309,14 @@ img {
     }
 
     &-box {
+      @media screen and (min-width: $mq-nav) {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+
       @media screen and (max-width: $mq-nav - 1) {
         position: fixed;
-        display: none;
         background: rgba($color: #000, $alpha: 0.95);
         top: 0;
         left: 0;
@@ -321,6 +326,8 @@ img {
         height: 100%;
         z-index: 1000;
         padding-bottom: 10px;
+        opacity: 0;
+        visibility: hidden;
       }
 
       &__content {
@@ -328,6 +335,16 @@ img {
           padding-top: 20%;
           padding-bottom: 10%;
         }
+      }
+
+      &.is-animation {
+        transition: opacity .3s, visibility 0s ease .3s;
+      }
+
+      &.is-show {
+        transition-delay: 0s;
+        opacity: 1;
+        visibility: visible;
       }
     }
 
