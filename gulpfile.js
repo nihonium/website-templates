@@ -1,54 +1,57 @@
-// 外部ファイル読み込み
+// * 外部ファイル読み込み
 const config = require('./config');
 
-// gulpプラグインの読み込み
+// * gulpプラグインの読み込み
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 const del = require('del');
+const header = require('gulp-header');
+const footer = require('gulp-footer');
 
-// コンパイルするプラグインの読み込み
-// Sass
+// * コンパイルするプラグインの読み込み
+// * Sass
 const sass = require('gulp-sass');
 const csscomb = require('gulp-csscomb');
 const autoprefixer = require('gulp-autoprefixer');
 const mediaqueries = require('gulp-group-css-media-queries');
 
-// JSON
+// * JSON
 const fs = require('fs');
 
-// ejs
+// * ejs
 const htmlhint = require('gulp-htmlhint');
 const ejs = require('gulp-ejs');
+const prettify = require('gulp-prettify');
 
-// JavaScript
+// * JavaScript
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 // const babelify = require('babelify');
 
-// 画像
+// * 画像
 const changed = require('gulp-changed');
 const imagemin = require('gulp-imagemin');
 
-// ファイル名変更
+// * ファイル名変更
 // const rename = require('gulp-rename');
 
-// エラー出力
+// * エラー出力
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 
-// タスクを順次実行
+// * タスクを順次実行
 gulp.task('default', function (callback) {
     return runSequence(['copy', 'html', 'css', 'image', 'js'], callback);
 });
 
-// 複製タスクを実行
+// * 複製タスクを実行
 gulp.task('copy', function (callback) {
     return runSequence(['vendor', 'pdf'], callback);
 });
 
-// .pdfの複製
+// * .pdfの複製
 gulp.task('pdf', function () {
     return (
         gulp.src(['src/assets/pdf/*.pdf']))
@@ -57,7 +60,7 @@ gulp.task('pdf', function () {
     );
 });
 
-// vendorの複製
+// * vendorの複製
 gulp.task('vendor', function () {
     return (
         gulp.src(['src/assets/vendor/**/', '!src/assets/vendor/_archives/', '!src/assets/vendor/_archives/**/']))
@@ -66,12 +69,12 @@ gulp.task('vendor', function () {
     );
 });
 
-// dest配下のファイルを削除
+// * dest配下のファイルを削除
 gulp.task('clean', function () {
     return del(['dest/**', '!dest', '!dest/.vscode']);
 });
 
-// CSSタスクを作成する
+// * CSSタスクを作成する
 gulp.task('css', function () {
     // ファイルを取得
     return (
@@ -95,7 +98,7 @@ gulp.task('css', function () {
     );
 });
 
-// HTMLタスクを生成する
+// * HTMLタスクを生成する
 gulp.task('html', function () {
     var data = JSON.parse(fs.readFileSync('src/html/json/_common/_view_at.json'));
     // ファイルを取得
@@ -105,11 +108,16 @@ gulp.task('html', function () {
             { errorHandler: notify.onError('<%= error.message %>') }
         ))
         .pipe(ejs(data))
+        // 余分なスペース削除、書き出しファイルの指定
         .pipe(ejs(
             {},
             { rmWhitespace: true },
             { ext: '.html' }
         ))
+        // インデント指定
+        .pipe(prettify({
+            indent_size: 4
+        }))
         .pipe(htmlhint('.htmlhintrc'))
         .pipe(htmlhint.reporter())
         .on('error', function (e) {
@@ -119,7 +127,7 @@ gulp.task('html', function () {
         .pipe(gulp.dest('dest/'))
 });
 
-// JavaScriptタスクを生成する
+// * JavaScriptタスクを生成する
 gulp.task('js', function (callback) {
     return runSequence('js-browserify', 'js-uglify', callback);
 });
@@ -168,16 +176,20 @@ gulp.task('js-uglify', function () {
             .pipe(babel({
                 presets: ['@babel/preset-env']
             }))
+            // コード圧縮
             .pipe(uglify())
             .on('error', function (e) {
                 console.log(e);
             })
+            // WordPress用 jQuery
+            .pipe(header('jQuery(function($){\n'))
+            .pipe(footer('\n});'))
             // フォルダ以下に保存
             .pipe(gulp.dest('dest/assets/js/'))
     );
 });
 
-// 画像タスクを生成する
+// * 画像タスクを生成する
 gulp.task('image', function () {
     gulp.src('src/assets/img/**/*.+(jpg|jpeg|png|svg|ico|gif)')
         // コンパイルを実行
