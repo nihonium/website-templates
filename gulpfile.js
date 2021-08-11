@@ -182,8 +182,8 @@ gulp.task('js-uglify', function () {
                 console.log(e);
             })
             // WordPress用 jQuery
-            .pipe(header('jQuery(function($){\n'))
-            .pipe(footer('\n});'))
+            // .pipe(header('jQuery(function($){\n'))
+            // .pipe(footer('\n});'))
             // フォルダ以下に保存
             .pipe(gulp.dest('dest/assets/js/'))
     );
