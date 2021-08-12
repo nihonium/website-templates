@@ -38,21 +38,21 @@
 <div class="c-article-card">
     <div class="c-article-card__content">
         <% articleList.forEach((v,i) => { %>
-            <a class="c-article-card__item" href="">
-                <div class="c-article-card__head">
-                    <img src="<%- root %><%- v.thumbnail %>" alt="<%- v.alt %>">
-                </div>
-                <dl class="c-article-card__body">
-                    <dt>
-                        <span class="c-article-card-label c-article-card-label--<%- v.class %>"><%- v.label %></span>
-                        <span>その<%- i+1 %> | <%- v.title %></span>
-                    </dt>
-                    <dd>
+            <article class="c-article-card__item">
+                <a class="c-article-card__link" href="">
+                    <div class="c-article-card__head">
+                        <img src="<%- root %><%- v.thumbnail %>" alt="<%- v.alt %>">
+                    </div>
+                    <div class="c-article-card__body">
+                        <h2 class="c-article-card__title">
+                            <span class="c-article-card-label c-article-card-label--<%- v.class %>"><%- v.label %></span>
+                            <span>その<%- i+1 %> | <%- v.title %></span>
+                        </h2>
                         <p class="c-article-card__text"><%- v.text %></p>
                         <span class="c-article-card__data">2020.01.01</span>
-                    </dd>
-                </dl>
-            </a>
+                    </div>
+                </a>
+            </article>
         <% }) %>
     </div>
 </div>

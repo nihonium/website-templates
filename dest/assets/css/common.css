@@ -8,7 +8,7 @@
  * 記事一覧(カード型)
  */
 
-.c-article-card__item {
+.c-article-card__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,6 +16,16 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c-article-card__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-article-card__title {
+  font-weight: 700;
 }
 
 .c-article-card-label {
@@ -799,12 +809,25 @@ img {
     flex-wrap: wrap;
   }
 
+  .c-article-card__link {
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+
+  .c-article-card__link:hover {
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .c-article-card__link:hover:hover {
+    opacity: .7;
+  }
+
   .c-article-card__item {
     width: calc(33.333% - 20px);
     margin-top: 30px;
     margin-right: 10px;
     margin-left: 10px;
-    border: 1px solid #ccc;
   }
 
   .c-article-card__head {
@@ -826,20 +849,9 @@ img {
     align-content: stretch;
   }
 
-  .c-article-card__body dt {
+  .c-article-card__title {
     -ms-flex-negative: 0;
     flex-shrink: 0;
-  }
-
-  .c-article-card__body dd {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    height: 100%;
   }
 
   .c-article-card__text {
