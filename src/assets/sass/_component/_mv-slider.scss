@@ -1,0 +1,98 @@
+// * スライダー
+@import "variables";
+@import "view-at";
+@import "link-color";
+
+$color-slider: #333;
+
+.c {
+  &-slider {
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+    @include view-at("pc") {
+      max-width: 1012px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &-area {
+      overflow-x: hidden;
+    }
+
+    &__content {
+      .slick-list {
+        @include view-at("pc") {
+          overflow: visible;
+        }
+      }
+
+      .slick-arrow {
+        z-index: 2;
+
+        &:before {
+          color: $color-slider;
+        }
+      }
+
+      .slick-next {
+        @include view-at("pc") {
+          right: 25px;
+        }
+
+        @include view-at("sp") {
+          right: 15px;
+        }
+      }
+
+      .slick-prev {
+        @include view-at("pc") {
+          left: 25px;
+        }
+
+        @include view-at("sp") {
+          left: 15px;
+        }
+      }
+
+      .slick-dots li button:before,
+      .slick-dots li.slick-active button:before {
+        content: '';
+        background-color: $color-slider;
+        border-radius: 5px;
+        width: 10px;
+        height: 10px;
+        margin: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    &__item {
+      padding-left: 6px;
+      padding-right: 6px;
+      transition: .1s opacity ease;
+      display: none;
+
+      &.slick-slide:not(.slick-current) {
+        opacity: .7;
+      }
+    }
+
+    &__link {
+      display: block;
+
+      @include view-at("pc") {
+        @include pcHover();
+      }
+    }
+
+    .slick-initialized {
+      .top-mv__item {
+        display: block;
+      }
+    }
+  }
+}

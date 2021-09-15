@@ -22,6 +22,9 @@
     <%- include(ejsRoot + '_component/_common/_css', {root: ejsRoot}); %>
     <!-- ページ独自CSS -->
     <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/top.css">
+    <!-- Slider -->
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/vendor/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/vendor/slick/slick-theme.css"/>
     <%# OGP %>
     <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'website', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
     <%# Googleタグマネージャー %>
@@ -37,6 +40,29 @@
     </div>
 
     <main class="c-main">
+        <div class="c-slider-area">
+            <div class="c-slider">
+                <div class="c-slider__content" data-slider-mv>
+                    <div class="c-slider__item">
+                        <a class="c-slider__link" href="">
+                            <img src="<%- ejsRoot %>assets/img/common/2000x600.png" alt="ダミー画像">
+                        </a>
+                    </div>
+                    <div class="c-slider__item">
+                        <a class="c-slider__link" href="">
+                            <img src="<%- ejsRoot %>assets/img/common/2000x600.png" alt="ダミー画像">
+                        </a>
+                    </div>
+                    <div class="c-slider__item">
+                        <a class="c-slider__link" href="">
+                            <img src="<%- ejsRoot %>assets/img/common/2000x600.png" alt="ダミー画像">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Slider -->
+
         <div class="c-section">
             <div class="c-section__content">
                 <picture>
@@ -55,6 +81,8 @@
     <%# 共通JS %>
     <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
     <%# ページ独自JSがある場合は、下記に記述 %>
+    <script src="<%- ejsRoot %>assets/vendor/slick/slick.min.js" defer></script>
+    <script src="<%- ejsRoot %>assets/js/top.js" defer></script>
 </body>
 
 </html>
