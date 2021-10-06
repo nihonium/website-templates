@@ -655,6 +655,50 @@ img {
   color: #fff;
 }
 
+/*
+ * テーブル
+ */
+
+.c-tbl {
+  table-layout: fixed;
+  width: 100%;
+  border-top: 1px solid #969696;
+}
+
+.c-tbl thead tr th {
+  padding: 20px 10px;
+  border-right: 1px solid #969696;
+  border-bottom: 1px solid #969696;
+  background: #555;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.c-tbl thead tr th:first-child {
+  border-left: 1px solid #969696;
+}
+
+.c-tbl tbody {
+  border-left: 1px solid #969696;
+}
+
+.c-tbl tbody tr td,
+.c-tbl tbody tr th {
+  padding: 10px;
+  border-right: 1px solid #969696;
+  border-bottom: 1px solid #969696;
+  background: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.c-tbl tbody tr th {
+  background: #eaeaef;
+  font-weight: 700;
+}
+
 .c-breadcrumb {
   display: none;
 }
@@ -693,6 +737,7 @@ img {
 
 .c-nowrap {
   display: inline-block;
+  word-break: break-all;
 }
 
 .c-kerning {
@@ -710,6 +755,10 @@ img {
 
 .c-align-right {
   text-align: right;
+}
+
+.c-strong {
+  font-weight: 600;
 }
 
 .c-link {
@@ -883,6 +932,10 @@ img {
   .c-single-text {
     margin-top: 50px;
     font-size: 18px;
+  }
+
+  .c-tbl-scroll-note {
+    display: none;
   }
 
   .c-hide-pc {
@@ -1152,6 +1205,18 @@ img {
   .c-single-text {
     margin-top: 40px;
     font-size: 16px;
+  }
+
+  .c-tbl {
+    min-width: 600px;
+  }
+
+  .c-tbl-scroll {
+    overflow-x: scroll;
+  }
+
+  .c-tbl-scroll-note {
+    margin-top: 10px;
   }
 
   .c-hide-sp {

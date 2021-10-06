@@ -39,9 +39,10 @@ img {
   height: auto;
 }
 
-// * component
+// * component(必要なstyleのみ読み込む)
 @import "_component/article-card";
 @import "_component/single";
+@import "_component/tbl";
 
 .c {
   // パンくず(h1用)
@@ -136,6 +137,7 @@ img {
   // テキスト改行禁止
   &-nowrap {
     display: inline-block;
+    word-break: break-all;
   }
 
   // テキスト自動カーニング
@@ -156,6 +158,11 @@ img {
     &-right {
       text-align: right;
     }
+  }
+
+  // テキスト強調
+  &-strong {
+    font-weight: 600;
   }
 
   // テキストリンク
