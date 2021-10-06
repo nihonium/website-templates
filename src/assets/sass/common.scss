@@ -2,12 +2,15 @@
  * 共通スタイル
  */
 
-@import "_component/variables";
-@import "_component/view-at";
-@import "_component/link-color";
+// * bass
+@import "_bass/variables";
+@import "_bass/view-at";
+@import "_bass/link-color";
+@import "_bass/destyle";
+
+// * component
 @import "_component/article-card";
-@import "_component/article";
-@import "_component/destyle";
+@import "_component/single";
 
 html {
   height: 100%;

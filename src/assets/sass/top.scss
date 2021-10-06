@@ -2,4 +2,10 @@
  * トップページ
  */
 
-@import "_component/mv-slider";
+// * bass
+@import "_bass/variables";
+@import "_bass/view-at";
+@import "_bass/link-color";
+
+// * component
+@import "_component/_slick/mv-slider";
