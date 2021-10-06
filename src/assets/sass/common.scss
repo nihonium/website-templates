@@ -8,10 +8,6 @@
 @import "_bass/link-color";
 @import "_bass/destyle";
 
-// * component
-@import "_component/article-card";
-@import "_component/single";
-
 html {
   height: 100%;
 }
@@ -42,6 +38,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+// * component
+@import "_component/article-card";
+@import "_component/single";
 
 .c {
   // パンくず(h1用)
@@ -222,9 +222,7 @@ img {
     }
   }
 
-  /*
-  * ヘッター
-  */
+  // * ヘッター
   &-header {
     background: #fff;
 

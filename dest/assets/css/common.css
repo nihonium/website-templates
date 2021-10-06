@@ -535,6 +535,29 @@ template {
   display: none;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  color: #000;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .1em;
+}
+
+body.is-active {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
 /*
  * 記事一覧(カード型)
  */
@@ -630,35 +653,6 @@ template {
   left: 0;
   background: rgba(0, 0, 0, .7);
   color: #fff;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  position: relative;
-  color: #000;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: .1em;
-}
-
-body.is-active {
-  overflow: hidden;
-}
-
-img {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-}
-
-.c {
-  /*
-  * ヘッター
-  */
 }
 
 .c-breadcrumb {
@@ -793,6 +787,10 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
   .c-article-card {
     margin-left: auto;
     margin-left: auto;
@@ -885,10 +883,6 @@ img {
   .c-single-text {
     margin-top: 50px;
     font-size: 18px;
-  }
-
-  body {
-    font-size: 16px;
   }
 
   .c-hide-pc {
@@ -1113,6 +1107,10 @@ img {
 }
 
 @media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
   .c-article-card {
     padding-top: 20px;
   }
@@ -1154,10 +1152,6 @@ img {
   .c-single-text {
     margin-top: 40px;
     font-size: 16px;
-  }
-
-  body {
-    font-size: 14px;
   }
 
   .c-hide-sp {
