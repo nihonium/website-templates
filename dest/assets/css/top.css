@@ -5,12 +5,18 @@
  */
 
 .c-slider {
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 20px;
   padding-bottom: 10px;
 }
 
 .c-slider-area {
   overflow-x: hidden;
+}
+
+.c-slider__content .slick-list {
+  overflow: visible;
 }
 
 .c-slider__content .slick-arrow {
@@ -58,12 +64,6 @@
 @media screen and (min-width: 768px) {
   .c-slider {
     max-width: 1012px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .c-slider__content .slick-list {
-    overflow: visible;
   }
 
   .c-slider__content .slick-next {
@@ -85,6 +85,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .c-slider {
+    max-width: 80%;
+  }
+
   .c-slider__content .slick-next {
     right: 15px;
   }

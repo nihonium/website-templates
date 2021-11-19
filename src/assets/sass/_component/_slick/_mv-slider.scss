@@ -5,11 +5,15 @@ $color-slider: #333;
   &-slider {
     padding-top: 20px;
     padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 
     @include view-at("pc") {
       max-width: 1012px;
-      margin-left: auto;
-      margin-right: auto;
+    }
+
+    @include view-at("sp") {
+      max-width: 80%;
     }
 
     &-area {
@@ -18,9 +22,7 @@ $color-slider: #333;
 
     &__content {
       .slick-list {
-        @include view-at("pc") {
-          overflow: visible;
-        }
+        overflow: visible;
       }
 
       .slick-arrow {
