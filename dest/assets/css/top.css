@@ -61,6 +61,27 @@
   display: block;
 }
 
+.p-col-inst {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: -15px;
+  margin-left: -15px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.p-col-inst li {
+  width: calc(33.333% - 30px);
+  margin-top: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.p-col-inst li > a {
+  display: block;
+}
+
 @media screen and (min-width: 768px) {
   .c-slider {
     max-width: 1012px;
@@ -80,6 +101,15 @@
   }
 
   .c-slider__link:hover {
+    opacity: .7;
+  }
+
+  .p-col-inst li > a {
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .p-col-inst li > a:hover {
     opacity: .7;
   }
 }

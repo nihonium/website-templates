@@ -29,7 +29,8 @@ module.exports = {
             },
             {
                 source: [
-                    'src/assets/js/unit/_mv-slider.js'
+                    'src/assets/js/unit/_mv-slider.js',
+                    'src/assets/js/target/top.js'
                 ],
                 publish: 'top.js'
             }
