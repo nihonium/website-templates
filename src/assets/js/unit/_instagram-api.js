@@ -1,3 +1,8 @@
+/*
+* GraphAPIでインスタグラム投稿一覧を出力
+* 参考　https://ginneko-atelier.com/blogs/entry448/
+* * * * * * * */
+
 {
     $(function () {
         let list = '';
