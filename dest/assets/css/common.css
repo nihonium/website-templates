@@ -699,6 +699,16 @@ img {
   font-weight: 700;
 }
 
+/*
+ * フォーム
+ */
+
+.c-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
 .c-breadcrumb {
   display: none;
 }

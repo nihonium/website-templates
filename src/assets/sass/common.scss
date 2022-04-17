@@ -43,14 +43,16 @@ img {
 @import "_component/article-card";
 @import "_component/single";
 @import "_component/tbl";
+@import "_component/form";
+
 
 .c {
-  // パンくず(h1用)
+  // * パンくず(h1用)
   &-breadcrumb {
     display: none;
   }
 
-  // 表示・非表示
+  // * 表示・非表示
   &-hide {
     &-pc {
       @include view-at("pc") {
@@ -65,7 +67,7 @@ img {
     }
   }
 
-  // 外余白
+  // * 外余白
   &-mt10 {
     margin-top: 10px;
   }
@@ -134,18 +136,18 @@ img {
     }
   }
 
-  // テキスト改行禁止
+  // * テキスト改行禁止
   &-nowrap {
     display: inline-block;
     word-break: break-all;
   }
 
-  // テキスト自動カーニング
+  // * テキスト自動カーニング
   &-kerning {
     font-feature-settings: "palt";
   }
 
-  // テキスト揃え
+  // * テキスト揃え
   &-align {
     &-center {
       text-align: center;
@@ -160,12 +162,12 @@ img {
     }
   }
 
-  // テキスト強調
+  // * テキスト強調
   &-strong {
     font-weight: 600;
   }
 
-  // テキストリンク
+  // * テキストリンク
   &-link {
     text-decoration: underline;
 
@@ -180,7 +182,7 @@ img {
     }
   }
 
-  // リスト
+  // * リスト
   &-list {
     color: #555;
     font-size: 10px;
@@ -200,7 +202,7 @@ img {
     }
   }
 
-  // セクション
+  // * セクション
   &-section {
     @include view-at("pc") {
       padding-top: 90px;
