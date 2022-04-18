@@ -29,8 +29,7 @@ module.exports = {
             },
             {
                 source: [
-                    'src/assets/js/unit/_mv-slider.js',
-                    'src/assets/js/unit/_instagram-api.js'
+                    'src/assets/js/unit/_mv-slider.js'
                 ],
                 publish: 'top.js'
             }

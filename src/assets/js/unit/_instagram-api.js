@@ -1,6 +1,9 @@
 /*
 * GraphAPIでインスタグラム投稿一覧を出力
 * 参考　https://ginneko-atelier.com/blogs/entry448/
+*
+* 出力先に下記を記述する
+* <div id="insta"></div>
 * * * * * * * */
 
 {

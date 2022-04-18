@@ -1217,16 +1217,16 @@ img {
     font-size: 16px;
   }
 
-  .c-tbl {
-    min-width: 600px;
-  }
-
   .c-tbl-scroll {
     overflow-x: scroll;
   }
 
   .c-tbl-scroll-note {
     margin-top: 10px;
+  }
+
+  .c-tbl-scroll > .c-tbl {
+    min-width: 600px;
   }
 
   .c-hide-sp {

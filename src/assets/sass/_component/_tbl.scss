@@ -6,10 +6,6 @@
   table-layout: fixed;
   border-top: 1px solid #969696;
 
-  @include view-at("sp") {
-    min-width: 600px;
-  }
-
   thead {
     tr {
       th {
@@ -62,6 +58,12 @@
 
       @include view-at("sp") {
         margin-top: 10px;
+      }
+    }
+
+    > .c-tbl {
+      @include view-at("sp") {
+        min-width: 600px;
       }
     }
   }
