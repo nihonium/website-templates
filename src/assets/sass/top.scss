@@ -3,12 +3,12 @@
  */
 
 // * base
-@import "_base/variables";
-@import "_base/view-at";
-@import "_base/link-color";
+@use "_base/variables";
+@use "_base/view-at" as view;
+@use "_base/link-color" as link;
 
 // * component
-@import "_component/_slick/mv-slider";
+@use "_component/_slick/mv-slider";
 
 .p-col-inst {
   display: flex;
@@ -25,8 +25,8 @@
     > a {
       display: block;
 
-      @include view-at("pc") {
-        @include pcHover();
+      @include view.view-at("pc") {
+        @include link.pcHover();
       }
     }
   }

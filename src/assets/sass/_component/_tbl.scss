@@ -1,6 +1,9 @@
 /*
  * テーブル
  */
+
+@use "../_base/view-at" as view;
+
 .c-tbl {
   width: 100%;
   table-layout: fixed;
@@ -47,22 +50,22 @@
   }
 
   &-scroll {
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       overflow-x: scroll;
     }
 
     &-note {
-      @include view-at("pc") {
+      @include view.view-at("pc") {
         display: none;
       }
 
-      @include view-at("sp") {
+      @include view.view-at("sp") {
         margin-top: 10px;
       }
     }
 
     > .c-tbl {
-      @include view-at("sp") {
+      @include view.view-at("sp") {
         min-width: 600px;
       }
     }

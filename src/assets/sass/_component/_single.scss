@@ -1,6 +1,9 @@
 /*
  * 記事ページ
  */
+
+@use "../_base/view-at" as view;
+
 .c-single {
   &-title {
     font-weight: 600;
@@ -11,10 +14,10 @@
       background: #ccc;
       color: #555;
 
-      @include view-at("pc") {
+      @include view.view-at("pc") {
         font-size: 12px;
       }
-      @include view-at("sp") {
+      @include view.view-at("sp") {
         font-size: 10px;
       }
     }
@@ -23,11 +26,11 @@
       display: inline-block;
       margin-top: 10px;
 
-      @include view-at("pc") {
+      @include view.view-at("pc") {
         font-size: 24px;
       }
 
-      @include view-at("sp") {
+      @include view.view-at("sp") {
         font-size: 18px;
       }
     }
@@ -36,11 +39,11 @@
   &-figure {
     position: relative;
 
-    @include view-at("pc") {
+    @include view.view-at("pc") {
       margin-top: 30px;
     }
 
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       margin-top: 20px;
     }
 
@@ -53,12 +56,12 @@
       background: rgba($color: #000000, $alpha: .7);
       color: #fff;
 
-      @include view-at("pc") {
+      @include view.view-at("pc") {
         font-size: 14px;
         padding: 15px;
       }
 
-      @include view-at("sp") {
+      @include view.view-at("sp") {
         font-size: 12px;
         padding: 5px;
       }
@@ -66,12 +69,12 @@
   }
 
   &-text {
-    @include view-at("pc") {
+    @include view.view-at("pc") {
       margin-top: 50px;
       font-size: 18px;
     }
 
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       margin-top: 40px;
       font-size: 16px;
     }

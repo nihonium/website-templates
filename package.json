@@ -35,7 +35,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-prettify": "^0.5.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.0.0",
     "gulp-swig": "^0.9.1",
     "gulp-uglify": "^3.0.2",
     "gulp-uglify-es": "^1.0.4",

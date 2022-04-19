@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-/*
- * トップページ
- */
-
 .c-slider {
   margin-right: auto;
   margin-left: auto;
@@ -38,7 +34,7 @@
   margin: auto;
   border-radius: 5px;
   background-color: #333;
-  content: '';
+  content: "";
 }
 
 .c-slider__item {
@@ -60,6 +56,10 @@
 .c-slider .slick-initialized .top-mv__item {
   display: block;
 }
+
+/*
+ * トップページ
+ */
 
 .p-col-inst {
   display: -webkit-box;

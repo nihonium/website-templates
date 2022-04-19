@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-/*
- * 共通スタイル
- */
-
 /*! destyle.css v2.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 
 /* Reset box-model and set borders */
@@ -277,13 +273,13 @@ textarea {
  * Reset radio and checkbox appearance to preserve their look in iOS.
  */
 
-[type="checkbox"] {
+[type=checkbox] {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
   appearance: checkbox;
 }
 
-[type="radio"] {
+[type=radio] {
   -webkit-appearance: radio;
   -moz-appearance: radio;
   appearance: radio;
@@ -316,9 +312,9 @@ select {
  */
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -326,9 +322,9 @@ button,
 }
 
 button[disabled],
-[type="button"][disabled],
-[type="reset"][disabled],
-[type="submit"][disabled] {
+[type=button][disabled],
+[type=reset][disabled],
+[type=submit][disabled] {
   cursor: default;
 }
 
@@ -337,9 +333,9 @@ button[disabled],
  */
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
@@ -349,9 +345,9 @@ button::-moz-focus-inner,
  */
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -421,8 +417,8 @@ textarea {
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -430,7 +426,7 @@ textarea {
  * 1. Correct the outline style in Safari.
  */
 
-[type="search"] {
+[type=search] {
   outline-offset: -2px;
   /* 1 */
 }
@@ -439,7 +435,7 @@ textarea {
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -533,29 +529,6 @@ template {
 
 [hidden] {
   display: none;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  position: relative;
-  color: #000;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: .1em;
-}
-
-body.is-active {
-  overflow: hidden;
-}
-
-img {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
 }
 
 /*
@@ -709,6 +682,33 @@ img {
   border: 1px solid #ccc;
 }
 
+/*
+ * 共通スタイル
+ */
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  color: #000;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .1em;
+}
+
+body.is-active {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
 .c-breadcrumb {
   display: none;
 }
@@ -846,10 +846,6 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-
   .c-article-card {
     margin-left: auto;
     margin-left: auto;
@@ -946,6 +942,10 @@ img {
 
   .c-tbl-scroll-note {
     display: none;
+  }
+
+  body {
+    font-size: 16px;
   }
 
   .c-hide-pc {
@@ -1170,10 +1170,6 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-  body {
-    font-size: 14px;
-  }
-
   .c-article-card {
     padding-top: 20px;
   }
@@ -1227,6 +1223,10 @@ img {
 
   .c-tbl-scroll > .c-tbl {
     min-width: 600px;
+  }
+
+  body {
+    font-size: 14px;
   }
 
   .c-hide-sp {

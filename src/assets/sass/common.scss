@@ -3,10 +3,16 @@
  */
 
 // * base
-@import "_base/variables";
-@import "_base/view-at";
-@import "_base/link-color";
-@import "_base/destyle";
+@use "_base/variables";
+@use "_base/view-at" as view;
+@use "_base/link-color" as link;
+@use "_base/destyle";
+
+// * component(必要なstyleのみ読み込む)
+@use "_component/article-card";
+@use "_component/single";
+@use "_component/tbl";
+@use "_component/form";
 
 html {
   height: 100%;
@@ -20,11 +26,11 @@ body {
   line-height: 1.5;
   letter-spacing: 0.1em;
 
-  @include view-at("pc") {
+  @include view.view-at("pc") {
     font-size: 16px;
   }
 
-  @include view-at("sp") {
+  @include view.view-at("sp") {
     font-size: 14px;
   }
 
@@ -39,13 +45,6 @@ img {
   height: auto;
 }
 
-// * component(必要なstyleのみ読み込む)
-@import "_component/article-card";
-@import "_component/single";
-@import "_component/tbl";
-@import "_component/form";
-
-
 .c {
   // * パンくず(h1用)
   &-breadcrumb {
@@ -55,13 +54,13 @@ img {
   // * 表示・非表示
   &-hide {
     &-pc {
-      @include view-at("pc") {
+      @include view.view-at("pc") {
         display: none;
       }
     }
 
     &-sp {
-      @include view-at("sp") {
+      @include view.view-at("sp") {
         display: none;
       }
     }
@@ -101,37 +100,37 @@ img {
   }
 
   &-sp10 {
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       margin-top: 10px;
     }
   }
 
   &-mt-sp20 {
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       margin-top: 20px;
     }
   }
 
   &-mt-sp30 {
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       margin-top: 30px;
     }
   }
 
   &-mt-sp40 {
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       margin-top: 40px;
     }
   }
 
   &-mt-sp50 {
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       margin-top: 50px;
     }
   }
 
   &-mt-sp60 {
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       margin-top: 60px;
     }
   }
@@ -171,11 +170,11 @@ img {
   &-link {
     text-decoration: underline;
 
-    @include link-color {
+    @include link.link-color {
       color: #ff0000;
     }
 
-    @include view-at("pc") {
+    @include view.view-at("pc") {
       &:hover {
         text-decoration: none;
       }
@@ -204,12 +203,12 @@ img {
 
   // * セクション
   &-section {
-    @include view-at("pc") {
+    @include view.view-at("pc") {
       padding-top: 90px;
       padding-bottom: 90px;
     }
 
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       padding-top: 40px;
       padding-bottom: 40px;
     }
@@ -218,13 +217,13 @@ img {
       margin-left: auto;
       margin-right: auto;
 
-      @include view-at("pc") {
+      @include view.view-at("pc") {
         max-width: 1020px;
         padding-left: 10px;
         padding-right: 10px;
       }
 
-      @include view-at("sp") {
+      @include view.view-at("sp") {
         width: calc(100% - 40px);
         max-width: 480px;
       }
@@ -239,7 +238,7 @@ img {
       display: flex;
       align-items: center;
 
-      @media screen and (min-width: $mq-nav) {
+      @media screen and (min-width: variables.$mq-nav) {
         justify-content: space-between;
         height: 80px;
         max-width: 1280px;
@@ -249,7 +248,7 @@ img {
         padding-right: 1%;
       }
 
-      @media screen and (max-width: $mq-nav - 1) {
+      @media screen and (max-width: variables.$mq-nav - 1) {
         justify-content: space-between;
         height: 60px;
         padding-left: 15px;
@@ -258,12 +257,12 @@ img {
     }
 
     &-logo {
-      @media screen and (min-width: $mq-nav) {
+      @media screen and (min-width: variables.$mq-nav) {
         width: 13.281%;
         max-width: 170px;
       }
 
-      @media screen and (max-width: $mq-nav - 1) {
+      @media screen and (max-width: variables.$mq-nav - 1) {
         width: 120px;
       }
 
@@ -273,11 +272,11 @@ img {
     }
 
     &-menu {
-      @media screen and (min-width: $mq-nav) {
+      @media screen and (min-width: variables.$mq-nav) {
         display: none;
       }
 
-      @media screen and (max-width: $mq-nav - 1) {
+      @media screen and (max-width: variables.$mq-nav - 1) {
         display: block;
         width: 32px;
         height: 32px;
@@ -289,11 +288,11 @@ img {
     }
 
     &-close {
-      @media screen and (min-width: $mq-nav) {
+      @media screen and (min-width: variables.$mq-nav) {
         display: none;
       }
 
-      @media screen and (max-width: $mq-nav - 1) {
+      @media screen and (max-width: variables.$mq-nav - 1) {
         position: absolute;
         background-image: url("https://placehold.jp/ffffff/000000/48x48.png?text=close");
         background-repeat: no-repeat;
@@ -306,11 +305,11 @@ img {
     }
 
     &-sp-logo {
-      @media screen and (min-width: $mq-nav) {
+      @media screen and (min-width: variables.$mq-nav) {
         display: none;
       }
 
-      @media screen and (max-width: $mq-nav - 1) {
+      @media screen and (max-width: variables.$mq-nav - 1) {
         position: absolute;
         width: 120px;
         left: 15px;
@@ -319,13 +318,13 @@ img {
     }
 
     &-box {
-      @media screen and (min-width: $mq-nav) {
+      @media screen and (min-width: variables.$mq-nav) {
         opacity: 1;
         visibility: visible;
         transform: none;
       }
 
-      @media screen and (max-width: $mq-nav - 1) {
+      @media screen and (max-width: variables.$mq-nav - 1) {
         position: fixed;
         background: rgba($color: #000, $alpha: 0.95);
         top: 0;
@@ -341,7 +340,7 @@ img {
       }
 
       &__content {
-        @media screen and (max-width: $mq-nav - 1) {
+        @media screen and (max-width: variables.$mq-nav - 1) {
           padding-top: 20%;
           padding-bottom: 10%;
         }
@@ -359,30 +358,30 @@ img {
     }
 
     &-list {
-      @media screen and (min-width: $mq-nav) {
+      @media screen and (min-width: variables.$mq-nav) {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-end;
       }
 
-      @media screen and (max-width: $mq-nav - 1) {
+      @media screen and (max-width: variables.$mq-nav - 1) {
         margin-top: 10px;
         width: 100%;
       }
 
       li {
-        @media screen and (min-width: $mq-nav) {
+        @media screen and (min-width: variables.$mq-nav) {
           margin-left: 13px;
           margin-right: 13px;
         }
 
-        @media screen and (max-width: $mq-nav - 1) {
+        @media screen and (max-width: variables.$mq-nav - 1) {
           text-align: center;
         }
 
         &:not(:first-child) {
-          @media screen and (max-width: $mq-nav - 1) {
+          @media screen and (max-width: variables.$mq-nav - 1) {
             margin-top: 20px;
           }
         }
@@ -392,31 +391,31 @@ img {
         font-weight: 700;
         font-size: 14px;
 
-        @media screen and (min-width: $mq-nav) {
+        @media screen and (min-width: variables.$mq-nav) {
           letter-spacing: 0.05em;
-          @include pcHover();
+          @include link.pcHover();
 
-          @include link-color {
+          @include link.link-color {
             color: #000;
           }
         }
 
-        @media screen and (max-width: $mq-nav - 1) {
+        @media screen and (max-width: variables.$mq-nav - 1) {
           color: #fff;
           font-size: 16px;
 
-          @include link-color {
+          @include link.link-color {
             color: #fff;
           }
         }
       }
 
       &-sp {
-        @media screen and (min-width: $mq-nav) {
+        @media screen and (min-width: variables.$mq-nav) {
           display: none;
         }
 
-        @media screen and (max-width: $mq-nav - 1) {
+        @media screen and (max-width: variables.$mq-nav - 1) {
           max-width: 280px;
           margin-left: auto;
           margin-right: auto;
@@ -429,11 +428,11 @@ img {
     }
 
     &-sns {
-      @media screen and (min-width: $mq-nav) {
+      @media screen and (min-width: variables.$mq-nav) {
         display: none;
       }
 
-      @media screen and (max-width: $mq-nav - 1) {
+      @media screen and (max-width: variables.$mq-nav - 1) {
         margin-top: 30px;
         display: flex;
         align-items: center;
@@ -441,7 +440,7 @@ img {
       }
 
       li {
-        @media screen and (max-width: $mq-nav - 1) {
+        @media screen and (max-width: variables.$mq-nav - 1) {
           margin-left: 10px;
           margin-right: 10px;
           width: 48px;

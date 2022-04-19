@@ -10,7 +10,7 @@ const footer = require('gulp-footer');
 
 // * コンパイルするプラグインの読み込み
 // * Sass
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const csscomb = require('gulp-csscomb');
 const autoprefixer = require('gulp-autoprefixer');
 const mediaqueries = require('gulp-group-css-media-queries');

@@ -1,4 +1,8 @@
 // * スライダー
+
+@use "../../_base/view-at" as view;
+@use "../../_base/link-color" as link;
+
 $color-slider: #333;
 
 .c {
@@ -8,11 +12,11 @@ $color-slider: #333;
     margin-left: auto;
     margin-right: auto;
 
-    @include view-at("pc") {
+    @include view.view-at("pc") {
       max-width: 1012px;
     }
 
-    @include view-at("sp") {
+    @include view.view-at("sp") {
       max-width: 80%;
     }
 
@@ -34,21 +38,21 @@ $color-slider: #333;
       }
 
       .slick-next {
-        @include view-at("pc") {
+        @include view.view-at("pc") {
           right: 25px;
         }
 
-        @include view-at("sp") {
+        @include view.view-at("sp") {
           right: 15px;
         }
       }
 
       .slick-prev {
-        @include view-at("pc") {
+        @include view.view-at("pc") {
           left: 25px;
         }
 
-        @include view-at("sp") {
+        @include view.view-at("sp") {
           left: 15px;
         }
       }
@@ -82,8 +86,8 @@ $color-slider: #333;
     &__link {
       display: block;
 
-      @include view-at("pc") {
-        @include pcHover();
+      @include view.view-at("pc") {
+        @include link.pcHover();
       }
     }
 
