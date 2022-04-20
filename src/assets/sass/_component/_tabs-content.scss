@@ -36,11 +36,8 @@
       letter-spacing: 0;
       font-weight: 700;
       text-align: center;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: 1em;
+      padding-bottom: 1em;
 
       @include mixin.view-at("pc") {
         cursor: pointer;
