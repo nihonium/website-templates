@@ -1,0 +1,39 @@
+/*
+ * リセットCSS
+ */
+
+@use "_base/variables";
+@use "_base/mixin";
+@use "destyle";
+
+// * 独自指定
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  color: #000;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+
+  @include mixin.view-at("pc") {
+    font-size: 16px;
+  }
+
+  @include mixin.view-at("sp") {
+    font-size: 14px;
+  }
+
+  &.is-active {
+    overflow: hidden;
+  }
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
