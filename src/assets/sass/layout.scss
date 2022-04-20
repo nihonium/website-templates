@@ -1,0 +1,12 @@
+/*
+ * レイアウト
+ */
+
+// * base
+@use "_base/variables";
+@use "_base/mixin";
+
+// * component(必要なstyleのみ読み込む)
+@use "_component/tbl";
+@use "_component/form";
+@use "_component/tabs-content";

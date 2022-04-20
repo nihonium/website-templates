@@ -6,7 +6,7 @@
 @use "_base/variables";
 @use "_base/mixin";
 
-// * component
+// * component(必要なstyleのみ読み込む)
 @use "_component/_slick/mv-slider";
 
 .p-col-inst {

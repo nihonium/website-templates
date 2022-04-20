@@ -1,0 +1,103 @@
+
+// * タブ切り替え
+@use "../_base/mixin";
+
+@keyframes tooltipShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.c-tabs {
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mixin.view-at("pc") {
+    max-width: 1000px;
+    margin-top: 30px;
+  }
+
+  @include mixin.view-at("sp") {
+    max-width: 480px;
+    margin-top: 20px;
+  }
+
+  &-list {
+    display: flex;
+    align-items: flex-end;
+
+    li {
+      color: #000;
+      background: #fff;
+      letter-spacing: 0;
+      font-weight: 700;
+      text-align: center;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+      @include mixin.view-at("pc") {
+        cursor: pointer;
+      }
+
+      &.is-active {
+        border-top: 5px solid #000;
+
+        @include mixin.view-at("pc") {
+          width: 56.8%;
+          font-size: 28px;
+        }
+
+        @include mixin.view-at("sp") {
+          font-size: 13px;
+          width: 56.875%;
+        }
+      }
+
+      &:not(.is-active) {
+        border-top: 3px solid #e7e7e7;
+
+        @include mixin.view-at("pc") {
+          width: 43.2%;
+          font-size: 22px;
+        }
+
+        @include mixin.view-at("sp") {
+          width: 43.125%;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  &-content {
+    background: #e7e7e7;
+
+    @include mixin.view-at("pc") {
+      padding: 20px;
+    }
+
+    @include mixin.view-at("sp") {
+      padding: 10px;
+    }
+  }
+
+  &-item {
+    display: none;
+
+    @include mixin.view-at("pc") {
+      font-size: 15px;
+    }
+
+    &.is-active {
+      animation: tooltipShow .3s linear 0s;
+      display: block;
+    }
+  }
+}

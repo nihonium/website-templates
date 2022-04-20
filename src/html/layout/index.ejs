@@ -21,6 +21,7 @@
     <%# 共通CSS %>
     <%- include(ejsRoot + '_component/_common/_css', {root: ejsRoot}); %>
     <!-- ページ独自CSS -->
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/layout.css">
     <%# OGP %>
     <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'article', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
     <%# Googleタグマネージャー %>
@@ -146,6 +147,29 @@
             </div>
         </section>
         <!-- /フォーム -->
+        <section class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong">タブ切り替え</h2>
+                <div class="c-tabs">
+                    <ul class="c-tabs-list" data-tabs-list>
+                        <li class="is-active">タブ切り替え 1</li>
+                        <li>タブ切り替え 2</li>
+                    </ul>
+                    <div class="c-tabs-content" data-tabs-content>
+                        <div class="c-tabs-item is-active" data-tabs-item>
+                            <p>タブ切り替え 1のコンテンツ</p>
+                        </div>
+                        <!-- /タブ切り替え 1 -->
+                        <div class="c-tabs-item" data-tabs-item>
+                            <p>タブ切り替え 2のコンテンツ</p>
+                        </div>
+                        <!-- /タブ切り替え 2 -->
+                    </div>
+                </div>
+                <!-- /タブ切り替え -->
+            </div>
+        </section>
+        <!-- /タブ切り替え -->
     </main>
     <!-- /main -->
 
@@ -154,6 +178,7 @@
     <%# 共通JS %>
     <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
     <%# ページ独自JSがある場合は、下記に記述 %>
+    <script src="<%- ejsRoot %>assets/js/layout.js" defer></script>
 </body>
 
 </html>

@@ -10,8 +10,6 @@
 // * component(必要なstyleのみ読み込む)
 @use "_component/article-card";
 @use "_component/single";
-@use "_component/tbl";
-@use "_component/form";
 
 .c {
   // * パンくず(h1用)

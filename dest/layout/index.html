@@ -15,6 +15,7 @@
         <!-- 共通CSS -->
         <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
         <!-- ページ独自CSS -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/layout.css">
         <meta property="og:type" content="article">
         <meta property="og:locale" content="ja_JP">
         <meta property="og:title" content="レイアウトページ | hoge">
@@ -186,6 +187,29 @@
                 </div>
             </section>
             <!-- /フォーム -->
+            <section class="c-section">
+                <div class="c-section__content">
+                    <h2 class="c-strong">タブ切り替え</h2>
+                    <div class="c-tabs">
+                        <ul class="c-tabs-list" data-tabs-list>
+                            <li class="is-active">タブ切り替え 1</li>
+                            <li>タブ切り替え 2</li>
+                        </ul>
+                        <div class="c-tabs-content" data-tabs-content>
+                            <div class="c-tabs-item is-active" data-tabs-item>
+                                <p>タブ切り替え 1のコンテンツ</p>
+                            </div>
+                            <!-- /タブ切り替え 1 -->
+                            <div class="c-tabs-item" data-tabs-item>
+                                <p>タブ切り替え 2のコンテンツ</p>
+                            </div>
+                            <!-- /タブ切り替え 2 -->
+                        </div>
+                    </div>
+                    <!-- /タブ切り替え -->
+                </div>
+            </section>
+            <!-- /タブ切り替え -->
         </main>
         <!-- /main -->
         <footer id="footer" class="c-footer">
@@ -203,5 +227,6 @@
         <!-- 共通JS -->
         <script src="../assets/vendor/jquery-3.6.0.min.js" defer></script>
         <script src="../assets/js/common.js" defer></script>
+        <script src="../assets/js/layout.js" defer></script>
     </body>
 </html>

@@ -32,6 +32,12 @@ module.exports = {
                     'src/assets/js/unit/_mv-slider.js'
                 ],
                 publish: 'top.js'
+            },
+            {
+                source: [
+                    'src/assets/js/unit/_tabs-content.js'
+                ],
+                publish: 'layout.js'
             }
         ]
     }
