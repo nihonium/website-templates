@@ -23,7 +23,6 @@
     "gulp-changed": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-csscomb": "^3.0.8",
-    "gulp-dart-sass": "^1.0.1",
     "gulp-debug": "^4.0.0",
     "gulp-ejs": "^3.1.1",
     "gulp-footer": "^2.0.2",
