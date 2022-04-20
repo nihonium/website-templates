@@ -4,8 +4,7 @@
 
 // * base
 @use "_base/variables";
-@use "_base/view-at" as view;
-@use "_base/link-color" as link;
+@use "_base/mixin";
 @use "_base/destyle";
 
 // * component(必要なstyleのみ読み込む)
@@ -26,11 +25,11 @@ body {
   line-height: 1.5;
   letter-spacing: 0.1em;
 
-  @include view.view-at("pc") {
+  @include mixin.view-at("pc") {
     font-size: 16px;
   }
 
-  @include view.view-at("sp") {
+  @include mixin.view-at("sp") {
     font-size: 14px;
   }
 
@@ -54,13 +53,13 @@ img {
   // * 表示・非表示
   &-hide {
     &-pc {
-      @include view.view-at("pc") {
+      @include mixin.view-at("pc") {
         display: none;
       }
     }
 
     &-sp {
-      @include view.view-at("sp") {
+      @include mixin.view-at("sp") {
         display: none;
       }
     }
@@ -100,37 +99,37 @@ img {
   }
 
   &-sp10 {
-    @include view.view-at("sp") {
+    @include mixin.view-at("sp") {
       margin-top: 10px;
     }
   }
 
   &-mt-sp20 {
-    @include view.view-at("sp") {
+    @include mixin.view-at("sp") {
       margin-top: 20px;
     }
   }
 
   &-mt-sp30 {
-    @include view.view-at("sp") {
+    @include mixin.view-at("sp") {
       margin-top: 30px;
     }
   }
 
   &-mt-sp40 {
-    @include view.view-at("sp") {
+    @include mixin.view-at("sp") {
       margin-top: 40px;
     }
   }
 
   &-mt-sp50 {
-    @include view.view-at("sp") {
+    @include mixin.view-at("sp") {
       margin-top: 50px;
     }
   }
 
   &-mt-sp60 {
-    @include view.view-at("sp") {
+    @include mixin.view-at("sp") {
       margin-top: 60px;
     }
   }
@@ -170,11 +169,11 @@ img {
   &-link {
     text-decoration: underline;
 
-    @include link.link-color {
+    @include mixin.link-color {
       color: #ff0000;
     }
 
-    @include view.view-at("pc") {
+    @include mixin.view-at("pc") {
       &:hover {
         text-decoration: none;
       }
@@ -203,12 +202,12 @@ img {
 
   // * セクション
   &-section {
-    @include view.view-at("pc") {
+    @include mixin.view-at("pc") {
       padding-top: 90px;
       padding-bottom: 90px;
     }
 
-    @include view.view-at("sp") {
+    @include mixin.view-at("sp") {
       padding-top: 40px;
       padding-bottom: 40px;
     }
@@ -217,13 +216,13 @@ img {
       margin-left: auto;
       margin-right: auto;
 
-      @include view.view-at("pc") {
+      @include mixin.view-at("pc") {
         max-width: 1020px;
         padding-left: 10px;
         padding-right: 10px;
       }
 
-      @include view.view-at("sp") {
+      @include mixin.view-at("sp") {
         width: calc(100% - 40px);
         max-width: 480px;
       }
@@ -393,9 +392,9 @@ img {
 
         @media screen and (min-width: variables.$mq-nav) {
           letter-spacing: 0.05em;
-          @include link.pcHover();
+          @include mixin.pcHover();
 
-          @include link.link-color {
+          @include mixin.link-color {
             color: #000;
           }
         }
@@ -404,7 +403,7 @@ img {
           color: #fff;
           font-size: 16px;
 
-          @include link.link-color {
+          @include mixin.link-color {
             color: #fff;
           }
         }

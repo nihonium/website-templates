@@ -2,7 +2,7 @@
  * テーブル
  */
 
-@use "../_base/view-at" as view;
+@use "../_base/mixin";
 
 .c-tbl {
   width: 100%;
@@ -50,22 +50,22 @@
   }
 
   &-scroll {
-    @include view.view-at("sp") {
+    @include mixin.view-at("sp") {
       overflow-x: scroll;
     }
 
     &-note {
-      @include view.view-at("pc") {
+      @include mixin.view-at("pc") {
         display: none;
       }
 
-      @include view.view-at("sp") {
+      @include mixin.view-at("sp") {
         margin-top: 10px;
       }
     }
 
     > .c-tbl {
-      @include view.view-at("sp") {
+      @include mixin.view-at("sp") {
         min-width: 600px;
       }
     }

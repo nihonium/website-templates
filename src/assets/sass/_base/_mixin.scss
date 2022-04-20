@@ -1,0 +1,36 @@
+@use "variables";
+
+// * ブレークポイント
+@mixin view-at($mode: 'pc') {
+  @if ($mode == 'sp') {
+    @media screen and (max-width: variables.$mq-lg - 1) {
+      @content;
+    }
+  }
+  @else if ($mode == 'pc') {
+    @media screen and (min-width: variables.$mq-lg) {
+      @content;
+    }
+  }
+}
+
+// * リンクの文字色指定
+@mixin link-color {
+  @content;
+
+  &:active,
+  &:focus,
+  &:visited,
+  &:hover {
+    @content;
+  }
+}
+
+// * マウスホバー時に半透明
+@mixin pcHover {
+  transition: opacity 0.25s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

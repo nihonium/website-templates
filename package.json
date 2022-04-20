@@ -23,6 +23,7 @@
     "gulp-changed": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-csscomb": "^3.0.8",
+    "gulp-dart-sass": "^1.0.1",
     "gulp-debug": "^4.0.0",
     "gulp-ejs": "^3.1.1",
     "gulp-footer": "^2.0.2",
@@ -42,6 +43,7 @@
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",
     "run-sequence": "^2.2.1",
+    "sass": "^1.42.0",
     "vinyl-source-stream": "^2.0.0"
   }
 }

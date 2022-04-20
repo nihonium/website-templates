@@ -4,8 +4,7 @@
 
 // * base
 @use "_base/variables";
-@use "_base/view-at" as view;
-@use "_base/link-color" as link;
+@use "_base/mixin";
 
 // * component
 @use "_component/_slick/mv-slider";
@@ -25,8 +24,8 @@
     > a {
       display: block;
 
-      @include view.view-at("pc") {
-        @include link.pcHover();
+      @include mixin.view-at("pc") {
+        @include mixin.pcHover();
       }
     }
   }
