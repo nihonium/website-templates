@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+.c-slider {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.c-slider-area {
+  overflow-x: hidden;
+}
+
+.c-slider__content .slick-list {
+  overflow: visible;
+}
+
+.c-slider__content .slick-arrow {
+  z-index: 2;
+}
+
+.c-slider__content .slick-arrow:before {
+  color: #333;
+}
+
+.c-slider__content .slick-dots li button:before,
+.c-slider__content .slick-dots li.slick-active button:before {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #333;
+  content: "";
+}
+
+.c-slider__item {
+  display: none;
+  padding-right: 6px;
+  padding-left: 6px;
+  -webkit-transition: .1s opacity ease;
+  transition: .1s opacity ease;
+}
+
+.c-slider__item.slick-slide:not(.slick-current) {
+  opacity: .7;
+}
+
+.c-slider__link {
+  display: block;
+}
+
+.c-slider .slick-initialized .top-mv__item {
+  display: block;
+}
+
+/*
+ * トップページ
+ */
+
+.p-col-inst {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: -15px;
+  margin-left: -15px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.p-col-inst li {
+  width: calc(33.333% - 30px);
+  margin-top: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.p-col-inst li > a {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .c-slider {
+    max-width: 1012px;
+  }
+
+  .c-slider__content .slick-next {
+    right: 25px;
+  }
+
+  .c-slider__content .slick-prev {
+    left: 25px;
+  }
+
+  .c-slider__link {
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .c-slider__link:hover {
+    opacity: .7;
+  }
+
+  .p-col-inst li > a {
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .p-col-inst li > a:hover {
+    opacity: .7;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .c-slider {
+    max-width: 80%;
+  }
+
+  .c-slider__content .slick-next {
+    right: 15px;
+  }
+
+  .c-slider__content .slick-prev {
+    left: 15px;
+  }
+}
