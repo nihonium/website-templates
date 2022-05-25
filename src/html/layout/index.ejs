@@ -5,6 +5,9 @@
     const pageDescription = "レイアウトページのディスクプリクション | hoge";
     const pageCanonical = "https://www.hoge.jp/";
 %>
+<%
+    const ttlName = "タイトル名テスト";
+%>
 
 <!DOCTYPE html>
 <html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
@@ -136,13 +139,16 @@
         <!-- /テーブル -->
         <section class="c-section">
             <div class="c-section__content">
-                <h2 class="c-strong">フォーム</h2>
+                <h2 class="c-strong">フォーム <%- `${ttlName}` %></h2>
                 <div class="c-mt20">
-                    <input class="c-input" type="email" name="email" autocomplete="email">
-                    <%#
-                    inputタグには適宜、autocomplete属性を追記する
-                    例：https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete
-                    %>
+                    <form action="./" method="post">
+                        <input class="c-input" type="email" name="email" autocomplete="email">
+                        <%#
+                        inputタグには適宜、autocomplete属性を追記する
+                        例：https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete
+                        %>
+                        <button class="c-input-btn" type="submit">送信</button>
+                    </form>
                 </div>
             </div>
         </section>
