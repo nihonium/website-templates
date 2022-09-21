@@ -1,6 +1,6 @@
 {
     const sliderMV = () => {
-        $(document).ready(function(){
+        $(window).on('load', function () {
             $('[data-slider-mv]').slick({
                 autoplay: true,
                 dots: true,

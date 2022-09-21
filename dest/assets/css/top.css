@@ -11,6 +11,10 @@
   overflow-x: hidden;
 }
 
+.c-slider__content {
+  display: none;
+}
+
 .c-slider__content .slick-list {
   overflow: visible;
 }
@@ -38,7 +42,6 @@
 }
 
 .c-slider__item {
-  display: none;
   padding-right: 6px;
   padding-left: 6px;
   -webkit-transition: .1s opacity ease;
@@ -53,8 +56,10 @@
   display: block;
 }
 
-.c-slider .slick-initialized .top-mv__item {
-  display: block;
+.c-slider .slick-initialized + .c-slider__mv {
+  display: none;
+  padding-right: 6px;
+  padding-left: 6px;
 }
 
 /*
@@ -116,7 +121,7 @@
 
 @media screen and (max-width: 767px) {
   .c-slider {
-    max-width: 80%;
+    width: calc(100% - 40px);
   }
 
   .c-slider__content .slick-next {

@@ -16,7 +16,7 @@ $color-slider: #333;
     }
 
     @include mixin.view-at("sp") {
-      max-width: 80%;
+      width: calc(100% - 40px);
     }
 
     &-area {
@@ -24,6 +24,8 @@ $color-slider: #333;
     }
 
     &__content {
+      display: none;
+
       .slick-list {
         overflow: visible;
       }
@@ -75,7 +77,6 @@ $color-slider: #333;
       padding-left: 6px;
       padding-right: 6px;
       transition: .1s opacity ease;
-      display: none;
 
       &.slick-slide:not(.slick-current) {
         opacity: .7;
@@ -91,8 +92,10 @@ $color-slider: #333;
     }
 
     .slick-initialized {
-      .top-mv__item {
-        display: block;
+      +.c-slider__mv {
+        display: none;
+        padding-left: 6px;
+        padding-right: 6px;
       }
     }
   }
