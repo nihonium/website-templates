@@ -722,6 +722,18 @@ img {
   display: block;
 }
 
+.c-footer {
+  margin-top: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eaeaef;
+}
+
+.c-footer__content {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media screen and (min-width: 768px) {
   body {
     font-size: 16px;
@@ -835,6 +847,12 @@ img {
   }
 
   .c-section__content {
+    max-width: 1020px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .c-footer__content {
     max-width: 1020px;
     padding-right: 10px;
     padding-left: 10px;
@@ -1126,5 +1144,10 @@ img {
   .c-section__content {
     max-width: 480px;
     width: calc(100% - 40px);
+  }
+
+  .c-footer__content {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }

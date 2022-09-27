@@ -81,8 +81,25 @@
             <h1>hoge</h1>
         </div>
         <main class="c-main">
-            <div class="c-section">
-                <section class="c-section__content">
+            <section class="c-section">
+                <div class="c-section__content">
+                    <h2 class="c-strong">アンカーリンク</h2>
+                    <p class="c-mt20">
+                        <a class="c-link" href="#1" data-scroll>テーブル</a>
+                    </p>
+                    <p class="c-mt20">
+                        <a class="c-link" href="#2" data-scroll>入力フォーム</a>
+                    </p>
+                    <p class="c-mt20">
+                        <a class="c-link" href="#3" data-scroll>タブ切り替え</a>
+                    </p>
+                    <p class="c-mt20">
+                        <a class="c-link" href="#4" data-scroll>Google Maps埋め込み</a>
+                    </p>
+                </div>
+            </section>
+            <section id="1" class="c-section">
+                <div class="c-section__content">
                     <h2 class="c-strong">テーブル</h2>
                     <div class="c-mt20">
                         <p>SP時 横スクロールあり</p>
@@ -175,12 +192,12 @@
                             </tbody>
                         </table>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
             <!-- /テーブル -->
-            <section class="c-section">
+            <section id="2" class="c-section">
                 <div class="c-section__content">
-                    <h2 class="c-strong">フォーム タイトル名テスト</h2>
+                    <h2 class="c-strong">入力フォーム</h2>
                     <div class="c-mt20">
                         <form action="./" method="post">
                             <input class="c-input" type="email" name="email" autocomplete="email">
@@ -189,8 +206,8 @@
                     </div>
                 </div>
             </section>
-            <!-- /フォーム -->
-            <section class="c-section">
+            <!-- /入力フォーム -->
+            <section id="3" class="c-section">
                 <div class="c-section__content">
                     <h2 class="c-strong">タブ切り替え</h2>
                     <div class="c-tabs">
@@ -212,22 +229,22 @@
                 </div>
             </section>
             <!-- /タブ切り替え -->
-            <section class="c-section">
+            <section id="4" class="c-section">
                 <div class="c-section__content">
                     <h2 class="c-strong">Google Maps埋め込み</h2>
                     <div class="c-youtube-iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d850494.5342862558!2d130.58595375000002!3d33.62490775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541817af77eb125%3A0x97a20ffb4a51384d!2z56aP5bKh55yM!5e0!3m2!1sja!2sjp!4v1663725211225!5m2!1sja!2sjp" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                 </div>
             </section>
-            <!-- /Google Maps埋め込みs -->
+            <!-- /Google Maps埋め込み -->
         </main>
         <!-- /main -->
         <footer id="footer" class="c-footer">
             <div class="c-footer__content"> 【footer】 <ul class="c-mt30">
                     <li>
-                        <a href="" target="_blank"> Twitter </a>
+                        <a class="c-link" href="" target="_blank">Twitter</a>
                     </li>
                     <li>
-                        <a href="" target="_blank"> Facebook </a>
+                        <a class="c-link" href="" target="_blank">Facebook</a>
                     </li>
                 </ul>
             </div>

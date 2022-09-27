@@ -21,14 +21,10 @@ const fbTOP = fbURL + 'https%3A%2F%2Fwww.hoge.co.jp%2Fhoge%2F';
         【footer】
         <ul class="c-mt30">
             <li>
-                <a href="<% if (page === 'top') { %><%- twTOP %><% } %>" target="_blank">
-                    Twitter
-                </a>
+                <a class="c-link" href="<% if (page === 'top') { %><%- twTOP %><% } %>" target="_blank">Twitter</a>
             </li>
             <li>
-                <a href="<% if (page === 'top') { %><%- fbTOP %><% } %>" target="_blank">
-                    Facebook
-                </a>
+                <a class="c-link" href="<% if (page === 'top') { %><%- fbTOP %><% } %>" target="_blank">Facebook</a>
             </li>
         </ul>
     </div>

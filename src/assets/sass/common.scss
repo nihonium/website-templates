@@ -419,4 +419,28 @@
       }
     }
   }
+
+  // * フッター
+  &-footer {
+    background-color: #eaeaef;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 80px;
+
+    &__content {
+      margin-left: auto;
+      margin-right: auto;
+
+      @include mixin.view-at("pc") {
+        max-width: 1020px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      @include mixin.view-at("sp") {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
 }
