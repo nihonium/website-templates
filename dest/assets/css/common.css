@@ -586,6 +586,10 @@ img {
  * 共通スタイル
  */
 
+.c-main {
+  padding-bottom: 80px;
+}
+
 .c-breadcrumb {
   display: none;
 }
@@ -645,7 +649,17 @@ img {
 }
 
 .c-strong {
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.c-highlight {
+  text-decoration: underline;
+  -webkit-text-decoration-color: rgba(255, 228, 0, .4);
+  text-decoration-color: rgba(255, 228, 0, .4);
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: .5em;
+  text-underline-offset: -.2em;
 }
 
 .c-link {

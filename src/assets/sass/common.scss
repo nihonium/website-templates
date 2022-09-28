@@ -12,6 +12,11 @@
 @use "_component/single";
 
 .c {
+  // * メインエリア
+  &-main {
+    padding-bottom: 80px;
+  }
+
   // * パンくず(h1用)
   &-breadcrumb {
     display: none;
@@ -129,7 +134,16 @@
 
   // * テキスト強調
   &-strong {
-    font-weight: 600;
+    font-weight: 700;
+  }
+
+  // * ハイライト
+  &-highlight {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5em;
+    text-decoration-color: rgba(255, 228, 0, .4);
+    text-underline-offset: -0.2em;
+    text-decoration-skip-ink: none;
   }
 
   // * テキストリンク
