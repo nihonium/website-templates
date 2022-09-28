@@ -1,4 +1,7 @@
-// モーダル(You Tube)用
+// * モーダル(You Tube)用
+
+@use "../../_base/mixin";
+
 .modal-video {
   // フェードイン処理
   &.mfp-bg {
@@ -38,7 +41,7 @@
     opacity: 1;
     color: #fff;
 
-    @include view-at("pc") {
+    @include mixin.view-at("pc") {
       font-size: 48px;
       width: 64px;
       height: 64px;
@@ -48,7 +51,7 @@
 
   // 左右の余白
   .mfp-container {
-    @include view-at("sp") {
+    @include mixin.view-at("sp") {
       padding-left: 10px;
       padding-right: 10px;
     }
@@ -57,8 +60,8 @@
   &-link {
     display: block;
 
-    @include view-at("pc") {
-      @include pcHover();
+    @include mixin.view-at("pc") {
+      @include mixin.pcHover();
     }
   }
 }

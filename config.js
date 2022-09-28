@@ -35,7 +35,8 @@ module.exports = {
             },
             {
                 source: [
-                    'src/assets/js/unit/_tabs-content.js'
+                    'src/assets/js/unit/_tabs-content.js',
+                    'src/assets/js/unit/_modal_video.js'
                 ],
                 publish: 'layout.js'
             }

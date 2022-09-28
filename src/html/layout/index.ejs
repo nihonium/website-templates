@@ -8,10 +8,13 @@
 
 <%# 見出し %>
 <%
-    const ttlName01 = "テーブル";
-    const ttlName02 = "入力フォーム";
-    const ttlName03 = "タブ切り替え";
-    const ttlName04 = "Google Maps埋め込み";
+    const ttlName = [
+        'テーブル',
+        '入力フォーム',
+        'タブ切り替え',
+        'Google Maps埋め込み',
+        'モーダルウィンドウ(YouTube埋め込み)'
+    ];
 %>
 
 <!DOCTYPE html>
@@ -29,6 +32,7 @@
     <%# 共通CSS %>
     <%- include(ejsRoot + '_component/_common/_css', {root: ejsRoot}); %>
     <!-- ページ独自CSS -->
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/vendor/popup/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/layout.css">
     <%# OGP %>
     <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'article', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
@@ -48,23 +52,16 @@
         <section class="c-section">
             <div class="c-section__content">
                 <h2 class="c-strong">アンカーリンク</h2>
-                <p class="c-mt20">
-                    <a class="c-link" href="#1" data-scroll><%- `${ttlName01}` %></a>
-                </p>
-                <p class="c-mt20">
-                    <a class="c-link" href="#2" data-scroll><%- `${ttlName02}` %></a>
-                </p>
-                <p class="c-mt20">
-                    <a class="c-link" href="#3" data-scroll><%- `${ttlName03}` %></a>
-                </p>
-                <p class="c-mt20">
-                    <a class="c-link" href="#4" data-scroll><%- `${ttlName04}` %></a>
-                </p>
+                <% ttlName.forEach((v,i) => { %>
+                    <p class="c-mt20">
+                        <a class="c-link" href="#<%- i + 1 %>" data-scroll><%- v %></a>
+                    </p>
+                <% }) %>
             </div>
         </section>
         <section id="1" class="c-section">
             <div class="c-section__content">
-                <h2 class="c-strong"><%- `${ttlName01}` %></h2>
+                <h2 class="c-strong"><%- `${ttlName[0]}` %></h2>
                 <div class="c-mt20">
                     <p>SP時 横スクロールあり</p>
                     <div class="c-tbl-scroll">
@@ -161,7 +158,7 @@
         <!-- /テーブル -->
         <section id="2" class="c-section">
             <div class="c-section__content">
-                <h2 class="c-strong"><%- `${ttlName02}` %></h2>
+                <h2 class="c-strong"><%- `${ttlName[1]}` %></h2>
                 <div class="c-mt20">
                     <form action="./" method="post">
                         <input class="c-input" type="email" name="email" autocomplete="email">
@@ -177,7 +174,7 @@
         <!-- /入力フォーム -->
         <section id="3" class="c-section">
             <div class="c-section__content">
-                <h2 class="c-strong"><%- `${ttlName03}` %></h2>
+                <h2 class="c-strong"><%- `${ttlName[2]}` %></h2>
                 <div class="c-tabs">
                     <ul class="c-tabs-list" data-tabs-list>
                         <li class="is-active">タブ切り替え 1</li>
@@ -199,11 +196,18 @@
         <!-- /タブ切り替え -->
         <section id="4" class="c-section">
             <div class="c-section__content">
-                <h2 class="c-strong"><%- `${ttlName04}` %></h2>
+                <h2 class="c-strong"><%- `${ttlName[3]}` %></h2>
                 <div class="c-youtube-iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d850494.5342862558!2d130.58595375000002!3d33.62490775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541817af77eb125%3A0x97a20ffb4a51384d!2z56aP5bKh55yM!5e0!3m2!1sja!2sjp!4v1663725211225!5m2!1sja!2sjp" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
             </div>
         </section>
         <!-- /Google Maps埋め込み -->
+        <section id="5" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[4]}` %></h2>
+                <a class="c-link" href="https://www.youtube.com/watch?v=w2iPKMP2a-U" data-popup-video>aタグにdata属性(data-popup-video)をつけて使用する</a>
+            </div>
+        </section>
+        <!-- /モーダルウィンドウ(YouTube埋め込み) -->
     </main>
     <!-- /main -->
 
@@ -212,6 +216,7 @@
     <%# 共通JS %>
     <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
     <%# ページ独自JSがある場合は、下記に記述 %>
+    <script src="<%- ejsRoot %>assets/vendor/popup/jquery.magnific-popup.min.js" defer></script>
     <script src="<%- ejsRoot %>assets/js/layout.js" defer></script>
 </body>
 
