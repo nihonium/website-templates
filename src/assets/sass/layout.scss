@@ -12,3 +12,9 @@
 @use "_component/tabs-content";
 @use "_component/youtube-iframe";
 @use "_component/_popup/modal-video";
+
+.sample {
+  &-btn {
+    width: 200px;
+  }
+}

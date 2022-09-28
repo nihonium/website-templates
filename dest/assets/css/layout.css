@@ -55,10 +55,13 @@
 }
 
 .c-input-btn {
+  width: 200px;
+  margin-top: 30px;
   padding: 5px 15px;
-  border-radius: 4px;
-  background: #ccc;
-  color: #222;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
 }
 
 @-webkit-keyframes tooltipShow {
@@ -188,9 +191,22 @@
  * レイアウト
  */
 
+.sample-btn {
+  width: 200px;
+}
+
 @media screen and (min-width: 768px) {
   .c-tbl-scroll-note {
     display: none;
+  }
+
+  .c-input-btn {
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .c-input-btn:hover {
+    opacity: .7;
   }
 
   .c-tabs {

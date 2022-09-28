@@ -2,18 +2,26 @@
  * フォーム
  */
 
+@use "../_base/mixin";
+
 .c {
-  // * 入力フォーム
   &-input {
     width: 100%;
     border: 1px solid #ccc;
     padding: 10px;
 
     &-btn {
-      background: #ccc;
-      color: #222;
+      background-color: #222;
+      color: #fff;
       padding: 5px 15px;
-      border-radius: 4px;
+      border-radius: 8px;
+      margin-top: 30px;
+      width: 200px;
+      text-align: center;
+
+      @include mixin.view-at("pc") {
+        @include mixin.pcHover();
+      }
     }
   }
 }

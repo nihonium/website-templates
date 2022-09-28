@@ -166,7 +166,7 @@
                         inputタグには適宜、autocomplete属性を追記する
                         例：https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete
                         %>
-                        <button class="c-input-btn" type="submit">送信</button>
+                        <button class="c-input-btn c-strong" type="submit">送信</button>
                     </form>
                 </div>
             </div>
@@ -197,14 +197,20 @@
         <section id="4" class="c-section">
             <div class="c-section__content">
                 <h2 class="c-strong"><%- `${ttlName[3]}` %></h2>
-                <div class="c-youtube-iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d850494.5342862558!2d130.58595375000002!3d33.62490775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541817af77eb125%3A0x97a20ffb4a51384d!2z56aP5bKh55yM!5e0!3m2!1sja!2sjp!4v1663725211225!5m2!1sja!2sjp" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                <div class="c-mt20">
+                    <div class="c-youtube-iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d850494.5342862558!2d130.58595375000002!3d33.62490775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541817af77eb125%3A0x97a20ffb4a51384d!2z56aP5bKh55yM!5e0!3m2!1sja!2sjp!4v1663725211225!5m2!1sja!2sjp" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                </div>
             </div>
         </section>
         <!-- /Google Maps埋め込み -->
         <section id="5" class="c-section">
             <div class="c-section__content">
                 <h2 class="c-strong"><%- `${ttlName[4]}` %></h2>
-                <a class="c-link" href="https://www.youtube.com/watch?v=w2iPKMP2a-U" data-popup-video>aタグにdata属性(data-popup-video)をつけて使用する</a>
+                <div class="c-mt20 sample-btn">
+                    <a class="modal-video-link" href="https://www.youtube.com/watch?v=FTWH1Fdkjow" data-popup-video>
+                        <img src="https://placehold.jp/24/000000/ffffff/250x50.png?text=sample" width="250" height="50">
+                    </a>
+                </div>
             </div>
         </section>
         <!-- /モーダルウィンドウ(YouTube埋め込み) -->

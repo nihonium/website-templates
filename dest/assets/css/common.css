@@ -649,7 +649,7 @@ img {
 }
 
 .c-link {
-  color: #f00;
+  color: #0000cd;
   text-decoration: underline;
 }
 
@@ -657,7 +657,7 @@ img {
 .c-link:focus,
 .c-link:visited,
 .c-link:hover {
-  color: #f00;
+  color: #0000cd;
 }
 
 .c-list {
