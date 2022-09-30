@@ -15,6 +15,10 @@
   display: none;
 }
 
+.c-slider__content.slick-slider {
+  display: block;
+}
+
 .c-slider__content .slick-list {
   overflow: visible;
 }
@@ -56,10 +60,13 @@
   display: block;
 }
 
-.c-slider .slick-initialized + .c-slider__mv {
-  display: none;
+.c-slider__mv {
   padding-right: 6px;
   padding-left: 6px;
+}
+
+.c-slider .slick-initialized + .c-slider__mv {
+  display: none;
 }
 
 /*
