@@ -230,8 +230,8 @@
 .accordion-head.is-open .accordion-head__content::after {
   -webkit-transition: .5s;
   transition: .5s;
-  -webkit-transform: rotate(0);
-  transform: rotate(0);
+  -webkit-transform: rotate(0) translateY(-.1em);
+  transform: rotate(0) translateY(-.1em);
 }
 
 .accordion-body {

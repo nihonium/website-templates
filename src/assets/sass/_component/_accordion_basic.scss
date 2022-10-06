@@ -48,7 +48,7 @@
     &.is-open {
       .accordion-head__content {
         &::after {
-          transform: rotate(0);
+          transform: rotate(0) translateY(-.1em);
           transition: .5s;
         }
       }
