@@ -1,17 +1,34 @@
 {
-    /*
-    * 要素内の高さ揃え
+    /**
+    * * 要素内の高さ揃え
     * 参考　https://into-the-program.com/auto-height/
-    * * * * * * * */
+    * @param {string} ele 高さを揃える範囲を指定
+    * @param {string} target 高さを揃える要素を指定
+    *
+    */
     const autoHeight = (ele, target) => {
-
-        //eleの要素を取得
+        /**
+         * eleの要素を取得
+         * @type {string}
+         */
         let elem = $(`${ele}`);
-        //eleの高さを揃えたい要素をすべて取得
+
+        /**
+         * eleの高さを揃えたい要素をすべて取得
+         * @type {boolean}
+         */
         let elemChildren = elem.find(`${target}`);
-        //高さの最大値を代入する変数を初期化
+
+        /**
+         * 高さの最大値を代入する変数を初期化
+         * @type {number}
+         */
         let elemMaxHeight = 0;
-        //eleの子要素の高さを格納する配列を初期化
+
+        /**
+         * eleの子要素の高さを格納する配列を初期化
+         * @type {number[]}
+         */
         let elemArray = new Array;
 
         //eleの子要素をループ
@@ -35,7 +52,7 @@
 
     const autoHeightEvent = () => {
         setTimeout(function () {
-            autoHeight('[data-match-height]', '[data-match-height-item]');
+            autoHeight('[data-auto-height]', '[data-auto-height-item]');
         }, 100);
     }
 

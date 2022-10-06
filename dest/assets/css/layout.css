@@ -248,6 +248,25 @@
   width: 200px;
 }
 
+.sample-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -20px;
+  margin-right: -10px;
+  margin-left: -10px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.sample-col-item {
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
 @media screen and (min-width: 768px) {
   .c-tbl-scroll-note {
     display: none;
@@ -317,6 +336,10 @@
   .accordion-head:hover:hover {
     opacity: .7;
   }
+
+  .sample-col-item {
+    width: calc(33.3333333333% - 20px);
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -354,5 +377,9 @@
   .modal-video .mfp-container {
     padding-right: 10px;
     padding-left: 10px;
+  }
+
+  .sample-col-item {
+    width: calc(50% - 20px);
   }
 }
