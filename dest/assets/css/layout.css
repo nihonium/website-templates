@@ -188,6 +188,59 @@
 }
 
 /*
+ * 汎用アコーディオン
+ */
+
+.accordion-head {
+  position: relative;
+  background-color: #eaeaef;
+}
+
+.accordion-head:not(:first-of-type) {
+  margin-top: 2px;
+}
+
+.accordion-head__content {
+  display: block;
+  padding: 10px 40px 10px 10px;
+  font-weight: 700;
+}
+
+.accordion-head__content::before,
+.accordion-head__content::after {
+  display: block;
+  position: absolute;
+  top: calc(15px + .4em);
+  right: 15px;
+  width: 15px;
+  height: 3px;
+  background: #000;
+  content: "";
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.accordion-head__content::after {
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.accordion-head.is-open .accordion-head__content::after {
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+}
+
+.accordion-body {
+  display: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/*
  * レイアウト
  */
 
@@ -249,6 +302,19 @@
   }
 
   .modal-video-link:hover {
+    opacity: .7;
+  }
+
+  .accordion-head {
+    cursor: pointer;
+  }
+
+  .accordion-head:hover {
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .accordion-head:hover:hover {
     opacity: .7;
   }
 }
