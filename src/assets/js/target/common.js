@@ -1,6 +1,17 @@
+/** グローバルメニュー */
 {
     const globalMenu = () => {
+
+        /**
+         * 画面幅を格納
+         * @type {number}
+         */
         let windowWidth = '';
+
+        /**
+         * ブレイクポイントを指定
+         * @type {number}
+         */
         const breakPoint = 1200;
 
         $(window).on('load resize', function () {
