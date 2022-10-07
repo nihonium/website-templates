@@ -715,7 +715,7 @@ img {
   display: block;
 }
 
-.c-header-box.is-animation {
+.c-header-box.is-animate {
   -webkit-transition: opacity .3s, visibility 0s ease .3s;
   transition: opacity .3s, visibility 0s ease .3s;
 }

@@ -19,10 +19,10 @@
 
             if (windowWidth >= breakPoint) {
                 $('[data-header-nav]').removeClass('is-show');
-                $('[data-header-nav]').removeClass('is-animation');
+                $('[data-header-nav]').removeClass('is-animate');
                 $('body').removeClass('is-active');
             } else {
-                $('[data-header-nav]').addClass('is-animation');
+                $('[data-header-nav]').addClass('is-animate');
             }
         });
 
