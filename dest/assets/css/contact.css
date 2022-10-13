@@ -93,6 +93,79 @@
   opacity: .8;
 }
 
+/* チェックボックス全体 */
+
+.form-contact .wpcf7-checkbox > .wpcf7-list-item {
+  margin-right: 1.2em;
+  margin-left: 0;
+}
+
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* デフォルトチェックボックス非表示 */
+
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label input {
+  display: none;
+}
+
+/* チェックボックスのスタイル */
+
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label .wpcf7-list-item-label {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+}
+
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label .wpcf7-list-item-label::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  content: "";
+}
+
+/* チェックマーク作成 */
+
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label .wpcf7-list-item-label::after {
+  display: none;
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-width: 0 2px 2px 0;
+  content: "";
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* チェック時のスタイル */
+
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label input:checked + .wpcf7-list-item-label::before {
+  background-color: #0070bd;
+}
+
+/* チェック時 チェックマーク表示 */
+
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label input:checked + .wpcf7-list-item-label::after {
+  display: block;
+}
+
 /*
  * お問い合わせ
  */
@@ -116,31 +189,5 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
-  }
-
-  .checkbox-inquiry .wpcf7-list-item {
-    display: block;
-  }
-
-  .form-contact input[type=checkbox] {
-    float: left;
-    width: auto;
-    margin-right: 10px;
-  }
-
-  .wpcf7-checkbox > .wpcf7-list-item {
-    display: block;
-    margin-left: 0;
-  }
-
-  .wpcf7-list-item label {
-    display: block;
-    overflow: hidden;
-    line-height: 1.7;
-  }
-
-  .wpcf7-checkbox {
-    display: block;
-    margin-top: 20px;
   }
 }

@@ -104,30 +104,66 @@
     box-sizing: border-box;
     width: 100%;
   }
+}
 
-  .checkbox-inquiry .wpcf7-list-item {
-    display: block;
-  }
+/* チェックボックス全体 */
+.form-contact .wpcf7-checkbox > .wpcf7-list-item {
+  margin-right: 1.2em;
+  margin-left: 0;
+}
 
-  .form-contact input[type="checkbox"] {
-    float: left;
-    margin-right: 10px;
-    width: auto;
-  }
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
 
-  .wpcf7-checkbox > .wpcf7-list-item {
-    display: block;
-    margin-left: 0;
-  }
+/* デフォルトチェックボックス非表示 */
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label input {
+  display: none;
+}
 
-  .wpcf7-list-item label {
-    display: block;
-    line-height: 1.7;
-    overflow: hidden;
-  }
+/* チェックボックスのスタイル */
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label .wpcf7-list-item-label {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+}
 
-  .wpcf7-checkbox {
-    display: block;
-    margin-top: 20px;
-  }
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label .wpcf7-list-item-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #CCC;
+  box-sizing: border-box;
+}
+
+/* チェックマーク作成 */
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label .wpcf7-list-item-label::after {
+  content: '';
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: 2px solid #FFF;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* チェック時のスタイル */
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label input:checked + .wpcf7-list-item-label::before {
+  background-color: #0070bd;
+}
+
+/* チェック時 チェックマーク表示 */
+.form-contact .wpcf7-checkbox > .wpcf7-list-item > label input:checked + .wpcf7-list-item-label::after {
+  display: block;
 }
