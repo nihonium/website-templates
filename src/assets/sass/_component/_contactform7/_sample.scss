@@ -1,169 +1,179 @@
-/* --------------------------------
-    Form
--------------------------------- */
+// * Contact Form7サンプル
 
-/* ------ テーブルレイアウト ------- */
-.form-contact th,
-.form-contact td {
-  border-bottom: solid 1px #ccc;
-}
+@use "../../_base/mixin";
 
-.form-contact tr:last-of-type th,
-.form-contact tr:last-of-type td {
-  border: none;
-}
-
-.form-contact th {
-  font-weight: normal;
-  text-align: left;
-  width: 30%;
-}
-
-.form-contact td {
-  padding: 20px 20px;
-  width: 70%;
-}
-
-@media screen and (max-width: 599px) {
-  .form-contact th,
-  .form-contact td {
-    border: none;
-    display: block;
-    padding: 0;
-    width: 100%;
-  }
-
-  .form-contact tr {
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
-/* ------ フォームスタイル ------- */
 .form-contact {
   position: relative;
-}
+  margin-top: 30px;
 
-.form-contact input,
-.form-contact textarea {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font: 15px/24px sans-serif;
-  margin: 8px 0;
-  outline: none;
-  padding: 10px 20px;
-  transition: 0.3s;
-}
+  @include mixin.view-at("pc") {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.form-contact textarea {
-  width: 100%;
-}
+  th,
+  td {
+    @include mixin.view-at("pc") {
+      border-bottom: solid 1px #ccc;
+    }
 
-.form-contact input:focus,
-.form-contact textarea:focus {
-  border: 1px solid #0086d1;
-}
+    @include mixin.view-at("sp") {
+      display: block;
+      padding: 0;
+      width: 100%;
+    }
+  }
 
-.text-required {
-  background: #e5004f;
-  border-radius: 3px;
-  color: #fff;
-  display: inline;
-  font-size: 1.2rem;
-  margin-right: 1rem;
-  padding: 2px 7px 4px;
-  position: relative;
-  top: -2px;
-  vertical-align: middle;
-}
+  tr {
+    @include mixin.view-at("sp") {
+      display: block;
+      margin-bottom: 20px;
+    }
 
-.form-contact__btn {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0 0 0;
-}
+    &:last-of-type {
+       th,
+       td {
+        @include mixin.view-at("pc") {
+          border: none;
+        }
+      }
+    }
+  }
 
-.form-contact__btn input[type="submit"] {
-  background-color: #0086d1;
-  border: none;
-  color: #fff;
-  font-size: 1.8rem;
-  letter-spacing: 0.15rem;
-  padding: 20px 25px;
-  width: 250px;
-}
+  th {
+    font-weight: normal;
+    text-align: left;
+    width: 30%;
+    font-weight: 700;
 
-.form-contact__btn input[type="submit"]:hover {
-  opacity: 0.8;
-}
+    @include mixin.view-at("pc") {
+      padding-top: 35px;
+    }
+  }
 
-@media screen and (max-width: 599px) {
-  .form-contact input,
-  .form-contact textarea {
-    box-sizing: border-box;
+  td {
+    padding: 20px 20px;
+    width: 70%;
+  }
+
+  input,
+  textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 10px 20px;
+    transition: 0.3s;
+
+    &:focus {
+      border: 1px solid #0086d1;
+    }
+
+    @include mixin.view-at("pc") {
+      width: 100%;
+    }
+  }
+
+  textarea {
     width: 100%;
   }
-}
 
-/* チェックボックス全体 */
-.form-contact .wpcf7-checkbox > .wpcf7-list-item {
-  margin-right: 1.2em;
-  margin-left: 0;
-}
+  .text-required {
+    background: #e5004f;
+    border-radius: 3px;
+    color: #fff;
+    display: inline;
+    margin-right: 1rem;
+    padding: 2px 7px 4px;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+  }
 
-.form-contact .wpcf7-checkbox > .wpcf7-list-item > label {
-  display: block;
-  position: relative;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 14px;
-  user-select: none;
-}
+  .form-contact__btn {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
 
-/* デフォルトチェックボックス非表示 */
-.form-contact .wpcf7-checkbox > .wpcf7-list-item > label input {
-  display: none;
-}
+    input[type="submit"] {
+      width: 100%;
+      background-color: #0086d1;
+      font-weight: 700;
+      color: #fff;
+      font-size: 20px;
+      letter-spacing: 0.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-/* チェックボックスのスタイル */
-.form-contact .wpcf7-checkbox > .wpcf7-list-item > label .wpcf7-list-item-label {
-  display: block;
-  position: relative;
-  padding-left: 30px;
-}
+      @include mixin.view-at("pc") {
+        @include mixin.pcHover();
+      }
+    }
+  }
 
-.form-contact .wpcf7-checkbox > .wpcf7-list-item > label .wpcf7-list-item-label::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background: #CCC;
-  box-sizing: border-box;
-}
+  .wpcf7-checkbox {
+    > .wpcf7-list-item {
+      margin-right: 1.2em;
+      margin-left: 0;
 
-/* チェックマーク作成 */
-.form-contact .wpcf7-checkbox > .wpcf7-list-item > label .wpcf7-list-item-label::after {
-  content: '';
-  position: absolute;
-  display: none;
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: 2px solid #FFF;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
+       > label {
+        display: block;
+        position: relative;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 14px;
+        user-select: none;
 
-/* チェック時のスタイル */
-.form-contact .wpcf7-checkbox > .wpcf7-list-item > label input:checked + .wpcf7-list-item-label::before {
-  background-color: #0070bd;
-}
+        input {
+          display: none;
 
-/* チェック時 チェックマーク表示 */
-.form-contact .wpcf7-checkbox > .wpcf7-list-item > label input:checked + .wpcf7-list-item-label::after {
-  display: block;
+          &:checked {
+            +.wpcf7-list-item-label {
+              &::before {
+                background-color: #0070bd;
+              }
+
+              &::after {
+                display: block;
+              }
+            }
+          }
+        }
+
+        .wpcf7-list-item-label {
+          display: block;
+          position: relative;
+          padding-left: 30px;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+          }
+
+          &::before {
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background: #CCC;
+            
+          }
+
+          &::after {
+            display: none;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: 2px solid #FFF;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
 }
