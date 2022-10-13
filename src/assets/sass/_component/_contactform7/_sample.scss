@@ -65,18 +65,11 @@
     outline: none;
     padding: 10px 20px;
     transition: 0.3s;
+    width: 100%;
 
     &:focus {
       border: 1px solid #0086d1;
     }
-
-    @include mixin.view-at("pc") {
-      width: 100%;
-    }
-  }
-
-  textarea {
-    width: 100%;
   }
 
   .text-required {

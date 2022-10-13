@@ -19,6 +19,7 @@
 
 .form-contact input,
 .form-contact textarea {
+  width: 100%;
   margin: 8px 0;
   padding: 10px 20px;
   border: 1px solid #ccc;
@@ -31,10 +32,6 @@
 .form-contact input:focus,
 .form-contact textarea:focus {
   border: 1px solid #0086d1;
-}
-
-.form-contact textarea {
-  width: 100%;
 }
 
 .form-contact .text-required {
@@ -157,11 +154,6 @@
 
   .form-contact th {
     padding-top: 35px;
-  }
-
-  .form-contact input,
-  .form-contact textarea {
-    width: 100%;
   }
 
   .form-contact .form-contact__btn input[type=submit] {
