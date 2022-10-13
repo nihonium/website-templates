@@ -1,0 +1,133 @@
+/* --------------------------------
+    Form
+-------------------------------- */
+
+/* ------ テーブルレイアウト ------- */
+.form-contact th,
+.form-contact td {
+  border-bottom: solid 1px #ccc;
+}
+
+.form-contact tr:last-of-type th,
+.form-contact tr:last-of-type td {
+  border: none;
+}
+
+.form-contact th {
+  font-weight: normal;
+  text-align: left;
+  width: 30%;
+}
+
+.form-contact td {
+  padding: 20px 20px;
+  width: 70%;
+}
+
+@media screen and (max-width: 599px) {
+  .form-contact th,
+  .form-contact td {
+    border: none;
+    display: block;
+    padding: 0;
+    width: 100%;
+  }
+
+  .form-contact tr {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* ------ フォームスタイル ------- */
+.form-contact {
+  position: relative;
+}
+
+.form-contact input,
+.form-contact textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font: 15px/24px sans-serif;
+  margin: 8px 0;
+  outline: none;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.form-contact textarea {
+  width: 100%;
+}
+
+.form-contact input:focus,
+.form-contact textarea:focus {
+  border: 1px solid #0086d1;
+}
+
+.text-required {
+  background: #e5004f;
+  border-radius: 3px;
+  color: #fff;
+  display: inline;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  padding: 2px 7px 4px;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+}
+
+.form-contact__btn {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 0 0;
+}
+
+.form-contact__btn input[type="submit"] {
+  background-color: #0086d1;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  letter-spacing: 0.15rem;
+  padding: 20px 25px;
+  width: 250px;
+}
+
+.form-contact__btn input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 599px) {
+  .form-contact input,
+  .form-contact textarea {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .checkbox-inquiry .wpcf7-list-item {
+    display: block;
+  }
+
+  .form-contact input[type="checkbox"] {
+    float: left;
+    margin-right: 10px;
+    width: auto;
+  }
+
+  .wpcf7-checkbox > .wpcf7-list-item {
+    display: block;
+    margin-left: 0;
+  }
+
+  .wpcf7-list-item label {
+    display: block;
+    line-height: 1.7;
+    overflow: hidden;
+  }
+
+  .wpcf7-checkbox {
+    display: block;
+    margin-top: 20px;
+  }
+}

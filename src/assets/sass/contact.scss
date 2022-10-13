@@ -1,0 +1,10 @@
+/*
+ * お問い合わせ
+ */
+
+// * base
+@use "_base/variables";
+@use "_base/mixin";
+
+// * component(必要なstyleのみ読み込む)
+@use "_component/_contactform7/sample";
