@@ -5,22 +5,13 @@
   margin-top: 30px;
 }
 
-.form-contact th {
-  width: 30%;
-  font-weight: normal;
+.form-contact-list dt {
   font-weight: 700;
-  text-align: left;
-}
-
-.form-contact td {
-  width: 70%;
-  padding: 20px 20px;
 }
 
 .form-contact input,
 .form-contact textarea {
   width: 100%;
-  margin: 8px 0;
   padding: 10px 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -46,13 +37,14 @@
   vertical-align: middle;
 }
 
-.form-contact .form-contact__btn {
+.form-contact__btn {
   max-width: 280px;
+  margin-top: 30px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.form-contact .form-contact__btn input[type=submit] {
+.form-contact__btn input[type=submit] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,6 +60,11 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.form-contact .wpcf7-checkbox {
+  display: block;
+  margin-bottom: -12px;
 }
 
 .form-contact .wpcf7-checkbox > .wpcf7-list-item {
@@ -123,12 +120,16 @@
   display: none;
   top: 2px;
   left: 6px;
-  width: 5px;
-  height: 10px;
+  width: 6px;
+  height: 12px;
   border: 2px solid #fff;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.form-contact .wpcf7-not-valid-tip {
+  margin-top: 10px;
 }
 
 /*
@@ -142,40 +143,46 @@
     margin-left: auto;
   }
 
-  .form-contact th,
-  .form-contact td {
+  .form-contact-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .form-contact-list:not(:last-child) {
     border-bottom: solid 1px #ccc;
   }
 
-  .form-contact tr:last-of-type th,
-  .form-contact tr:last-of-type td {
-    border: none;
-  }
-
-  .form-contact th {
+  .form-contact-list dt {
+    width: 30%;
     padding-top: 35px;
   }
 
-  .form-contact .form-contact__btn input[type=submit] {
+  .form-contact-list dd {
+    width: 70%;
+    padding: 22px 20px;
+  }
+
+  .form-contact__btn input[type=submit] {
     -webkit-transition: opacity .25s ease;
     transition: opacity .25s ease;
   }
 
-  .form-contact .form-contact__btn input[type=submit]:hover {
+  .form-contact__btn input[type=submit]:hover {
     opacity: .7;
+  }
+
+  .form-contact .wpcf7-checkbox {
+    margin-top: 2px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .form-contact th,
-  .form-contact td {
-    display: block;
-    width: 100%;
-    padding: 0;
+  .form-contact-list:not(:first-child) {
+    margin-top: 30px;
   }
 
-  .form-contact tr {
-    display: block;
-    margin-bottom: 20px;
+  .form-contact-list dd {
+    padding-top: 10px;
   }
 }

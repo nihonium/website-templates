@@ -12,56 +12,48 @@
     margin-right: auto;
   }
 
-  th,
-  td {
+  &-list {
     @include mixin.view-at("pc") {
-      border-bottom: solid 1px #ccc;
+      display: flex;
     }
 
-    @include mixin.view-at("sp") {
-      display: block;
-      padding: 0;
-      width: 100%;
-    }
-  }
-
-  tr {
-    @include mixin.view-at("sp") {
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    &:last-of-type {
-       th,
-       td {
-        @include mixin.view-at("pc") {
-          border: none;
-        }
+    &:not(:first-child) {
+      @include mixin.view-at("sp") {
+        margin-top: 30px;
       }
     }
-  }
 
-  th {
-    font-weight: normal;
-    text-align: left;
-    width: 30%;
-    font-weight: 700;
-
-    @include mixin.view-at("pc") {
-      padding-top: 35px;
+    &:not(:last-child) {
+      @include mixin.view-at("pc") {
+        border-bottom: solid 1px #ccc;
+      }
     }
-  }
 
-  td {
-    padding: 20px 20px;
-    width: 70%;
+    dt {
+      font-weight: 700;
+
+      @include mixin.view-at("pc") {
+        width: 30%;
+        padding-top: 35px;
+      }
+    }
+
+    dd {
+      @include mixin.view-at("pc") {
+        width: 70%;
+        padding: 22px 20px;
+      }
+
+      @include mixin.view-at("sp") {
+        padding-top: 10px;
+      }
+    }
   }
 
   input,
   textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin: 8px 0;
     outline: none;
     padding: 10px 20px;
     transition: 0.3s;
@@ -84,8 +76,9 @@
     vertical-align: middle;
   }
 
-  .form-contact__btn {
+  &__btn {
     max-width: 280px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
 
@@ -107,6 +100,13 @@
   }
 
   .wpcf7-checkbox {
+    margin-bottom: -12px;
+    display: block;
+
+    @include mixin.view-at("pc") {
+      margin-top: 2px;
+    }
+
     > .wpcf7-list-item {
       margin-right: 1.2em;
       margin-left: 0;
@@ -159,8 +159,8 @@
             display: none;
             left: 6px;
             top: 2px;
-            width: 5px;
-            height: 10px;
+            width: 6px;
+            height: 12px;
             border: 2px solid #FFF;
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
@@ -168,5 +168,9 @@
         }
       }
     }
+  }
+
+  .wpcf7-not-valid-tip {
+    margin-top: 10px;
   }
 }
