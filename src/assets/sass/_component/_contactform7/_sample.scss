@@ -48,6 +48,15 @@
         padding-top: 10px;
       }
     }
+
+    &--confirm {
+      dt {
+        @include mixin.view-at("pc") {
+          padding-top: 22px;
+          padding-bottom: 22px;
+        }
+      }
+    }
   }
 
   input,
@@ -76,17 +85,15 @@
     vertical-align: middle;
   }
 
-  &__btn {
+  &-btn {
     max-width: 280px;
-    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
 
-    input[type="submit"] {
+    .wpcf7-submit,
+    .wpcf7-previous {
       width: 100%;
-      background-color: #0086d1;
       font-weight: 700;
-      color: #fff;
       font-size: 20px;
       letter-spacing: 0.15rem;
       display: flex;
@@ -95,6 +102,28 @@
 
       @include mixin.view-at("pc") {
         @include mixin.pcHover();
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-top: 40px;
+    }
+
+    &:last-of-type {
+      margin-top: 20px;
+    }
+
+    &--submit {
+      .wpcf7-submit {
+        background-color: #0086d1;
+        color: #fff;
+      }
+    }
+
+    &--previous {
+      .wpcf7-previous {
+        background-color: #999;
+        color: #fff;
       }
     }
   }

@@ -37,20 +37,18 @@
   vertical-align: middle;
 }
 
-.form-contact__btn {
+.form-contact-btn {
   max-width: 280px;
-  margin-top: 30px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.form-contact__btn input[type=submit] {
+.form-contact-btn .wpcf7-submit,
+.form-contact-btn .wpcf7-previous {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  background-color: #0086d1;
-  color: #fff;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: .15rem;
@@ -60,6 +58,24 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.form-contact-btn:not(:last-of-type) {
+  margin-top: 40px;
+}
+
+.form-contact-btn:last-of-type {
+  margin-top: 20px;
+}
+
+.form-contact-btn--submit .wpcf7-submit {
+  background-color: #0086d1;
+  color: #fff;
+}
+
+.form-contact-btn--previous .wpcf7-previous {
+  background-color: #999;
+  color: #fff;
 }
 
 .form-contact .wpcf7-checkbox {
@@ -163,12 +179,19 @@
     padding: 22px 20px;
   }
 
-  .form-contact__btn input[type=submit] {
+  .form-contact-list--confirm dt {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .form-contact-btn .wpcf7-submit,
+  .form-contact-btn .wpcf7-previous {
     -webkit-transition: opacity .25s ease;
     transition: opacity .25s ease;
   }
 
-  .form-contact__btn input[type=submit]:hover {
+  .form-contact-btn .wpcf7-submit:hover,
+  .form-contact-btn .wpcf7-previous:hover {
     opacity: .7;
   }
 
