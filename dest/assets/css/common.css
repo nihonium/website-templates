@@ -603,12 +603,18 @@ img {
   width: 50%;
 }
 
+.c-post-list-item:only-child {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .c-post-list-item--prev {
   padding-right: 10%;
 }
 
 .c-post-list-item--next {
-  padding-left: 10px;
+  padding-left: 10%;
   text-align: right;
 }
 
