@@ -10,6 +10,7 @@
 // * component(必要なstyleのみ読み込む)
 @use "_component/article-card";
 @use "_component/single";
+@use "_component/post-link";
 
 .c {
   // * メインエリア

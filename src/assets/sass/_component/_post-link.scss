@@ -1,0 +1,45 @@
+/*
+ * 次の記事・前の記事リンク
+ */
+
+@use "../_base/mixin";
+
+.c {
+  &-post-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    &-item {
+      width: 50%;
+
+      &--prev {
+        padding-right: 10%;
+      }
+
+      &--next {
+        padding-left: 10px;
+        text-align: right;
+      }
+    }
+
+    &-link {
+      @include mixin.view-at("pc") {
+        @include mixin.pcHover();
+      }
+
+      @include mixin.view-at("sp") {
+        font-size: 12px;
+      }
+
+      &__strong {
+        font-weight: 700;
+      }
+
+      &__title {
+        text-decoration: underline;
+      }
+    }
+  }
+}
