@@ -563,6 +563,26 @@ img {
   color: #555;
 }
 
+.c-single-title-label--info {
+  background: crimson;
+  color: #fff;
+}
+
+.c-single-title-label--product {
+  background: #0000cd;
+  color: #fff;
+}
+
+.c-single-title-label--service {
+  background: #008080;
+  color: #fff;
+}
+
+.c-single-title-label--other {
+  background: #b0c4de;
+  color: #222;
+}
+
 .c-single-title-main {
   display: inline-block;
   margin-top: 10px;
@@ -886,6 +906,15 @@ img {
 
   .c-single-title-label {
     font-size: 12px;
+  }
+
+  .c-single-title-label:hover {
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .c-single-title-label:hover:hover {
+    opacity: .7;
   }
 
   .c-single-title-main {

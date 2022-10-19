@@ -16,9 +16,34 @@
 
       @include mixin.view-at("pc") {
         font-size: 12px;
+
+        &:hover {
+          @include mixin.pcHover();
+        }
       }
+
       @include mixin.view-at("sp") {
         font-size: 10px;
+      }
+
+      &--info {
+        color: #fff;
+        background: crimson;
+      }
+
+      &--product {
+        color: #fff;
+        background: #0000cd;
+      }
+
+      &--service {
+        color: #fff;
+        background: #008080;
+      }
+
+      &--other {
+        color: #222;
+        background: #b0c4de;
       }
     }
 
