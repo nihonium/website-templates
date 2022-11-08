@@ -28,17 +28,34 @@
 
       &--info {
         color: #fff;
-        background: crimson;
+        background: #ff5252;
+      }
+
+      &--info-cat {
+        color: #ff5252;
+        background: #fff;
+        border: 1px solid #ff5252;
       }
 
       &--product {
         color: #fff;
-        background: #0000cd;
+        background: #303f9f;
       }
 
       &--service {
         color: #fff;
-        background: #008080;
+        background: #4caf50;
+      }
+
+      &--recruit {
+        color: #fff;
+        background: #ff9800;
+      }
+
+      &--recruit-cat {
+        color: #ff9800;
+        background: #fff;
+        border: 1px solid #ff9800;
       }
 
       &--other {

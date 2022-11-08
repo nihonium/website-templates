@@ -81,6 +81,7 @@
 
   &__title {
     font-weight: 700;
+    margin-top: -.5em;
 
     @include mixin.view-at("pc") {
       flex-shrink: 0;
@@ -90,25 +91,45 @@
   &-label {
     display: inline-block;
     font-weight: 600;
-    padding: .5em .8em;
+    padding: 5px 9px;
     font-size: .7em;
-    margin-right: 10px;
+    margin-right: .5em;
+    margin-top: .5em;
     color: #555;
     background: #ccc;
 
     &--info {
-      color: #fff;
-      background: crimson;
+        color: #fff;
+        background: #ff5252;
+      }
+
+    &--info-cat {
+      color: #ff5252;
+      background: #fff;
+      border: 1px solid #ff5252;
+      padding: 4px 8px;
     }
 
     &--product {
       color: #fff;
-      background: #0000cd;
+      background: #303f9f;
     }
 
     &--service {
       color: #fff;
-      background: #008080;
+      background: #4caf50;
+    }
+
+    &--recruit {
+      color: #fff;
+      background: #ff9800;
+    }
+
+    &--recruit-cat {
+      color: #ff9800;
+      background: #fff;
+      border: 1px solid #ff9800;
+      padding: 4px 8px;
     }
 
     &--other {
