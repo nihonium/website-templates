@@ -574,12 +574,15 @@ img {
  */
 
 .c-single-title {
+  margin-top: -5px;
   font-weight: 600;
 }
 
 .c-single-title-label {
   display: inline-block;
-  padding: .5em .8em;
+  margin-top: 5px;
+  margin-right: 5px;
+  padding: 6px 10px;
   background: #ccc;
   color: #555;
 }
@@ -590,6 +593,7 @@ img {
 }
 
 .c-single-title-label--info-cat {
+  padding: 5px 9px;
   border: 1px solid #ff5252;
   background: #fff;
   color: #ff5252;
@@ -611,6 +615,7 @@ img {
 }
 
 .c-single-title-label--recruit-cat {
+  padding: 5px 9px;
   border: 1px solid #ff9800;
   background: #fff;
   color: #ff9800;
