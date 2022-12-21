@@ -4,10 +4,10 @@
     * * * * * * * */
 
     const tabsContent = () => {
-        $('[data-tabs-list] li').click(function () {
-            const num = $('[data-tabs-list] li').index(this);
+        $('[data-tabs-list] .c-tabs-list__btn').click(function () {
+            const num = $('[data-tabs-list] .c-tabs-list__btn').index(this);
 
-            $(this).addClass('is-active').siblings('li').removeClass('is-active');
+            $(this).addClass('is-active').siblings('.c-tabs-list__btn').removeClass('is-active');
             $(this).closest('[data-tabs-list]').next('[data-tabs-content]').find('[data-tabs-item]').removeClass('is-active');
             $('[data-tabs-item]').eq(num).addClass('is-active');
         });
