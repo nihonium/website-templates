@@ -224,16 +224,16 @@
                 <div class="c-section__content">
                     <h2 class="c-strong">タブ切り替え</h2>
                     <div class="c-tabs">
-                        <div class="c-tabs-list" data-tabs-list>
-                            <button class="c-tabs-list__btn is-active" type="button">タブ切り替え 1</button>
-                            <button class="c-tabs-list__btn" type="button">タブ切り替え 2</button>
+                        <div class="c-tabs-list" role="tablist" data-tabs-list>
+                            <button id="tab-1" class="c-tabs-list__btn is-active" type="button" role="tab" aria-controls="panel-1">タブ切り替え 1</button>
+                            <button id="tab-2" class="c-tabs-list__btn" type="button" role="tab" aria-controls="panel-2">タブ切り替え 2</button>
                         </div>
                         <div class="c-tabs-content" data-tabs-content>
-                            <div class="c-tabs-item is-active" data-tabs-item>
+                            <div id="panel-1" class="c-tabs-item is-active" role="tabpanel" aria-labelledby="tab-1" data-tabs-item>
                                 <p>タブ切り替え 1のコンテンツ</p>
                             </div>
                             <!-- /タブ切り替え 1 -->
-                            <div class="c-tabs-item" data-tabs-item>
+                            <div id="panel-2" class="c-tabs-item" role="tabpanel" aria-labelledby="tab-2" data-tabs-item>
                                 <p>タブ切り替え 2のコンテンツ</p>
                             </div>
                             <!-- /タブ切り替え 2 -->
