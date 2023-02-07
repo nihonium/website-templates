@@ -241,6 +241,74 @@
 }
 
 /*
+ * ボタン
+ */
+
+.c-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #0000cd;
+  line-height: 1.15;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c-btn--center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.c-btn-content {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-right: 2em;
+  padding-left: 2em;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.c-btn-content::before {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  content: "";
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.c-btn-content--top::before {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.c-btn-content--bottom::before {
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.c-btn-content--left::before {
+  right: auto;
+  left: 1em;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+/*
  * レイアウト
  */
 
@@ -337,6 +405,16 @@
     opacity: .7;
   }
 
+  .c-btn {
+    width: 320px;
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .c-btn:hover {
+    opacity: .7;
+  }
+
   .sample-col-item {
     width: calc(33.3333333333% - 20px);
   }
@@ -377,6 +455,11 @@
   .modal-video .mfp-container {
     padding-right: 10px;
     padding-left: 10px;
+  }
+
+  .c-btn {
+    max-width: 400px;
+    width: 80%;
   }
 
   .sample-col-item {
