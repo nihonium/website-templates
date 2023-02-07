@@ -16,6 +16,39 @@
 @use "_component/btn";
 
 .sample {
+  &-anchor {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -20px;
+
+    li {
+      position: relative;
+      margin-top: 20px;
+      padding-left: 1.2em;
+      padding-right: 2em;
+
+      @include mixin.view-at("pc") {
+        width: calc(100% / 3);
+      }
+
+      @include mixin.view-at("sp") {
+        width: calc(100% / 2);
+      }
+
+      &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-top: solid 2px #5070e3;
+        border-right: solid 2px #5070e3;
+        position: absolute;
+        left: 0;
+        top: .25em;
+        transform: rotate(135deg);
+      }
+    }
+  }
+
   &-btn {
     width: 200px;
   }

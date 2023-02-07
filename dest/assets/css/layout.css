@@ -312,6 +312,35 @@
  * レイアウト
  */
 
+.sample-anchor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -20px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.sample-anchor li {
+  position: relative;
+  margin-top: 20px;
+  padding-right: 2em;
+  padding-left: 1.2em;
+}
+
+.sample-anchor li::before {
+  position: absolute;
+  top: .25em;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: solid 2px #5070e3;
+  border-right: solid 2px #5070e3;
+  content: "";
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
 .sample-btn {
   width: 200px;
 }
@@ -415,6 +444,10 @@
     opacity: .7;
   }
 
+  .sample-anchor li {
+    width: 33.3333333333%;
+  }
+
   .sample-col-item {
     width: calc(33.3333333333% - 20px);
   }
@@ -460,6 +493,10 @@
   .c-btn {
     max-width: 400px;
     width: 80%;
+  }
+
+  .sample-anchor li {
+    width: 50%;
   }
 
   .sample-col-item {
