@@ -181,20 +181,43 @@
         <section id="3" class="c-section">
             <div class="c-section__content">
                 <h2 class="c-strong"><%- `${ttlName[2]}` %></h2>
+                <%#
                 <div class="c-tabs">
                     <div class="c-tabs-list" role="tablist" data-tabs-list>
-                        <button id="tab-1" class="c-tabs-list__btn is-active" type="button" role="tab" aria-controls="panel-1">タブ切り替え 1</button>
-                        <button id="tab-2" class="c-tabs-list__btn" type="button" role="tab" aria-controls="panel-2">タブ切り替え 2</button>
+                        <button id="tab-1" class="c-tabs-list__btn" type="button" role="tab" aria-controls="panel-1">タブ切り替え 1</button>
+                        <button id="tab-2" class="c-tabs-list__btn is-active" type="button" role="tab" aria-controls="panel-2">タブ切り替え 2</button>
                     </div>
                     <div class="c-tabs-content" data-tabs-content>
-                        <div id="panel-1" class="c-tabs-item is-active" role="tabpanel" aria-labelledby="tab-1" data-tabs-item>
+                        <div id="panel-1" class="c-tabs-item" role="tabpanel" aria-labelledby="tab-1" data-tabs-item>
                             <p>タブ切り替え 1のコンテンツ</p>
                         </div>
                         <!-- /タブ切り替え 1 -->
-                        <div id="panel-2"class="c-tabs-item" role="tabpanel" aria-labelledby="tab-2" data-tabs-item>
+                        <div id="panel-2"class="c-tabs-item is-active" role="tabpanel" aria-labelledby="tab-2" data-tabs-item>
                             <p>タブ切り替え 2のコンテンツ</p>
                         </div>
                         <!-- /タブ切り替え 2 -->
+                    </div>
+                </div>
+                %>
+                <div class="c-tabs c-tabs--col3">
+                    <div class="c-tabs-list" role="tablist" data-tabs-list>
+                        <button id="tab-3" class="c-tabs-list__btn" type="button" role="tab" aria-controls="panel-3" data-tabs-active>タブ切り替え 3</button>
+                        <button id="tab-4" class="c-tabs-list__btn" type="button" role="tab" aria-controls="panel-4">タブ切り替え 4</button>
+                        <button id="tab-5" class="c-tabs-list__btn" type="button" role="tab" aria-controls="panel-5">タブ切り替え 5</button>
+                    </div>
+                    <div class="c-tabs-content" data-tabs-content>
+                        <div id="panel-3" class="c-tabs-item" role="tabpanel" aria-labelledby="tab-3" data-tabs-item data-tabs-active>
+                            <p>タブ切り替え 3のコンテンツ</p>
+                        </div>
+                        <!-- /タブ切り替え 3 -->
+                        <div id="panel-4"class="c-tabs-item" role="tabpanel" aria-labelledby="tab-4" data-tabs-item>
+                            <p>タブ切り替え 4のコンテンツ</p>
+                        </div>
+                        <!-- /タブ切り替え 4 -->
+                        <div id="panel-5"class="c-tabs-item" role="tabpanel" aria-labelledby="tab-5" data-tabs-item>
+                            <p>タブ切り替え 5のコンテンツ</p>
+                        </div>
+                        <!-- /タブ切り替え 5 -->
                     </div>
                 </div>
             </div>

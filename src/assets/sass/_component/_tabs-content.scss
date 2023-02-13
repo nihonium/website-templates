@@ -38,6 +38,7 @@
       text-align: center;
       padding-top: 1em;
       padding-bottom: 1em;
+      width: 50%;
 
       @include mixin.view-at("pc") {
         cursor: pointer;
@@ -47,13 +48,11 @@
         border-top: 5px solid #000;
 
         @include mixin.view-at("pc") {
-          width: 56.8%;
           font-size: 28px;
         }
 
         @include mixin.view-at("sp") {
           font-size: 13px;
-          width: 56.875%;
         }
       }
 
@@ -61,12 +60,10 @@
         border-top: 3px solid #e7e7e7;
 
         @include mixin.view-at("pc") {
-          width: 43.2%;
           font-size: 22px;
         }
 
         @include mixin.view-at("sp") {
-          width: 43.125%;
           font-size: 10px;
         }
       }
@@ -95,6 +92,12 @@
     &.is-active {
       animation: tooltipShow .3s linear 0s;
       display: block;
+    }
+  }
+
+  &--col3 {
+    .c-tabs-list__btn {
+      width: calc(100% / 3);
     }
   }
 }

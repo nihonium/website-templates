@@ -99,6 +99,7 @@
 }
 
 .c-tabs-list__btn {
+  width: 50%;
   padding-top: 1em;
   padding-bottom: 1em;
   background: #fff;
@@ -128,6 +129,10 @@
   display: block;
   -webkit-animation: tooltipShow .3s linear 0s;
   animation: tooltipShow .3s linear 0s;
+}
+
+.c-tabs--col3 .c-tabs-list__btn {
+  width: 33.3333333333%;
 }
 
 /*
@@ -388,12 +393,10 @@
   }
 
   .c-tabs-list__btn.is-active {
-    width: 56.8%;
     font-size: 28px;
   }
 
   .c-tabs-list__btn:not(.is-active) {
-    width: 43.2%;
     font-size: 22px;
   }
 
@@ -472,12 +475,10 @@
   }
 
   .c-tabs-list__btn.is-active {
-    width: 56.875%;
     font-size: 13px;
   }
 
   .c-tabs-list__btn:not(.is-active) {
-    width: 43.125%;
     font-size: 10px;
   }
 

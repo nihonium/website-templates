@@ -4,6 +4,8 @@
     * * * * * * * */
 
     const tabsContent = () => {
+        $('[data-tabs-active]').addClass('is-active');
+
         $('[data-tabs-list] .c-tabs-list__btn').click(function () {
             const num = $('[data-tabs-list] .c-tabs-list__btn').index(this);
 
