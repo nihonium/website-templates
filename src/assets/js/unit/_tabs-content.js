@@ -15,5 +15,34 @@
         });
     }
 
+    const tabsContentTest = () => {
+        // パラメータ取得
+        function getParam(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        
+        // ページ読み込み時のタブ切り替え
+        let tabPram = ['tab-1', 'tab-2', 'tab-3'];
+        let pram = getParam('active-tab');
+        if (pram && $.inArray(pram, tabPram) !== -1) {
+            $('.js-tab-cts,.js-tab-switch').removeClass('is-active');
+            $('[data-tab="' + pram + '"]').addClass('is-active');
+        }
+        
+        // ロード後のタブ切り替え
+        $('.js-tab-switch').on('click', function() {
+            let dataPram = $(this).data('tab');
+            $('.js-tab-cts,.js-tab-switch').removeClass('is-active');
+            $('[data-tab="' + dataPram + '"]').addClass('is-active');
+        });
+    }
+
     tabsContent();
+    tabsContentTest();
 }

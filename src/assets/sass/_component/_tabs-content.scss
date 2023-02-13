@@ -101,3 +101,36 @@
     }
   }
 }
+
+.service-tabs {
+  margin-top: 20px;
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 5px solid #bababa;
+  }
+  &__menu-item {
+    width: calc( 100% / 3 - 4px );
+    margin-bottom: -5px;
+    padding: 16px 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #fff;
+    border-top-left-radius: 10px;
+    background: #bababa;
+    cursor: pointer;
+    &.is-active {
+      background: #1088d4;
+      cursor: default;
+    }
+  }
+  &__body {
+    display: none;
+    background: #eff6fb;
+    padding: 60px 48px 80px;
+    &.is-active {
+      display: block;
+    }
+  }
+}

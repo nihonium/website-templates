@@ -135,6 +135,48 @@
   width: 33.3333333333%;
 }
 
+.service-tabs {
+  margin-top: 20px;
+}
+
+.service-tabs__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 5px solid #bababa;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.service-tabs__menu-item {
+  width: calc(33.3333333333% - 4px);
+  margin-bottom: -5px;
+  padding: 16px 20px;
+  border-top-left-radius: 10px;
+  background: #bababa;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.service-tabs__menu-item.is-active {
+  background: #1088d4;
+  cursor: default;
+}
+
+.service-tabs__body {
+  display: none;
+  padding: 60px 48px 80px;
+  background: #eff6fb;
+}
+
+.service-tabs__body.is-active {
+  display: block;
+}
+
 /*
  * youtube埋め込み レスポンシブ対応 
  */
