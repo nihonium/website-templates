@@ -21,7 +21,9 @@
         }
 
         // ページ読み込み時のタブ切り替え
-        const tabPram = ['tab-1', 'tab-2', 'tab-999'];
+        const tabPram = $('[data-tab-list]').children('[data-tab]').map(function () {
+            return $(this).data('tab');
+        });
         const pram = getParam('p');
         if (pram && $.inArray(pram, tabPram) !== -1) {
             $('[data-tab]').removeClass('is-active');
