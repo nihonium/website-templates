@@ -3,24 +3,25 @@
     * タブ切り替え
     * * * * * * * */
 
+    const getParam = (name, url) => {
+        // URLからパラメータを取得
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+
+        const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+        const results = regex.exec(url);
+
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
     const tabsContent = () => {
         // 'data-tab-active'の入ったタブを初回アクティブ表示
         $('[data-tab-active]').addClass('is-active');
 
-        // パラメータ取得
-        function getParam(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-
-            const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
-            const results = regex.exec(url);
-
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-
         // ページ読み込み時のタブ切り替え
+        // パラメータ読み込み
         const tabPram = $('[data-tab-list]').children('[data-tab]').map(function () {
             return $(this).data('tab');
         });
