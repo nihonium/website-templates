@@ -22,7 +22,7 @@
         }
 
         // 就業時間を判定
-        if ((setTime > 900) || (setTime < 1801)) {
+        if ((setTime > 900) && (setTime < 1801)) {
             $('#business_hours').show();
             $('#off_hours').hide();
         } else {
