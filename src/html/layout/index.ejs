@@ -17,7 +17,8 @@
         'テキスト強調',
         '汎用アコーディオン',
         '要素内の高さ揃え',
-        '汎用ボタン'
+        '汎用ボタン',
+        '時間ごとの要素の出し分け'
     ];
 %>
 
@@ -342,6 +343,18 @@
             </div>
         </section>
         <!-- /汎用ボタン -->
+        <section id="10" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[9]}` %></h2>
+                <p id="odd_number" class="c-mt20">
+                    このテキストは時刻が<span class="c-highlight c-strong">奇数(odd)</span>の時に表示されます
+                </p>
+                <p id="even_number" class="c-mt20">
+                    このテキストは時刻が<span class="c-highlight c-strong">偶数(even)</span>の時に表示されます
+                </p>
+            </div>
+        </section>
+        <!-- /時間ごとの要素の出し分け -->
     </main>
     <!-- /main -->
 

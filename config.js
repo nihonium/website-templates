@@ -38,7 +38,8 @@ module.exports = {
                     'src/assets/js/unit/_tabs-content.js',
                     'src/assets/js/unit/_modal_video.js',
                     'src/assets/js/unit/_accordion_basic.js',
-                    'src/assets/js/unit/_auto_height.js'
+                    'src/assets/js/unit/_auto_height.js',
+                    'src/assets/js/unit/_display-time-based-elements.js'
                 ],
                 publish: 'layout.js'
             }
