@@ -116,7 +116,7 @@
                     <p class="c-tbl-scroll-note">右にスクロールできます→</p>
                 </div>
                 <div class="c-mt20">
-                    <p>通常版</p>
+                    <p>スクロール無し</p>
                     <table class="c-tbl">
                         <thead>
                             <tr>
@@ -165,16 +165,24 @@
         <section id="2" class="c-section">
             <div class="c-section__content">
                 <h2 class="c-strong"><%- `${ttlName[1]}` %></h2>
-                <div class="c-mt20">
-                    <form action="./" method="post">
-                        <input class="c-input" type="email" name="email" autocomplete="email">
-                        <%#
-                        inputタグには適宜、autocomplete属性を追記する
-                        例：https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete
-                        %>
-                        <button class="c-input-btn c-strong" type="submit">送信</button>
-                    </form>
-                </div>
+                <p class="c-mt20">
+                    inputタグにautocomplete属性を設定することで、フォームへの自動入力を有効にします。<br>
+                    値：<a class="c-link c-nowrap" href="https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete#%E5%80%A4" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete#%E5%80%A4</a>
+                </p>
+                <form action="./" method="post">
+                    <dl class="sample-form">
+                        <dt>名前</dt>
+                        <dd><input class="c-input sample-form-w300" type="text" name="name" autocomplete="name" placeholder="例：鈴木一朗"></dd>
+                        <dt>メールアドレス</dt>
+                        <dd><input class="c-input sample-form-w500" type="email" name="email" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp"></dd>
+                        <dt>アカウント名</dt>
+                        <dd><input class="c-input sample-form-w200" type="text" name="username" autocomplete="username" placeholder="例：hogeboke"></dd>
+                        <dt>郵便番号</dt>
+                        <dd><input class="c-input sample-form-w200" type="text" name="postal-code" autocomplete="postal-code" placeholder="例：8101000"></dd>
+                        <dt>住所</dt>
+                        <dd><input class="c-input" type="text" name="street-address" autocomplete="street-address" placeholder="マンション名、部屋の号数まで入力してください。"></dd>
+                    </dl>
+                </form>
             </div>
         </section>
         <!-- /入力フォーム -->

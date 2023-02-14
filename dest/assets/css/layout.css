@@ -388,6 +388,26 @@
   transform: rotate(135deg);
 }
 
+.sample-form {
+  padding-top: 10px;
+}
+
+.sample-form dt {
+  margin-top: 20px;
+}
+
+.sample-form-w200 {
+  max-width: 200px;
+}
+
+.sample-form-w300 {
+  max-width: 300px;
+}
+
+.sample-form-w500 {
+  max-width: 500px;
+}
+
 .sample-btn {
   width: 200px;
 }
@@ -493,6 +513,25 @@
     width: 33.3333333333%;
   }
 
+  .sample-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .sample-form dt {
+    width: 160px;
+    padding-top: .5em;
+  }
+
+  .sample-form dd {
+    width: calc(100% - 160px);
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+
   .sample-col-item {
     width: calc(33.3333333333% - 20px);
   }
@@ -540,6 +579,10 @@
 
   .sample-anchor li {
     width: 50%;
+  }
+
+  .sample-form dd {
+    margin-top: 10px;
   }
 
   .sample-col-item {
