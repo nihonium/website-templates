@@ -769,6 +769,18 @@ img {
   text-underline-offset: -.2em;
 }
 
+.c-color-rd {
+  color: #f00;
+}
+
+.c-color-bl {
+  color: #00f;
+}
+
+.c-color-bk {
+  color: #000;
+}
+
 .c-link {
   color: #0000cd;
   text-decoration: underline;

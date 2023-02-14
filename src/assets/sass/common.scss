@@ -147,6 +147,21 @@
     text-decoration-skip-ink: none;
   }
 
+  // * テキスト色
+  &-color {
+    &-rd {
+      color: #ff0000;
+    }
+
+    &-bl {
+      color: #0000ff;
+    }
+
+    &-bk {
+      color: #000;
+    }
+  }
+
   // * テキストリンク
   &-link {
     text-decoration: underline;
