@@ -1,0 +1,39 @@
+/**
+* * YouTubeのIFramePlayerAPIを使って複数のモーダル表示のYouTube動画を自動再生させる
+* 参考　https://designsupply-web.com/media/programming/6548/
+*
+*/
+
+.modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+}
+.modal-wrap.shown {
+  display: flex;
+}
+.modal-panel {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  position: relative;
+}
+.modal-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.modal-frame iframe {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+}

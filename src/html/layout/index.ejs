@@ -18,7 +18,8 @@
         '汎用アコーディオン',
         '要素内の高さ揃え',
         '汎用ボタン',
-        '時間ごとの要素の出し分け'
+        '時間ごとの要素の出し分け',
+        '複数のモーダル表示のYouTube動画を自動再生'
     ];
 %>
 
@@ -367,6 +368,51 @@
             </div>
         </section>
         <!-- /時間ごとの要素の出し分け -->
+        <section id="11" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[10]}` %></h2>
+                <!-- 動画サムネイルリスト部分 -->
+                <div class="thumbnails">
+                    <div class="thumbnail">
+                        <a href="#AkgDid5oYFM" class="video_play">
+                        <figure>
+                            <img src="https://placehold.jp/300x240.png" alt="再生する">
+                            <figcaption>サムネイルキャプション</figcaption>
+                        </figure>
+                        </a>
+                    </div>
+                    <div class="thumbnail">
+                        <a href="#XZTv1Rg_H5Y" class="video_play">
+                        <figure>
+                            <img src="https://placehold.jp/300x240.png" alt="再生する">
+                            <figcaption>サムネイルキャプション</figcaption>
+                        </figure>
+                        </a>
+                    </div>
+                    <div class="thumbnail">
+                        <a href="#KKsbMLCrSZU" class="video_play">
+                        <figure>
+                            <img src="https://placehold.jp/300x240.png" alt="再生する">
+                            <figcaption>サムネイルキャプション</figcaption>
+                        </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- モーダル＆動画インラインフレーム部分 -->
+                <div class="modal-wrap" id="modal">
+                    <div class="modal-panel">
+                        <div class="modal-frame">
+                            <div id="AkgDid5oYFM" class="youtube_video"></div>
+                            <div id="XZTv1Rg_H5Y" class="youtube_video"></div>
+                            <div id="KKsbMLCrSZU" class="youtube_video"></div>
+                        </div>
+                        <button class="modal-close" id="modal_close">閉じる</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /複数のモーダル表示のYouTube動画を自動再生 -->
     </main>
     <!-- /main -->
 
@@ -376,6 +422,9 @@
     <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
     <%# ページ独自JSがある場合は、下記に記述 %>
     <script src="<%- ejsRoot %>assets/vendor/popup/jquery.magnific-popup.min.js" defer></script>
+    <!-- YouTube IFrame Player API  -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="<%- ejsRoot %>assets/vendor/youtube-iframe-api/script.js" defer></script>
     <script src="<%- ejsRoot %>assets/js/layout.js" defer></script>
 </body>
 

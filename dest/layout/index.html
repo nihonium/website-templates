@@ -97,6 +97,7 @@
                             <li><a class="c-link" href="#8" data-scroll>要素内の高さ揃え</a></li>
                             <li><a class="c-link" href="#9" data-scroll>汎用ボタン</a></li>
                             <li><a class="c-link" href="#10" data-scroll>時間ごとの要素の出し分け</a></li>
+                            <li><a class="c-link" href="#11" data-scroll>複数のモーダル表示のYouTube動画を自動再生</a></li>
                         </ul>
                     </div>
                 </div>
@@ -383,6 +384,49 @@
                 </div>
             </section>
             <!-- /時間ごとの要素の出し分け -->
+            <section id="11" class="c-section">
+                <div class="c-section__content">
+                    <h2 class="c-strong">複数のモーダル表示のYouTube動画を自動再生</h2>
+                    <!-- 動画サムネイルリスト部分 -->
+                    <div class="thumbnails">
+                        <div class="thumbnail">
+                            <a href="#AkgDid5oYFM" class="video_play">
+                                <figure>
+                                    <img src="https://placehold.jp/300x240.png" alt="再生する">
+                                    <figcaption>サムネイルキャプション</figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="thumbnail">
+                            <a href="#XZTv1Rg_H5Y" class="video_play">
+                                <figure>
+                                    <img src="https://placehold.jp/300x240.png" alt="再生する">
+                                    <figcaption>サムネイルキャプション</figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="thumbnail">
+                            <a href="#KKsbMLCrSZU" class="video_play">
+                                <figure>
+                                    <img src="https://placehold.jp/300x240.png" alt="再生する">
+                                    <figcaption>サムネイルキャプション</figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div><!-- モーダル＆動画インラインフレーム部分 -->
+                    <div class="modal-wrap" id="modal">
+                        <div class="modal-panel">
+                            <div class="modal-frame">
+                                <div id="AkgDid5oYFM" class="youtube_video"></div>
+                                <div id="XZTv1Rg_H5Y" class="youtube_video"></div>
+                                <div id="KKsbMLCrSZU" class="youtube_video"></div>
+                            </div>
+                            <button class="modal-close" id="modal_close">閉じる</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /複数のモーダル表示のYouTube動画を自動再生 -->
         </main>
         <!-- /main --><a href="#page_top" class="c-footer-page-top" data-scroll>ページの先頭へ戻る</a>
         <footer id="footer" class="c-footer">
@@ -402,6 +446,9 @@
         <script src="../assets/vendor/jquery-3.6.0.min.js" defer></script>
         <script src="../assets/js/common.js" defer></script>
         <script src="../assets/vendor/popup/jquery.magnific-popup.min.js" defer></script>
+        <!-- YouTube IFrame Player API  -->
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="../assets/vendor/youtube-iframe-api/script.js" defer></script>
         <script src="../assets/js/layout.js" defer></script>
     </body>
 </html>

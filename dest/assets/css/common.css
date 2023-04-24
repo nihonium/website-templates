@@ -818,7 +818,11 @@ img {
 }
 
 .c-header {
-  background: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  background: rgba(255, 255, 255, .6);
 }
 
 .c-header__content {
