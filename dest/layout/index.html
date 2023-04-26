@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D76Z8EEBZL"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag()
+            {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-D76Z8EEBZL');
+        </script>
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w, d, s, l, i)
+            {
+                w[l] = w[l] || [];
+                w[l].push(
+                {
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-N9NP7H7');
+        </script>
+        <!-- End Google Tag Manager -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +58,9 @@
         <meta name="twitter:card" content="summary_large_image">
     </head>
     <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9NP7H7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
         <header id="header" class="c-header">
             <nav class="c-header__content">
                 <div class="c-header-logo">
@@ -55,10 +89,10 @@
                                 <a class="c-header-list-item" href="hoge">ダミーテキスト</a>
                             </li>
                             <li>
-                                <a class="c-header-list-item" href="hoge">ダミーテキスト</a>
+                                <a class="c-header-list-item" href="https://developer.mozilla.org/ja/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL" target="_blank">CTAテスト1</a>
                             </li>
                             <li>
-                                <a class="c-header-list-item" href="hoge">ダミーテキスト</a>
+                                <a class="c-header-list-item" href="https://developer.mozilla.org/ja/docs/Web/API/Performance_API" target="_blank">CTAテスト2</a>
                             </li>
                         </ul>
                         <ul class="c-header-sns">
@@ -388,8 +422,8 @@
                 <div class="c-section__content">
                     <h2 class="c-strong">複数のモーダル表示のYouTube動画を自動再生</h2>
                     <!-- 動画サムネイルリスト部分 -->
-                    <div class="thumbnails">
-                        <div class="thumbnail">
+                    <div class="c-modal-thumbnail">
+                        <div class="c-modal-thumbnail-item">
                             <a href="#AkgDid5oYFM" class="video_play">
                                 <figure>
                                     <img src="https://placehold.jp/300x240.png" alt="再生する">
@@ -397,7 +431,7 @@
                                 </figure>
                             </a>
                         </div>
-                        <div class="thumbnail">
+                        <div class="c-modal-thumbnail-item">
                             <a href="#XZTv1Rg_H5Y" class="video_play">
                                 <figure>
                                     <img src="https://placehold.jp/300x240.png" alt="再生する">
@@ -405,7 +439,7 @@
                                 </figure>
                             </a>
                         </div>
-                        <div class="thumbnail">
+                        <div class="c-modal-thumbnail-item">
                             <a href="#KKsbMLCrSZU" class="video_play">
                                 <figure>
                                     <img src="https://placehold.jp/300x240.png" alt="再生する">
@@ -414,14 +448,14 @@
                             </a>
                         </div>
                     </div><!-- モーダル＆動画インラインフレーム部分 -->
-                    <div class="modal-wrap" id="modal">
-                        <div class="modal-panel">
-                            <div class="modal-frame">
+                    <div id="modal" class="c-modal-wrap">
+                        <div class="c-modal-panel">
+                            <div class="c-modal-frame">
                                 <div id="AkgDid5oYFM" class="youtube_video"></div>
                                 <div id="XZTv1Rg_H5Y" class="youtube_video"></div>
                                 <div id="KKsbMLCrSZU" class="youtube_video"></div>
                             </div>
-                            <button class="modal-close" id="modal_close">閉じる</button>
+                            <button id="modal_close" class="c-modal-close">閉じる</button>
                         </div>
                     </div>
                 </div>

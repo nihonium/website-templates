@@ -10,6 +10,8 @@
 <html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 
 <head>
+    <%# Googleタグマネージャー %>
+    <%- include(ejsRoot + '_component/_common/_gtm') %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,8 +29,6 @@
     <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/top.css">
     <%# OGP %>
     <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'website', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
-    <%# Googleタグマネージャー %>
-    <%- include(ejsRoot + '_component/_common/_gtm') %>
 </head>
 
 <body>
