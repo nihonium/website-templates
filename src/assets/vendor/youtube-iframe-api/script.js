@@ -4,10 +4,10 @@
 *
 */
 
-const videoPlayButtons = document.querySelectorAll('.video_play');
+const videoPlayButtons = document.querySelectorAll('[data-video-play]');
 const modalCloseButton = document.getElementById('modal_close');
 const modal = document.getElementById('modal');
-const videoIframes = document.querySelectorAll('.youtube_video');
+const videoIframes = document.querySelectorAll('[data-youtube-video]');
 let currentVideoId = null;
 
 // APIでのYouTube動画制御
