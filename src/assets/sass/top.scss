@@ -8,6 +8,7 @@
 
 // * component(必要なstyleのみ読み込む)
 @use "_component/_slick/mv-slider";
+@use "_component/_googlesearch/style";
 
 .p-col-inst {
   display: flex;

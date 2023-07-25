@@ -1,0 +1,9 @@
+// * googleカスタム検索styleリセット
+
+@use "../../_base/mixin";
+
+.gssb_a {
+  img[src$="branding.png"] {
+    max-width: 75px;
+  }
+}
