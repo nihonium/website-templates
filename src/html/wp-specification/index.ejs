@@ -1,9 +1,22 @@
 <%# ejsRootは都度変更する %>
 <% const ejsRoot = '../'; %>
 <%
-    const pageTitle = "記事ページ | hoge";
-    const pageDescription = "記事ページのディスクプリクション | hoge";
+    const pageTitle = "レイアウトページ | hoge";
+    const pageDescription = "レイアウトページのディスクプリクション | hoge";
     const pageCanonical = "https://www.hoge.jp/";
+%>
+
+<%# 見出し %>
+<%
+    const ttlName = [
+        'カスタム投稿・カスタムタクソノミー(カスタム分類)の設定',
+        'カスタムフィールドの設定',
+        'お問い合わせフォーム設定',
+        'セキュリティ対策について',
+        'バックアップについて',
+        'サイト内検索について',
+        'WordPressインストールについて'
+    ];
 %>
 
 <!DOCTYPE html>
@@ -23,6 +36,8 @@
     <%# 共通CSS %>
     <%- include(ejsRoot + '_component/_common/_css', {root: ejsRoot}); %>
     <!-- ページ独自CSS -->
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/vendor/popup/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/layout.css">
     <%# OGP %>
     <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'article', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
 </head>
@@ -36,23 +51,101 @@
     </div>
 
     <main class="c-main">
-        <div class="c-section">
-            <section class="c-section__content">
-                <h2 class="c-single-title">
-                    <a href="#" class="c-single-title-label">お知らせ</a><a href="#" class="c-single-title-label c-single-title-label--info">お知らせ</a><a href="#" class="c-single-title-label c-single-title-label--info-cat">お知らせ</a><a href="#" class="c-single-title-label c-single-title-label--product">お知らせ</a><a href="#" class="c-single-title-label c-single-title-label--service">お知らせ</a><a href="#" class="c-single-title-label c-single-title-label--recruit">お知らせ</a><a href="#" class="c-single-title-label c-single-title-label--recruit-cat">お知らせ</a><br>
-                    <span class="c-single-title-main">ダミータイトルこのタイトルはダミーです</span>
-                </h2>
-                <figure class="c-single-figure">
-                    <img src="https://placehold.jp/1000x300.png" alt="画像" width="1000" height="300">
-                    <figcaption class="c-single-figure__text">ダミーテキスト。このテキストはダミーです。</figcaption>
-                </figure>
-                <div class="c-single-text">
-                    親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。<br>
-                    <br>
-                    （青空文庫より）
+        <section class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong">目次</h2>
+                <div class="c-mt20">
+                    <ul class="sample-anchor">
+                        <% ttlName.forEach((v,i) => { %>
+                            <li><a class="c-link" href="#<%- i + 1 %>" data-scroll><%- v %></a></li>
+                        <% }) %>
+                    </ul>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+        <section id="1" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[0]}` %></h2>
+                <div class="c-mt20">
+                    【使用プラグイン】：Custom Post Type UI<br>
+                    【実装した主な内容】：<br>
+                    ・4つの投稿タイプを登録しています(お知らせ、製品情報、サービス、採用情報)。<br>
+                    ・「お知らせ」には3つのカテゴリを設定しています(その他、トピックス、プレスリリース)。<br>
+                    ・「採用情報」には4つのカテゴリを設定しています(中途採用、契約社員採用、新卒採用、障がい者採用)。<br>
+                    ・「archive-***.php」「taxonomy-***.php」側で、カスタム投稿やカスタムタクソノミーごとに一覧で出力されるよう実装しています。<br>
+                    【参考URL】<a class="c-link" href="https://webst8.com/blog/wordpress-custom-post-type-ui/" target="_blank" rel="noopener noreferrer">https://webst8.com/blog/wordpress-custom-post-type-ui/</a>
+                </div>
+            </div>
+        </section>
+        <!-- /カスタム投稿・カスタムタクソノミー(カスタム分類)の設定 -->
+        <section id="2" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[1]}` %></h2>
+                <div class="c-mt20">
+                    【使用プラグイン】：Advanced Custom Fields<br>
+                    【実装した主な内容】：<br>
+                    ・「TOPページ___MVスライダー」「カスタム投稿ページ___キービジュアル」「カスタム投稿ページ___リード」の3つのフィールドグループを実装しています。<br>
+                    ・画像は「functions.php」で指定したサイズから、「single.php」側でリサイズして出力されます。<br>
+                    【参考URL】<a class="c-link" href="http://galileo-venus.com/2020/05/14/20200507_wp_acf01/" target="_blank" rel="noopener noreferrer">http://galileo-venus.com/2020/05/14/20200507_wp_acf01/</a>
+                </div>
+            </div>
+        </section>
+        <!-- /カスタムフィールドの設定 -->
+        <section id="3" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[2]}` %></h2>
+                <div class="c-mt20">
+                    【使用プラグイン】：Contact Form 7、Contact Form 7 Multi-Step Forms<br>
+                    【実装した主な内容】：<br>
+                    ・「Contact Form 7」の拡張プラグインである「Contact Form 7 Multi-Step Forms」を使って、お問い合わせの確認ページと完了ページを実装しています。<br>
+                    ・「function.php」側で、reCAPTCHA v3をお問い合わせページのみで表示される様に設定しています。<br>
+                    【参考URL】<a class="c-link" href="https://wpmake.jp/contents/plugin/contact-form7/add-confirm/" target="_blank" rel="noopener noreferrer">https://wpmake.jp/contents/plugin/contact-form7/add-confirm/</a>
+                </div>
+            </div>
+        </section>
+        <!-- /お問い合わせフォーム設定 -->
+        <section id="4" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[3]}` %></h2>
+                <div class="c-mt20">
+                    【使用プラグイン】：SiteGuard WP Plugin<br>
+                    【実装した主な内容】：<br>
+                    ・ログインページに画像認証を追加しています。<br>
+                    ・WordPressの管理画面(ダッシュボード)に入る度メールで通知でされ、SiteGuard WP Pluginのダッシュボードからログイン履歴が参照できます。<br>
+                    ・「function.php」側で、クリックジャキング対策を行っています(X-FRAME-OPTIONS)。<br>
+                    【参考URL】<a class="c-link" href="https://www.jp-secure.com/siteguard_wp_plugin/" target="_blank" rel="noopener noreferrer">https://www.jp-secure.com/siteguard_wp_plugin/</a>
+                </div>
+            </div>
+        </section>
+        <!-- /セキュリティ対策について -->
+        <section id="5" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[4]}` %></h2>
+                <div class="c-mt20">
+                    【使用プラグイン】：BackWPup<br>
+                    【参考URL】<a class="c-link" href="https://webst8.com/blog/wordpress-backup-plugin/" target="_blank" rel="noopener noreferrer">https://webst8.com/blog/wordpress-backup-plugin/</a>
+                </div>
+            </div>
+        </section>
+        <!-- /バックアップについて -->
+        <section id="6" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[5]}` %></h2>
+                <div class="c-mt20">
+                    googleカスタム検索を使用しています。
+                </div>
+            </div>
+        </section>
+        <!-- /サイト内検索について -->
+        <section id="7" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[6]}` %></h2>
+                <div class="c-mt20">
+                    ロリポップのWordPress簡単インストール機能を使用しています。
+                </div>
+            </div>
+        </section>
+        <!-- /WordPressインストールについて -->
     </main>
     <!-- /main -->
 
@@ -61,6 +154,11 @@
     <%# 共通JS %>
     <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
     <%# ページ独自JSがある場合は、下記に記述 %>
+    <script src="<%- ejsRoot %>assets/vendor/popup/jquery.magnific-popup.min.js" defer></script>
+    <!-- YouTube IFrame Player API  -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="<%- ejsRoot %>assets/vendor/youtube-iframe-api/script.js" defer></script>
+    <script src="<%- ejsRoot %>assets/js/layout.js" defer></script>
 </body>
 
 </html>
