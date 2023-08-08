@@ -116,7 +116,15 @@
     transition: opacity .25s ease;
   }
 
-  .c-slider__link:hover {
+  .c-slider__link:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-slider__link:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-slider__link:any-link:hover {
     opacity: .7;
   }
 
@@ -125,7 +133,15 @@
     transition: opacity .25s ease;
   }
 
-  .p-col-inst li > a:hover {
+  .p-col-inst li > a:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .p-col-inst li > a:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .p-col-inst li > a:any-link:hover {
     opacity: .7;
   }
 }

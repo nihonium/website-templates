@@ -540,7 +540,15 @@
     transition: opacity .25s ease;
   }
 
-  .c-input-btn:hover {
+  .c-input-btn:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-input-btn:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-input-btn:any-link:hover {
     opacity: .7;
   }
 
@@ -581,7 +589,15 @@
     transition: opacity .25s ease;
   }
 
-  .modal-video-link:hover {
+  .modal-video-link:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .modal-video-link:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .modal-video-link:any-link:hover {
     opacity: .7;
   }
 
@@ -594,7 +610,15 @@
     transition: opacity .25s ease;
   }
 
-  .accordion-head:hover:hover {
+  .accordion-head:hover:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .accordion-head:hover:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .accordion-head:hover:any-link:hover {
     opacity: .7;
   }
 
@@ -604,7 +628,15 @@
     transition: opacity .25s ease;
   }
 
-  .c-btn:hover {
+  .c-btn:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-btn:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-btn:any-link:hover {
     opacity: .7;
   }
 
@@ -628,7 +660,15 @@
     transition: opacity .25s ease;
   }
 
-  .c-modal-thumbnail-item:hover:hover {
+  .c-modal-thumbnail-item:hover:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-modal-thumbnail-item:hover:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-modal-thumbnail-item:hover:any-link:hover {
     opacity: .7;
   }
 
@@ -637,7 +677,15 @@
     transition: opacity .25s ease;
   }
 
-  .c-modal-close:hover:hover {
+  .c-modal-close:hover:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-modal-close:hover:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-modal-close:hover:any-link:hover {
     opacity: .7;
   }
 

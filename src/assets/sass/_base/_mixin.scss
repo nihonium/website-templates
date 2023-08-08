@@ -30,7 +30,7 @@
 @mixin pcHover {
   transition: opacity 0.25s ease;
 
-  &:hover {
+  &:any-link:hover {
     opacity: 0.7;
   }
 }

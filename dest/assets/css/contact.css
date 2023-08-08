@@ -190,8 +190,18 @@
     transition: opacity .25s ease;
   }
 
-  .form-contact-btn .wpcf7-submit:hover,
-  .form-contact-btn .wpcf7-previous:hover {
+  .form-contact-btn .wpcf7-submit:-webkit-any-link:hover,
+  .form-contact-btn .wpcf7-previous:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .form-contact-btn .wpcf7-submit:-moz-any-link:hover,
+  .form-contact-btn .wpcf7-previous:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .form-contact-btn .wpcf7-submit:any-link:hover,
+  .form-contact-btn .wpcf7-previous:any-link:hover {
     opacity: .7;
   }
 
