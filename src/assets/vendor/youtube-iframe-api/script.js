@@ -6,6 +6,7 @@
 
 const videoPlayButtons = document.querySelectorAll('[data-video-play]');
 const modalCloseButton = document.getElementById('modal_close');
+const modalClose = document.getElementById('auto-play-modal');
 const modal = document.getElementById('modal');
 const videoIframes = document.querySelectorAll('[data-youtube-video]');
 let currentVideoId = null;
@@ -38,8 +39,18 @@ function onYouTubeIframeAPIReady() {
         });
     });
 
-    // モーダルクローズ＆YouTube動画の停止
+    // モーダルクローズ＆YouTube動画の停止(閉じるボタン)
     modalCloseButton.addEventListener('click', (event) => {
+        const targetVideo = players.filter(player => {
+            return player.getVideoData().video_id === currentVideoId;
+        });
+        targetVideo[0].stopVideo();
+        document.getElementById(currentVideoId).style.display = 'none';
+        modal.classList.remove('shown');
+    });
+
+    // モーダルクローズ＆YouTube動画の停止(閉じるボタン)
+    modalClose.addEventListener('click', (event) => {
         const targetVideo = players.filter(player => {
             return player.getVideoData().video_id === currentVideoId;
         });
