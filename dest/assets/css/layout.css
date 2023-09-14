@@ -455,6 +455,30 @@
 }
 
 /*
+ * フローティングバナー
+ */
+
+.c-floating-bnr {
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  bottom: 40px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.c-floating-bnr.is-show {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.c-floating-bnr__btn {
+  display: block;
+}
+
+/*
  * レイアウト
  */
 
@@ -689,6 +713,27 @@
     opacity: .7;
   }
 
+  .c-floating-bnr {
+    width: 150px;
+  }
+
+  .c-floating-bnr__btn {
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .c-floating-bnr__btn:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-floating-bnr__btn:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-floating-bnr__btn:any-link:hover {
+    opacity: .7;
+  }
+
   .sample-anchor li {
     width: 33.3333333333%;
   }
@@ -759,6 +804,10 @@
 
   .c-modal-thumbnail-item {
     margin-top: 20px;
+  }
+
+  .c-floating-bnr {
+    width: 33.3333333333%;
   }
 
   .sample-anchor li {
