@@ -28,6 +28,7 @@ function onYouTubeIframeAPIReady() {
     videoPlayButtons.forEach(element => {
         element.addEventListener('click', (event) => {
             modal.classList.add('shown');
+            modal.classList.remove('hide');
             const elementId = element.hash.replace('#', '');
             event.preventDefault();
             const targetVideo = players.filter(player => {
@@ -46,6 +47,7 @@ function onYouTubeIframeAPIReady() {
         });
         targetVideo[0].stopVideo();
         document.getElementById(currentVideoId).style.display = 'none';
+        modal.classList.add('hide');
         modal.classList.remove('shown');
     });
 
@@ -56,6 +58,7 @@ function onYouTubeIframeAPIReady() {
         });
         targetVideo[0].stopVideo();
         document.getElementById(currentVideoId).style.display = 'none';
+        modal.classList.add('hide');
         modal.classList.remove('shown');
     });
 }
