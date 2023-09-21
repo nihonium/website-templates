@@ -28,7 +28,6 @@ function onYouTubeIframeAPIReady() {
     videoPlayButtons.forEach(element => {
         element.addEventListener('click', (event) => {
             modal.classList.add('shown');
-            modal.classList.remove('hide');
             const elementId = element.hash.replace('#', '');
             event.preventDefault();
             const targetVideo = players.filter(player => {
