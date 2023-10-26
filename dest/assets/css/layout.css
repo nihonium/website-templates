@@ -561,6 +561,22 @@
   max-width: 500px;
 }
 
+.sample-form-btn {
+  margin-top: 30px;
+}
+
+.sample-form-btn__content {
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #ff8c00;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
 .sample-btn {
   width: 200px;
 }
@@ -785,6 +801,23 @@
     width: calc(100% - 160px);
     margin-top: 20px;
     padding-left: 20px;
+  }
+
+  .sample-form-btn__content {
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .sample-form-btn__content:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .sample-form-btn__content:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .sample-form-btn__content:any-link:hover {
+    opacity: .7;
   }
 
   .sample-col-item {

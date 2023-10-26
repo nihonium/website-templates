@@ -40,7 +40,8 @@ module.exports = {
                     'src/assets/js/unit/_accordion_basic.js',
                     'src/assets/js/unit/_auto_height.js',
                     'src/assets/js/unit/_display-time-based-elements.js',
-                    'src/assets/js/unit/_floating-bnr.js'
+                    'src/assets/js/unit/_floating-bnr.js',
+                    'src/assets/js/unit/_handle-submit.js'
                 ],
                 publish: 'layout.js'
             }
