@@ -808,15 +808,7 @@
     transition: opacity .25s ease;
   }
 
-  .sample-form-btn__content:-webkit-any-link:hover {
-    opacity: .7;
-  }
-
-  .sample-form-btn__content:-moz-any-link:hover {
-    opacity: .7;
-  }
-
-  .sample-form-btn__content:any-link:hover {
+  .sample-form-btn__content:hover {
     opacity: .7;
   }
 

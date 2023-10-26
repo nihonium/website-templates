@@ -107,7 +107,11 @@
         text-align: center;
 
         @include mixin.view-at("pc") {
-          @include mixin.pcHover();
+          transition: opacity 0.25s ease;
+
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
     }
