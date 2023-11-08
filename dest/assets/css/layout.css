@@ -509,6 +509,27 @@
 }
 
 /*
+ * GSAPを使ったアニメーション実装のサンプル
+ */
+
+#dispersionMotion {
+  overflow: hidden;
+  position: relative;
+  height: 50vh;
+  background: #000;
+}
+
+.rect {
+  display: block;
+  position: absolute;
+  top: -1vh;
+  left: 25vw;
+  width: 1vw;
+  height: 1vw;
+  background: white;
+}
+
+/*
  * レイアウト
  */
 

@@ -1,0 +1,20 @@
+/*
+ * GSAPを使ったアニメーション実装のサンプル
+ */
+
+#dispersionMotion {
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    height: 50vh;
+}
+
+.rect {
+    width: 1vw;
+    height: 1vw;
+    display: block;
+    position: absolute;
+    background: white;
+    left: 25vw;
+    top: -1vh;
+}

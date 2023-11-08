@@ -48,26 +48,6 @@
         <!-- ページ独自CSS -->
         <link rel="stylesheet" type="text/css" href="../assets/vendor/popup/magnific-popup.css">
         <link rel="stylesheet" type="text/css" href="../assets/css/layout.css">
-        <style>
-            #dispersionMotion
-            {
-                background: #000;
-                overflow: hidden;
-                position: relative;
-                height: 50vh;
-            }
-
-            .rect
-            {
-                width: 1vw;
-                height: 1vw;
-                display: block;
-                position: absolute;
-                background: white;
-                left: 25vw;
-                top: -1vh;
-            }
-        </style>
         <meta property="og:type" content="article">
         <meta property="og:locale" content="ja_JP">
         <meta property="og:title" content="レイアウトページ | hoge">
@@ -540,35 +520,6 @@
         <script src="../assets/vendor/youtube-iframe-api/script.js" defer></script>
         <!-- GSAP -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" defer></script>
-        <script>
-            window.addEventListener("DOMContentLoaded", () =>
-            {
-                // デモ説明のためのデフォルト設定
-                gsap.defaults(
-                {
-                    repeat: -1, // 無限に繰り返し
-                    repeatDelay: 0.5, // 繰り返し時に0.5秒の待機
-                }); // たくさんの矩形を配置
-                for (let i = 0; i < 100; i++)
-                {
-                    const rect = document.createElement("div");
-                    rect.classList.add("rect");
-                    document.getElementById("dispersionMotion").appendChild(rect);
-                    rect.style.left = `${i}vw`;
-                } // 画面下部に落下
-                gsap.to(".rect",
-                {
-                    y: "50vh",
-                    duration: 2,
-                    ease: "bounce.out",
-                    stagger:
-                    {
-                        each: 0.01, // ばらす間隔（秒）
-                        from: "random", // ランダムに開始
-                    },
-                });
-            });
-        </script>
         <script src="../assets/js/layout.js" defer></script>
     </body>
 </html>
