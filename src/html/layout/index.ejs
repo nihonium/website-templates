@@ -20,7 +20,8 @@
         '汎用ボタン',
         '時間ごとの要素の出し分け',
         '複数のモーダル表示のYouTube動画を自動再生',
-        'フローティングバナー'
+        'フローティングバナー',
+        'GSAPを使ったアニメーション実装'
     ];
 %>
 
@@ -43,6 +44,25 @@
     <!-- ページ独自CSS -->
     <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/vendor/popup/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/layout.css">
+    <style>
+      #dispersionMotion {
+        background: #000;
+        overflow: hidden;
+        position: relative;
+        height: 50vh;
+      }
+
+      .rect {
+        width: 1vw;
+        height: 1vw;
+        display: block;
+        position: absolute;
+        background: white;
+
+        left: 25vw;
+        top: -1vh;
+      }
+    </style>
     <%# OGP %>
     <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'article', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
 </head>
@@ -439,6 +459,13 @@
             </div>
         </section>
         <!-- /フローティングバナー -->
+        <section id="13" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong"><%- `${ttlName[12]}` %></h2>
+                <div id="dispersionMotion" class="c-mt20"></div>
+            </div>
+        </section>
+        <!-- /GSAPを使ったアニメーション実装 -->
     </main>
     <!-- /main -->
 
@@ -449,8 +476,39 @@
     <%# ページ独自JSがある場合は、下記に記述 %>
     <script src="<%- ejsRoot %>assets/vendor/popup/jquery.magnific-popup.min.js" defer></script>
     <!-- YouTube IFrame Player API  -->
-    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://www.youtube.com/iframe_api" defer></script>
     <script src="<%- ejsRoot %>assets/vendor/youtube-iframe-api/script.js" defer></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" defer></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        // デモ説明のためのデフォルト設定
+        gsap.defaults({
+          repeat: -1, // 無限に繰り返し
+          repeatDelay: 0.5, // 繰り返し時に0.5秒の待機
+        });
+
+        // たくさんの矩形を配置
+        for (let i = 0; i < 100; i++) {
+          const rect = document.createElement("div");
+          rect.classList.add("rect");
+          document.getElementById("dispersionMotion").appendChild(rect);
+
+          rect.style.left = `${i}vw`;
+        }
+
+        // 画面下部に落下
+        gsap.to(".rect", {
+          y: "50vh",
+          duration: 2,
+          ease: "bounce.out",
+          stagger: {
+            each: 0.01, // ばらす間隔（秒）
+            from: "random", // ランダムに開始
+          },
+        });
+      });
+    </script>
     <script src="<%- ejsRoot %>assets/js/layout.js" defer></script>
 </body>
 
