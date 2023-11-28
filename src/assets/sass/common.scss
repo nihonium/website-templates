@@ -286,6 +286,35 @@
       }
     }
 
+    &-dropdown {
+      position: relative;
+
+      &-list {
+        position: absolute;
+        background: #aaa;
+        width: 100%;
+        transform: translateY(-500px);
+        transition: .5s;
+        z-index: -3;
+
+        &.open {
+            transform: translateY(20px);
+        }
+
+        > li {
+          padding:20px 0;
+
+          &:hover {
+            background:red;
+          }
+        }
+
+        &__link {
+          display: block;
+        }
+      }
+    }
+
     &-close {
       @media screen and (min-width: variables.$mq-nav) {
         display: none;

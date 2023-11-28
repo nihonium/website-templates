@@ -838,6 +838,38 @@ img {
   display: block;
 }
 
+.c-header-dropdown {
+  position: relative;
+}
+
+.c-header-dropdown-list {
+  position: absolute;
+  z-index: -3;
+  width: 100%;
+  background: #aaa;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translateY(-500px);
+  transform: translateY(-500px);
+}
+
+.c-header-dropdown-list.open {
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+}
+
+.c-header-dropdown-list > li {
+  padding: 20px 0;
+}
+
+.c-header-dropdown-list > li:hover {
+  background: red;
+}
+
+.c-header-dropdown-list__link {
+  display: block;
+}
+
 .c-header-box.is-animate {
   -webkit-transition: opacity .3s, visibility 0s ease .3s;
   transition: opacity .3s, visibility 0s ease .3s;

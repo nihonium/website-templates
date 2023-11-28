@@ -38,4 +38,16 @@
     }
 
     globalMenu();
+
+    const main = document.querySelectorAll('[data-menu-dropdown]');
+    const item = Array.prototype.slice.call(main,0);
+
+    item.forEach(function (element) {
+    element.addEventListener("mouseover",function(){
+        element.querySelector('[data-menu-dropdown-list]').classList.add('open');
+    },false);
+    element.addEventListener("mouseout",function(){
+        element.querySelector('[data-menu-dropdown-list]').classList.remove('open');
+    },false);
+    });
 }
