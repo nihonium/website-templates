@@ -822,7 +822,7 @@ img {
   position: sticky;
   z-index: 1000;
   top: 0;
-  background: rgba(255, 255, 255, .6);
+  background: #fff;
 }
 
 .c-header__content {
@@ -840,34 +840,23 @@ img {
 
 .c-header-dropdown {
   position: relative;
-}
-
-.c-header-dropdown-list {
-  position: absolute;
-  z-index: -3;
-  width: 100%;
-  background: #aaa;
-  -webkit-transition: .5s;
-  transition: .5s;
-  -webkit-transform: translateY(-500px);
-  transform: translateY(-500px);
-}
-
-.c-header-dropdown-list.open {
-  -webkit-transform: translateY(20px);
-  transform: translateY(20px);
+  z-index: 1;
 }
 
 .c-header-dropdown-list > li {
-  padding: 20px 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .05em;
 }
 
-.c-header-dropdown-list > li:hover {
-  background: red;
+.c-header-dropdown-list > li:not(:first-child) {
+  margin-top: 10px;
 }
 
 .c-header-dropdown-list__link {
   display: block;
+  padding: 10px;
+  letter-spacing: .05em;
 }
 
 .c-header-box.is-animate {
@@ -1105,7 +1094,6 @@ img {
 @media screen and (min-width: 1200px) {
   .c-header__content {
     max-width: 1280px;
-    height: 80px;
     margin-right: auto;
     margin-left: auto;
     padding-right: 1%;
@@ -1122,6 +1110,69 @@ img {
 
   .c-header-menu {
     display: none;
+  }
+
+  .c-header-dropdown {
+    padding-right: 1em;
+  }
+
+  .c-header-dropdown__btn {
+    position: absolute;
+    z-index: 2;
+    top: 40px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-top: 6px solid #555;
+    border-right: 5px solid transparent;
+    border-bottom: 0;
+    border-left: 5px solid transparent;
+  }
+
+  .c-header-dropdown-list {
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #fff;
+    opacity: 0;
+    -webkit-transition: opacity .3s, visibility 0s ease .3s;
+    transition: opacity .3s, visibility 0s ease .3s;
+  }
+
+  .c-header-dropdown-list.is-open {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+
+  .c-header-dropdown-list__link {
+    color: #000;
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+
+  .c-header-dropdown-list__link:-webkit-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-header-dropdown-list__link:-moz-any-link:hover {
+    opacity: .7;
+  }
+
+  .c-header-dropdown-list__link:any-link:hover {
+    opacity: .7;
+  }
+
+  .c-header-dropdown-list__link:active,
+  .c-header-dropdown-list__link:focus,
+  .c-header-dropdown-list__link:visited,
+  .c-header-dropdown-list__link:hover {
+    color: #000;
   }
 
   .c-header-close {
@@ -1152,9 +1203,11 @@ img {
     justify-content: flex-end;
   }
 
-  .c-header-list li {
+  .c-header-list > li {
     margin-right: 13px;
     margin-left: 13px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .c-header-list-item {
@@ -1216,6 +1269,56 @@ img {
     background-size: 32px auto;
   }
 
+  .c-header-dropdown__btn {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+  }
+
+  .c-header-dropdown__btn::before,
+  .c-header-dropdown__btn::after {
+    display: block;
+    position: absolute;
+    top: calc(15px - .7em);
+    right: 0;
+    width: 15px;
+    height: 3px;
+    background: #fff;
+    content: "";
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .c-header-dropdown__btn::after {
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transform: translateY(-50%) rotate(90deg);
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  .c-header-dropdown__btn.is-open::after {
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transform: rotate(0) translateY(-.1em);
+    transform: rotate(0) translateY(-.1em);
+  }
+
+  .c-header-dropdown-list {
+    display: none;
+  }
+
+  .c-header-dropdown-list__link {
+    color: #fff;
+  }
+
+  .c-header-dropdown-list__link:active,
+  .c-header-dropdown-list__link:focus,
+  .c-header-dropdown-list__link:visited,
+  .c-header-dropdown-list__link:hover {
+    color: #fff;
+  }
+
   .c-header-close {
     position: absolute;
     top: 12px;
@@ -1259,11 +1362,11 @@ img {
     margin-top: 10px;
   }
 
-  .c-header-list li {
+  .c-header-list > li {
     text-align: center;
   }
 
-  .c-header-list li:not(:first-child) {
+  .c-header-list > li:not(:first-child) {
     margin-top: 20px;
   }
 
