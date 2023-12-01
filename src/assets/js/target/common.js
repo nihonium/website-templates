@@ -67,6 +67,7 @@
                     }, false);
                 });
             } else {
+                $('[data-dropdown-btn]').off('click'); // ブラウザリサイズ時　複数実行不具合用の処理
                 $('[data-dropdown-btn]').on('click', function () {
                     $(this).toggleClass('is-open').next().slideToggle();
                 });
@@ -76,27 +77,4 @@
 
     globalMenu();
     globalDropDown();
-
-    const mediaQueryList = window.matchMedia('(min-width: 768px)');
-
-    /**
-     * イベントリスナー
-     */
-    const listener = (event) => {
-    // リサイズ時に行う処理
-    if (event.matches) {
-        // 768px以上
-        console.log('PC用ブレークポイント用処理');
-    } else {
-        // 768px未満
-        console.log('SP用ブレークポイント用処理');
-    }
-    };
-
-    // リスナー登録
-    // mediaQueryList.addListener(listener); // @deprecated
-    mediaQueryList.addEventListener("change", listener);
-
-    // 初期化処理
-    listener(mediaQueryList);
 }
