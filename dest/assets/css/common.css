@@ -1258,18 +1258,64 @@ img {
   .c-header-menu {
     display: block;
     position: absolute;
+    z-index: 2000;
     top: 14px;
     right: 16px;
     width: 32px;
     height: 32px;
-    background-image: url("https://placehold.jp/000000/ffffff/48x48.png?text=menu");
-    background-repeat: no-repeat;
-    background-size: 32px auto;
   }
 
-  .c-header-menu.is-open {
-    z-index: 2000;
-    background-image: url("https://placehold.jp/ffffff/000000/48x48.png?text=close");
+  .c-header-menu-btn {
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    background: #465d69;
+    cursor: pointer;
+  }
+
+  .c-header-menu-btn__line {
+    display: inline-block;
+    position: absolute;
+    /*アニメーションの設定*/
+    left: 6.5px;
+    width: 60%;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+  }
+
+  .c-header-menu-btn__line:nth-of-type(1) {
+    top: 8px;
+  }
+
+  .c-header-menu-btn__line:nth-of-type(2) {
+    top: 15px;
+  }
+
+  .c-header-menu-btn__line:nth-of-type(3) {
+    top: 22px;
+  }
+
+  .c-header-menu-btn.is-open > .c-header-menu-btn__line:nth-of-type(1) {
+    top: 7px;
+    left: 7px;
+    -webkit-transform: translateY(8px) rotate(-45deg);
+    transform: translateY(8px) rotate(-45deg);
+  }
+
+  .c-header-menu-btn.is-open > .c-header-menu-btn__line:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .c-header-menu-btn.is-open > .c-header-menu-btn__line:nth-of-type(3) {
+    top: 23px;
+    left: 7px;
+    -webkit-transform: translateY(-8px) rotate(45deg);
+    transform: translateY(-8px) rotate(45deg);
   }
 
   .c-header-dropdown__btn {

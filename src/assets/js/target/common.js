@@ -6,7 +6,7 @@
 
             if (windowWidth >= breakPoint) {
                 $('[data-header-nav]').removeClass('is-show is-animate');
-                $('[data-menu-btn]').removeClass('is-open');
+                $('[data-menu-btn-inner]').removeClass('is-open');
                 $('body').removeClass('is-active');
             } else {
                 $('[data-header-nav]').addClass('is-animate');
@@ -14,7 +14,7 @@
         });
 
         $('[data-menu-btn]').on('click', function () {
-            $(this).toggleClass('is-open');
+            $(this).children('[data-menu-btn-inner]').toggleClass('is-open');
             $('[data-header-nav]').toggleClass('is-show');
             $('body').toggleClass('is-active');
         });

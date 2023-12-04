@@ -26,7 +26,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <img src="https://placehold.jp/b5b5b5/ffffff/180x48.png?text=LOGO" alt="">
             </a>
         </div>
-        <button class="c-header-menu" data-menu-btn></button>
+        <button class="c-header-menu" data-menu-btn>
+            <span class="c-header-menu-btn" data-menu-btn-inner>
+                <span class="c-header-menu-btn__line"></span>
+                <span class="c-header-menu-btn__line"></span>
+                <span class="c-header-menu-btn__line"></span>
+            </span>
+        </button>
         <div class="c-header-box" data-header-nav>
             <nav class="c-header-box__content" aria-label="サイト内メニュー" aria-haspopup="true">
                 <a class="c-header-sp-logo" href="<% if (page === 'top') { %>./<% } else { %><%- root %><% } %>">
