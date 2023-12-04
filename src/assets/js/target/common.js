@@ -1,16 +1,6 @@
 /** グローバルメニュー */
 {
     const globalMenu = () => {
-        /**
-         * 画面幅を格納
-         */
-        let windowWidth = '';
-
-        /**
-         * ブレイクポイントを指定
-         */
-        const breakPoint = 1200;
-
         $(window).on('load resize', function () {
             windowWidth = window.innerWidth;
 
@@ -37,16 +27,6 @@
     const globalDropDown = () => {
         const main = document.querySelectorAll('[data-dropdown]');
         const item = Array.prototype.slice.call(main, 0);
-
-        /**
-         * 画面幅を格納
-         */
-        let windowWidth = '';
-
-        /**
-         * ブレイクポイントを指定
-         */
-        const breakPoint = 1200;
 
         $(window).on('load resize', function () {
             windowWidth = window.innerWidth;
@@ -75,6 +55,16 @@
         });
     }
 
-    globalMenu();
-    globalDropDown();
+    /**
+     * 画面幅を格納
+     */
+    let windowWidth = '';
+
+    /**
+     * ブレイクポイントを指定
+     */
+    const breakPoint = 1200;
+
+    globalMenu(windowWidth, breakPoint);
+    globalDropDown(windowWidth, breakPoint);
 }
