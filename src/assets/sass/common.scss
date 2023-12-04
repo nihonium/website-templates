@@ -275,13 +275,22 @@
       }
 
       @media screen and (max-width: variables.$mq-nav - 1) {
+        position: absolute;
         display: block;
         width: 32px;
         height: 32px;
-        margin-left: 24px;
-        background: url("https://placehold.jp/000000/ffffff/48x48.png?text=menu");
+        background-image: url("https://placehold.jp/000000/ffffff/48x48.png?text=menu");
         background-repeat: no-repeat;
         background-size: 32px auto;
+        top: 14px;
+        right: 16px;
+      }
+
+      &.is-open {
+        @media screen and (max-width: variables.$mq-nav - 1) {
+          background-image: url("https://placehold.jp/ffffff/000000/48x48.png?text=close");
+          z-index: 2000;
+        }
       }
     }
 
@@ -395,23 +404,6 @@
             }
           }
         }
-      }
-    }
-
-    &-close {
-      @media screen and (min-width: variables.$mq-nav) {
-        display: none;
-      }
-
-      @media screen and (max-width: variables.$mq-nav - 1) {
-        position: absolute;
-        background-image: url("https://placehold.jp/ffffff/000000/48x48.png?text=close");
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 32px;
-        height: 32px;
-        top: 12px;
-        right: 14px;
       }
     }
 

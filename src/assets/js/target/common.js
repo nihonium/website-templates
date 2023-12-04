@@ -5,8 +5,8 @@
             windowWidth = window.innerWidth;
 
             if (windowWidth >= breakPoint) {
-                $('[data-header-nav]').removeClass('is-show');
-                $('[data-header-nav]').removeClass('is-animate');
+                $('[data-header-nav]').removeClass('is-show is-animate');
+                $('[data-menu-btn]').removeClass('is-open');
                 $('body').removeClass('is-active');
             } else {
                 $('[data-header-nav]').addClass('is-animate');
@@ -14,13 +14,9 @@
         });
 
         $('[data-menu-btn]').on('click', function () {
-            $('[data-header-nav]').addClass('is-show');
-            $('body').addClass('is-active');
-        });
-
-        $('[data-header-close]').on('click', function () {
-            $('[data-header-nav]').removeClass('is-show');
-            $('body').removeClass('is-active');
+            $(this).toggleClass('is-open');
+            $('[data-header-nav]').toggleClass('is-show');
+            $('body').toggleClass('is-active');
         });
     }
 
