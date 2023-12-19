@@ -476,7 +476,7 @@ body {
 }
 
 body.is-active {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 img {
@@ -1320,19 +1320,20 @@ img {
 
   .c-header-dropdown__btn {
     position: relative;
-    width: 15px;
-    height: 15px;
-    margin-left: 5px;
+    width: 24px;
+    height: 24px;
   }
 
   .c-header-dropdown__btn::before,
   .c-header-dropdown__btn::after {
     display: block;
     position: absolute;
-    top: calc(15px - .7em);
+    top: calc(15px - .4em);
     right: 0;
+    left: 0;
     width: 15px;
     height: 3px;
+    margin: auto;
     background: #fff;
     content: "";
     -webkit-transform: translateY(-50%);

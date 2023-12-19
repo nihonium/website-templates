@@ -369,9 +369,8 @@
 
         @media screen and (max-width: variables.$mq-nav - 1) {
           position: relative;
-          margin-left: 5px;
-          width: 15px;
-          height: 15px;
+          width: 24px;
+          height: 24px;
 
           &::before,
           &::after {
@@ -382,7 +381,9 @@
             background: #fff;
             position: absolute;
             right: 0;
-            top: calc(15px - .7em);
+            left: 0;
+            margin: auto;
+            top: calc(15px - .4em);
             transform: translateY(-50%);
           }
 
