@@ -496,6 +496,7 @@
 
       &__content {
         @media screen and (max-width: variables.$mq-nav - 1) {
+          width: 100%;
           padding-top: 20%;
           padding-bottom: 10%;
         }
