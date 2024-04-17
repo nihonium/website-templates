@@ -1393,6 +1393,7 @@ img {
   }
 
   .c-header-box__content {
+    width: 100%;
     padding-top: 20%;
     padding-bottom: 10%;
   }
