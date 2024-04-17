@@ -909,7 +909,7 @@ img {
 
 @media screen and (min-width: 768px) {
   body {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .c-article-card {
@@ -1457,7 +1457,7 @@ img {
 
 @media screen and (max-width: 767px) {
   body {
-    font-size: 14px;
+    font-size: 3.73vw;
   }
 
   .c-article-card {

@@ -20,11 +20,11 @@ body {
   letter-spacing: 0.1em;
 
   @include mixin.view-at("pc") {
-    font-size: 16px;
+    @include mixin.FontSize-PC(16);
   }
 
   @include mixin.view-at("sp") {
-    font-size: 14px;
+    @include mixin.FontSize-SP(14);
   }
 
   &.is-active {
