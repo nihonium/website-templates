@@ -8,16 +8,30 @@
 function validateForm() {
     Validator.useLang('ja');
 
+    // カスタムルール：年齢
+    Validator.register('age_check', function(value, requirement, attribute) {
+        return value >= requirement;
+    });
+
+    // カスタムルール：メールアドレスの確認
+    Validator.register('email_confirmation', function(value, requirement, attribute) {
+        const confirmationField = attribute.replace('_confirmation', '');
+        const confirmationValue = document.getElementById(confirmationField).value;
+        return value === confirmationValue;
+    });
+
     let data = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
+        email_confirmation: document.getElementById('email_confirmation').value,
         age: document.getElementById('age').value
     };
 
     let rules = {
         name: 'required',
         email: 'required|email',
-        age: 'required|min:18'
+        email_confirmation: 'required|email_confirmation',
+        age: 'required|age_check:18'
     };
 
     let validation = new Validator(data, rules);
@@ -35,5 +49,3 @@ function validateForm() {
         alert(errorMessage);
     }
 }
-
-// document.addEventListener("DOMContentLoaded", validateForm);
