@@ -6,6 +6,8 @@
  */
 
 function validateForm() {
+    Validator.useLang('ja');
+
     let data = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -15,7 +17,7 @@ function validateForm() {
     let rules = {
         name: 'required',
         email: 'required|email',
-        age: 'min:18'
+        age: 'required|min:18'
     };
 
     let validation = new Validator(data, rules);
