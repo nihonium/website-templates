@@ -187,6 +187,7 @@
                             <li><a class="c-link" href="#11" data-scroll="100">複数のモーダル表示のYouTube動画を自動再生</a></li>
                             <li><a class="c-link" href="#12" data-scroll="100">フローティングバナー</a></li>
                             <li><a class="c-link" href="#13" data-scroll="100">GSAPを使ったアニメーション実装</a></li>
+                            <li><a class="c-link" href="#14" data-scroll="100">validatorjsを使ったバリデーション</a></li>
                         </ul>
                     </div>
                 </div>
@@ -298,8 +299,6 @@
                         <dl class="sample-form">
                             <dt>メールアドレス</dt>
                             <dd><input class="c-input sample-form-w500" type="email" name="email" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
-                            <dt>メールアドレス(確認用の再入力)</dt>
-                            <dd><input class="c-input sample-form-w500" type="email" name="email_reenter" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
                         </dl>
                         <div class="sample-form-btn">
                             <button class="sample-form-btn__content">送信する</button>
@@ -549,6 +548,24 @@
                 </div>
             </section>
             <!-- /GSAPを使ったアニメーション実装 -->
+            <section id="14" class="c-section">
+                <div class="c-section__content">
+                    <h2 class="c-strong">validatorjsを使ったバリデーション</h2>
+                    <p class="c-mt20"> テスト </p>
+                    <form id="" action="../" method="get">
+                        <dl class="sample-form">
+                            <dt>メールアドレス</dt>
+                            <dd><input class="c-input sample-form-w500" type="email" name="email_v" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
+                            <dt>メールアドレス(確認用の再入力)</dt>
+                            <dd><input class="c-input sample-form-w500" type="email" name="email_reenter_v" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
+                        </dl>
+                        <div class="sample-form-btn">
+                            <button class="sample-form-btn__content">送信する</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- /validatorjsを使ったバリデーション -->
         </main>
         <!-- /main --><a href="#page_top" class="c-footer-page-top" data-scroll aria-label="ページの先頭へ戻る">ページの先頭へ戻る</a>
         <footer id="footer" class="c-footer">
@@ -573,6 +590,8 @@
         <script src="../assets/vendor/youtube-iframe-api/script.js" defer></script>
         <!-- GSAP -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" defer></script>
+        <!-- validatorjs -->
+        <script src="../assets/vendor/validatorjs/validator.js" defer></script>
         <script src="../assets/js/layout.js" defer></script>
     </body>
 </html>
