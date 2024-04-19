@@ -41,9 +41,7 @@ module.exports = {
                     'src/assets/js/unit/_auto_height.js',
                     'src/assets/js/unit/_display-time-based-elements.js',
                     'src/assets/js/unit/_floating-bnr.js',
-                    'src/assets/js/unit/_handle-submit.js',
-                    'src/assets/js/unit/_gsap-sample.js',
-                    'src/assets/js/unit/_validatorjs-sample.js'
+                    'src/assets/js/unit/_gsap-sample.js'
                 ],
                 publish: 'layout.js'
             }

@@ -175,7 +175,7 @@
                     <div class="c-mt20">
                         <ul class="sample-anchor">
                             <li><a class="c-link" href="#1" data-scroll="100">テーブル</a></li>
-                            <li><a class="c-link" href="#2" data-scroll="100">入力フォーム</a></li>
+                            <li><a class="c-link" href="#2" data-scroll="100">validatorjsを使ったバリデーション</a></li>
                             <li><a class="c-link" href="#3" data-scroll="100">タブ切り替え</a></li>
                             <li><a class="c-link" href="#4" data-scroll="100">Google Maps埋め込み</a></li>
                             <li><a class="c-link" href="#5" data-scroll="100">モーダルウィンドウ(YouTube埋め込み)</a></li>
@@ -187,7 +187,6 @@
                             <li><a class="c-link" href="#11" data-scroll="100">複数のモーダル表示のYouTube動画を自動再生</a></li>
                             <li><a class="c-link" href="#12" data-scroll="100">フローティングバナー</a></li>
                             <li><a class="c-link" href="#13" data-scroll="100">GSAPを使ったアニメーション実装</a></li>
-                            <li><a class="c-link" href="#14" data-scroll="100">validatorjsを使ったバリデーション</a></li>
                         </ul>
                     </div>
                 </div>
@@ -291,22 +290,35 @@
             <!-- /テーブル -->
             <section id="2" class="c-section">
                 <div class="c-section__content">
-                    <h2 class="c-strong">入力フォーム</h2>
+                    <h2 class="c-strong">validatorjsを使ったバリデーション</h2>
                     <p class="c-mt20"> inputタグにautocomplete属性を設定することで、フォームへの自動入力を有効にしています。<br>
                         <!-- 値：<a class="c-link c-nowrap" href="https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete#%E5%80%A4" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete#%E5%80%A4</a> -->
                     </p>
-                    <form id="postForm" action="../" method="get">
+                    <!-- <form id="postForm" action="../" method="get">
+<dl class="sample-form">
+<dt>メールアドレス</dt>
+<dd><input class="c-input sample-form-w500" type="email" name="email" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
+</dl>
+<div class="sample-form-btn">
+<button class="sample-form-btn__content">送信する</button>
+</div>
+</form> -->
+                    <form id="myForm" action="../" method="get">
                         <dl class="sample-form">
-                            <dt>メールアドレス</dt>
-                            <dd><input class="c-input sample-form-w500" type="email" name="email" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
+                            <dt><label for="name">Name:</label></dt>
+                            <dd><input class="c-input sample-form-w200" type="text" id="name" name="name"></dd>
+                            <dt><label for="email">Email:</label></dt>
+                            <dd><input class="c-input sample-form-w500" type="email" id="email" name="email"></dd>
+                            <dt><label for="age">Age:</label></dt>
+                            <dd><input class="c-input sample-form-w100" type="text" id="age" name="age"></dd>
                         </dl>
                         <div class="sample-form-btn">
-                            <button class="sample-form-btn__content">送信する</button>
+                            <button class="sample-form-btn__content" type="button" onclick="validateForm()">Submit</button>
                         </div>
                     </form>
                 </div>
             </section>
-            <!-- /入力フォーム -->
+            <!-- /validatorjsを使ったバリデーション -->
             <section id="3" class="c-section">
                 <div class="c-section__content">
                     <h2 class="c-strong">タブ切り替え</h2>
@@ -548,24 +560,6 @@
                 </div>
             </section>
             <!-- /GSAPを使ったアニメーション実装 -->
-            <section id="14" class="c-section">
-                <div class="c-section__content">
-                    <h2 class="c-strong">validatorjsを使ったバリデーション</h2>
-                    <p class="c-mt20"> テスト </p>
-                    <form id="" action="../" method="get">
-                        <dl class="sample-form">
-                            <dt>メールアドレス</dt>
-                            <dd><input class="c-input sample-form-w500" type="email" name="email_v" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
-                            <dt>メールアドレス(確認用の再入力)</dt>
-                            <dd><input class="c-input sample-form-w500" type="email" name="email_reenter_v" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
-                        </dl>
-                        <div class="sample-form-btn">
-                            <button class="sample-form-btn__content">送信する</button>
-                        </div>
-                    </form>
-                </div>
-            </section>
-            <!-- /validatorjsを使ったバリデーション -->
         </main>
         <!-- /main --><a href="#page_top" class="c-footer-page-top" data-scroll aria-label="ページの先頭へ戻る">ページの先頭へ戻る</a>
         <footer id="footer" class="c-footer">
@@ -591,7 +585,8 @@
         <!-- GSAP -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" defer></script>
         <!-- validatorjs -->
-        <script src="../assets/vendor/validatorjs/validator.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/validatorjs@3.7.0/dist/validator.js"></script>
+        <script src="../assets/vendor/validatorjs/sample.js" defer></script>
         <script src="../assets/js/layout.js" defer></script>
     </body>
 </html>

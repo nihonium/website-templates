@@ -10,7 +10,7 @@
 <%
     const ttlName = [
         'テーブル',
-        '入力フォーム',
+        'validatorjsを使ったバリデーション',
         'タブ切り替え',
         'Google Maps埋め込み',
         'モーダルウィンドウ(YouTube埋め込み)',
@@ -21,8 +21,7 @@
         '時間ごとの要素の出し分け',
         '複数のモーダル表示のYouTube動画を自動再生',
         'フローティングバナー',
-        'GSAPを使ったアニメーション実装',
-        'validatorjsを使ったバリデーション'
+        'GSAPを使ったアニメーション実装'
     ];
 %>
 
@@ -174,7 +173,7 @@
                     inputタグにautocomplete属性を設定することで、フォームへの自動入力を有効にしています。<br>
                     <!-- 値：<a class="c-link c-nowrap" href="https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete#%E5%80%A4" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete#%E5%80%A4</a> -->
                 </p>
-                <form id="postForm" action="../" method="get">
+                <!-- <form id="postForm" action="../" method="get">
                     <dl class="sample-form">
                         <dt>メールアドレス</dt>
                         <dd><input class="c-input sample-form-w500" type="email" name="email" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
@@ -182,10 +181,23 @@
                     <div class="sample-form-btn">
                         <button class="sample-form-btn__content">送信する</button>
                     </div>
+                </form> -->
+                <form id="myForm" action="../" method="get">
+                    <dl class="sample-form">
+                        <dt><label for="name">Name:</label></dt>
+                        <dd><input class="c-input sample-form-w200" type="text" id="name" name="name"></dd>
+                        <dt><label for="email">Email:</label></dt>
+                        <dd><input class="c-input sample-form-w500" type="email" id="email" name="email"></dd>
+                        <dt><label for="age">Age:</label></dt>
+                        <dd><input class="c-input sample-form-w100" type="text" id="age" name="age"></dd>
+                    </dl>
+                    <div class="sample-form-btn">
+                        <button class="sample-form-btn__content" type="button" onclick="validateForm()">Submit</button>
+                    </div>
                 </form>
             </div>
         </section>
-        <!-- /入力フォーム -->
+        <!-- /validatorjsを使ったバリデーション -->
         <section id="3" class="c-section">
             <div class="c-section__content">
                 <h2 class="c-strong"><%- `${ttlName[2]}` %></h2>
@@ -446,26 +458,6 @@
             </div>
         </section>
         <!-- /GSAPを使ったアニメーション実装 -->
-        <section id="14" class="c-section">
-            <div class="c-section__content">
-                <h2 class="c-strong"><%- `${ttlName[13]}` %></h2>
-                <p class="c-mt20">
-                    テスト
-                </p>
-                <form id="" action="../" method="get">
-                    <dl class="sample-form">
-                        <dt>メールアドレス</dt>
-                        <dd><input class="c-input sample-form-w500" type="email" name="email_v" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
-                        <dt>メールアドレス(確認用の再入力)</dt>
-                        <dd><input class="c-input sample-form-w500" type="email" name="email_reenter_v" autocomplete="email" placeholder="例：hoge@mentaiko.co.jp" required="required" /></dd>
-                    </dl>
-                    <div class="sample-form-btn">
-                        <button class="sample-form-btn__content">送信する</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-        <!-- /validatorjsを使ったバリデーション -->
     </main>
     <!-- /main -->
 
@@ -481,7 +473,8 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" defer></script>
     <!-- validatorjs -->
-    <script src="<%- ejsRoot %>assets/vendor/validatorjs/validator.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/validatorjs@3.7.0/dist/validator.js"></script>
+    <script src="<%- ejsRoot %>assets/vendor/validatorjs/sample.js" defer></script>
     <script src="<%- ejsRoot %>assets/js/layout.js" defer></script>
 </body>
 
