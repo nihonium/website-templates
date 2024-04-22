@@ -124,6 +124,20 @@
         }
       }
     }
+
+    &-note {
+      color: #555;
+      display: block;
+      margin-top: 10px;
+
+      @include mixin.view-at("pc") {
+        font-size: 12px;
+      }
+
+      @include mixin.view-at("sp") {
+        font-size: 10px;
+      }
+    }
   }
 
   &-btn {

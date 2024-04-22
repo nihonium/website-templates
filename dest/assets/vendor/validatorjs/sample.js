@@ -40,6 +40,19 @@ function validateForm() {
 
     let validation = new Validator(data, rules);
 
+    // フィールド名を日本語に変換
+    validation.setAttributeNames({
+        name: '名前',
+        email: 'メールアドレス',
+        email_confirmation: '確認用メールアドレス',
+        age: '年齢'
+    });
+
+    // 個別に未入力エラーメッセージを設定
+    let messages = Validator.getMessages('ja');
+    messages.required = '【:attribute】は必須項目です。';
+    Validator.setMessages('ja', messages);
+
     if (validation.passes()) {
         alert('Form submitted successfully!');
         // ここでフォームを送信するためのコードを追加することができます。

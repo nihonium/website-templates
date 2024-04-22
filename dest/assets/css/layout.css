@@ -606,6 +606,12 @@
   text-align: center;
 }
 
+.sample-form-note {
+  display: block;
+  margin-top: 10px;
+  color: #555;
+}
+
 .sample-btn {
   width: 200px;
 }
@@ -841,6 +847,10 @@
     opacity: .7;
   }
 
+  .sample-form-note {
+    font-size: 12px;
+  }
+
   .sample-col-item {
     width: calc(33.3333333333% - 20px);
   }
@@ -900,6 +910,10 @@
 
   .sample-form dd {
     margin-top: 10px;
+  }
+
+  .sample-form-note {
+    font-size: 10px;
   }
 
   .sample-col-item {

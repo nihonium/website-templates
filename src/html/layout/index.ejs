@@ -186,12 +186,15 @@
                     <dl class="sample-form">
                         <dt><label for="name">名前</label></dt>
                         <dd><input class="c-input sample-form-w200" type="text" id="name" name="name" placeholder="例：山田太郎"></dd>
+                        <dt><label for="age">年齢</label></dt>
+                        <dd>
+                            <input class="c-input sample-form-w100" type="number" id="age" name="age">
+                            <span class="sample-form-note">18歳以上で入力してください</span>
+                        </dd>
                         <dt><label for="email">メールドレス</label></dt>
                         <dd><input class="c-input sample-form-w500" type="email" id="email" name="email" placeholder="例：hoge@mentaiko.co.jp"></dd>
                         <dt><label for="email_confirmation">メールドレス(確認)</label></dt>
                         <dd><input class="c-input sample-form-w500" type="email" id="email_confirmation" name="email_confirmation" placeholder="例：hoge@mentaiko.co.jp"></dd>
-                        <dt><label for="age">年齢</label></dt>
-                        <dd><input class="c-input sample-form-w100" type="number" id="age" name="age"></dd>
                     </dl>
                     <div class="sample-form-btn">
                         <button class="sample-form-btn__content" type="button" onclick="validateForm()">Submit</button>
