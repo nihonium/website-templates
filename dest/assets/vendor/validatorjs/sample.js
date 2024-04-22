@@ -54,8 +54,10 @@ function validateForm() {
     Validator.setMessages('ja', messages);
 
     if (validation.passes()) {
-        alert('Form submitted successfully!');
-        // ここでフォームを送信するためのコードを追加することができます。
+        let form = document.getElementById('myForm');
+        form.action = '../';
+        form.method = 'get';
+        form.submit();
     } else {
         // バリデーションエラーがある場合、エラーメッセージを表示します。
         let errors = validation.errors.all();
