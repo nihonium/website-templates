@@ -11,14 +11,18 @@ function validateForm() {
     // カスタムルール：年齢
     Validator.register('age_check', function(value, requirement, attribute) {
         return value >= requirement;
-    });
+    },
+        '年齢は18歳以上である必要があります。'
+    );
 
     // カスタムルール：メールアドレスの確認
     Validator.register('email_confirmation', function(value, requirement, attribute) {
         const confirmationField = attribute.replace('_confirmation', '');
         const confirmationValue = document.getElementById(confirmationField).value;
         return value === confirmationValue;
-    });
+    },
+        'メールアドレスが一致しません。'
+    );
 
     let data = {
         name: document.getElementById('name').value,
