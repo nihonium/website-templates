@@ -303,11 +303,22 @@
                                 <input class="c-input sample-form-w100" type="number" id="age" name="age">
                                 <span class="sample-form-note">18歳以上で入力してください</span>
                             </dd>
+                            <dt>性別</dt>
+                            <dd>
+                                <label for="gender_male">男性</label>
+                                <input type="radio" id="gender_male" name="gender" value="male">
+                                <label for="gender_female">女性</label>
+                                <input type="radio" id="gender_female" name="gender" value="female">
+                            </dd>
                             <dt><label for="email">メールドレス</label></dt>
                             <dd><input class="c-input sample-form-w500" type="email" id="email" name="email" placeholder="例：hoge@mentaiko.co.jp"></dd>
                             <dt><label for="email_confirmation">メールドレス(確認)</label></dt>
                             <dd><input class="c-input sample-form-w500" type="email" id="email_confirmation" name="email_confirmation" placeholder="例：hoge@mentaiko.co.jp"></dd>
                         </dl>
+                        <div class="sample-form-accept-terms">
+                            <label for="accept_terms">注意事項・利用規約に同意します。</label>
+                            <input type="checkbox" id="accept_terms" name="accept_terms">
+                        </div>
                         <div class="sample-form-btn">
                             <button class="sample-form-btn__content" type="button" onclick="validateForm()">Submit</button>
                         </div>

@@ -28,14 +28,18 @@ function validateForm() {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         email_confirmation: document.getElementById('email_confirmation').value,
-        age: document.getElementById('age').value
+        age: document.getElementById('age').value,
+        gender: document.querySelector('input[name="gender"]:checked').value,
+        accept_terms: document.getElementById('accept_terms').checked
     };
 
     let rules = {
         name: 'required',
         email: 'required|email',
         email_confirmation: 'required|email_confirmation',
-        age: 'required|age_check:18'
+        age: 'required|age_check:18',
+        gender: 'required',
+        accept_terms: 'required'
     };
 
     let validation = new Validator(data, rules);
@@ -45,7 +49,9 @@ function validateForm() {
         name: '名前',
         email: 'メールアドレス',
         email_confirmation: '確認用メールアドレス',
-        age: '年齢'
+        age: '年齢',
+        gender: '性別',
+        accept_terms: '注意事項・利用規約への同意'
     });
 
     // 個別に未入力エラーメッセージを設定
