@@ -747,6 +747,11 @@
   color: #555;
 }
 
+.sample-form-error {
+  margin-top: -80px;
+  padding-top: 80px;
+}
+
 .sample-form-error > ul {
   margin-top: 20px;
   padding: 15px;
