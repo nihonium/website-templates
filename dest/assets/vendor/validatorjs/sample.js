@@ -20,24 +20,30 @@ function validateForm() {
     }, 'メールアドレスが一致しません。');
 
     // カスタムルール：ラジオボタンの必須入力検証
-    Validator.register('required_radio', function (value, requirement, attribute) {
-        const radios = $('input[name="' + attribute + '"]').length;
-        if (radios === 0) {
-            return true;
+    Validator.register('required_radio', function(value, requirement, attribute) {
+        let radioButtons = document.querySelectorAll('input[name="' + attribute + '"]');
+        for (let i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                return true;
+            }
         }
-    }, ':attributeは必須項目です。');
+        return false;
+    }, '【:attribute】は必須項目です。');
 
     // カスタムルール：チェックボックスの必須入力検証
     Validator.register('required_checkbox', function(value, requirement, attribute) {
         return document.getElementById(attribute).checked;
-    }, ':attributeは必須項目です。');
+    }, '【:attribute】は必須項目です。');
 
     let data = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         email_confirmation: document.getElementById('email_confirmation').value,
         age: document.getElementById('age').value,
-        gender: getSelectedRadioValue('gender'),
+        gender: {
+            male: document.getElementById('gender_male').value,
+            female: document.getElementById('gender_female').value
+        },
         accept_terms: document.getElementById('accept_terms').checked
     };
 
@@ -46,8 +52,8 @@ function validateForm() {
         email: 'required|email',
         email_confirmation: 'required|email_confirmation',
         age: 'required|age_check:18',
-        gender: 'required_radio',
-        accept_terms: 'required_checkbox'
+        gender: 'required|required_radio',
+        accept_terms: 'required|required_checkbox'
     };
 
     let validation = new Validator(data, rules);
