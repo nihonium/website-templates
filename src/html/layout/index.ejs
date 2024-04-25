@@ -184,12 +184,12 @@
                         </dd>
                         <dt>性別</dt>
                         <dd class="sample-form-radio">
-                            <label for="gender_male">
-                                <input type="radio" id="gender_male" name="gender" value="male">
+                            <label class="sample-form-radio__label" for="gender_male">
+                                <input class="sample-form-radio__input" type="radio" id="gender_male" name="gender" value="male">
                                 男性
                             </label>
-                            <label for="gender_female">
-                                <input type="radio" id="gender_female" name="gender" value="female">
+                            <label class="sample-form-radio__label" for="gender_female">
+                                <input class="sample-form-radio__input" type="radio" id="gender_female" name="gender" value="female">
                                 女性
                             </label>
                         </dd>
@@ -199,11 +199,13 @@
                         <dd><input class="c-input sample-form-w500" type="email" id="email_confirmation" name="email_confirmation" placeholder="例：hoge@mentaiko.co.jp"></dd>
                     </dl>
                     <div class="sample-form-accept-terms">
-                        <label for="accept_terms">注意事項・利用規約に同意します。</label>
-                        <input type="checkbox" id="accept_terms" name="accept_terms">
+                        <label class="sample-form-accept-terms__label" for="accept_terms">
+                            注意事項・利用規約に同意します。
+                            <input class="sample-form-accept-terms__input" type="checkbox" id="accept_terms" name="accept_terms">
+                        </label>
                     </div>
                     <div class="sample-form-btn">
-                        <button class="sample-form-btn__content" type="button" onclick="validateForm()">Submit</button>
+                        <button class="sample-form-btn__content" type="button" onclick="validateForm()">送信する</button>
                     </div>
                 </form>
             </div>

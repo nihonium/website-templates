@@ -600,7 +600,7 @@
   gap: .3em 2em;
 }
 
-.sample-form-radio > label {
+.sample-form-radio__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -612,13 +612,13 @@
   gap: 0 .5em;
 }
 
-.sample-form-radio > label::before,
-.sample-form-radio > label::after {
+.sample-form-radio__label::before,
+.sample-form-radio__label::after {
   border-radius: 50%;
   content: "";
 }
 
-.sample-form-radio > label::before {
+.sample-form-radio__label::before {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 18px;
@@ -626,7 +626,7 @@
   border: 2px solid #dee5eb;
 }
 
-.sample-form-radio > label::after {
+.sample-form-radio__label::after {
   position: absolute;
   top: 50%;
   left: 9px;
@@ -637,10 +637,8 @@
   transform: translate(-50%, -50%);
 }
 
-.sample-form-radio > label:has(:checked)::after {
+.sample-form-radio__label:has(:checked)::after {
   background-color: #2589d0;
-  -webkit-animation: animRadio .3s linear;
-  animation: animRadio .3s linear;
 }
 
 @-webkit-keyframes animRadio {
@@ -677,7 +675,51 @@
   }
 }
 
-.sample-form-radio input {
+.sample-form-radio__input {
+  display: none;
+}
+
+.sample-form-accept-terms__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0 .5em;
+}
+
+.sample-form-accept-terms__label::before,
+.sample-form-accept-terms__label:has(:checked)::after {
+  content: "";
+}
+
+.sample-form-accept-terms__label::before {
+  width: 17px;
+  height: 17px;
+  border-radius: 3px;
+  background-color: #e6edf3;
+}
+
+.sample-form-accept-terms__label:has(:checked)::before {
+  background-color: #2589d0;
+}
+
+.sample-form-accept-terms__label:has(:checked)::after {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.sample-form-accept-terms__input {
   display: none;
 }
 
@@ -927,6 +969,14 @@
     width: calc(100% - 160px);
     margin-top: 20px;
     padding-left: 20px;
+  }
+
+  .sample-form-accept-terms {
+    margin-top: 40px;
+  }
+
+  .sample-form-accept-terms {
+    margin-top: 30px;
   }
 
   .sample-form-btn__content {
