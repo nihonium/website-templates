@@ -684,6 +684,7 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  line-height: 1;
   cursor: pointer;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -709,7 +710,7 @@
 
 .sample-form-accept-terms__label:has(:checked)::after {
   position: absolute;
-  top: 6px;
+  top: 2px;
   left: 6px;
   width: 6px;
   height: 10px;
@@ -975,10 +976,6 @@
     margin-top: 40px;
   }
 
-  .sample-form-accept-terms {
-    margin-top: 30px;
-  }
-
   .sample-form-btn__content {
     -webkit-transition: opacity .25s ease;
     transition: opacity .25s ease;
@@ -1051,6 +1048,10 @@
 
   .sample-form dd {
     margin-top: 10px;
+  }
+
+  .sample-form-accept-terms {
+    margin-top: 30px;
   }
 
   .sample-form-note {
