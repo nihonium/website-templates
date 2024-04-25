@@ -738,12 +738,38 @@
   color: #fff;
   font-weight: 700;
   text-align: center;
+  letter-spacing: .1em;
 }
 
 .sample-form-note {
   display: block;
   margin-top: 10px;
   color: #555;
+}
+
+.sample-form-error > ul {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #e60000;
+  background-color: #f5ecf4;
+  color: #e60000;
+  font-size: 14px;
+}
+
+.sample-form-error > ul > li {
+  position: relative;
+  padding-left: 1.1em;
+}
+
+.sample-form-error > ul > li:not(:first-child) {
+  margin-top: 10px;
+}
+
+.sample-form-error > ul > li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "・";
 }
 
 .sample-btn {

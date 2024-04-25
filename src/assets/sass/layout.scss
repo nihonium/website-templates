@@ -160,7 +160,6 @@
     }
 
     &-accept-terms {
-
       @include mixin.view-at("pc") {
         margin-top: 40px;
       }
@@ -225,6 +224,7 @@
         background-color: #ff8c00;
         font-weight: 700;
         text-align: center;
+        letter-spacing: .1em;
 
         @include mixin.view-at("pc") {
           transition: opacity 0.25s ease;
@@ -247,6 +247,33 @@
 
       @include mixin.view-at("sp") {
         font-size: 10px;
+      }
+    }
+
+    &-error {
+      > ul {
+        background-color: #f5ecf4;
+        color: #e60000;
+        border: 1px solid #e60000;
+        padding: 15px;
+        font-size: 14px;
+        margin-top: 20px;
+
+        > li {
+          position: relative;
+          padding-left: 1.1em;
+
+          &:not(:first-child) {
+            margin-top: 10px;
+          }
+
+          &::before {
+            position: absolute;
+            content: '・';
+            top: 0;
+            left: 0;
+          }
+        }
       }
     }
   }

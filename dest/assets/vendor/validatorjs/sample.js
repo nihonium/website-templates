@@ -74,7 +74,7 @@ function validateForm() {
     Validator.setMessages('ja', messages);
 
     if (validation.passes()) {
-        alert('フォームが正常に送信されました！');
+        alert('フォームが正常に送信されました！' + '\n' + '(トップページに戻る)');
         let form = document.getElementById('myForm');
         form.action = '../';
         form.method = 'get';
@@ -84,8 +84,20 @@ function validateForm() {
         let errors = validation.errors.all();
         let errorMessage = '';
         for (let error in errors) {
-            errorMessage += errors[error][0] + '\n';
+            errorMessage += '<li>' + errors[error][0] + '</li>' + '\n';
         }
-        alert(errorMessage);
+
+        let errorMessageBox = '<ul data-form-error>' + errorMessage + '</ul>';
+        const errorBox = document.getElementById('errorMyForm');
+        const elementErrorBox = document.querySelector('[data-form-error]');
+        if (elementErrorBox) {
+            elementErrorBox.remove();
+        }
+        errorBox.insertAdjacentHTML('afterbegin', errorMessageBox);
+        errorBox.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'start'
+        });
     }
 }
