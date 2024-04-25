@@ -10,14 +10,14 @@ function validateForm() {
     // カスタムルール：年齢
     Validator.register('age_check', function(value, requirement, attribute) {
         return value >= requirement;
-    }, '年齢は18歳以上である必要があります。');
+    }, '【年齢は18歳以上である必要があります。】');
 
     // カスタムルール：メールアドレスの確認
     Validator.register('email_confirmation', function(value, requirement, attribute) {
         const confirmationField = attribute.replace('_confirmation', '');
         const confirmationValue = document.getElementById(confirmationField).value;
         return value === confirmationValue;
-    }, 'メールアドレスが一致しません。');
+    }, '【メールアドレスが一致しません。】');
 
     // カスタムルール：ラジオボタンの必須入力検証
     Validator.register('required_radio', function(value, requirement, attribute) {
@@ -37,22 +37,22 @@ function validateForm() {
 
     let data = {
         name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        email_confirmation: document.getElementById('email_confirmation').value,
         age: document.getElementById('age').value,
         gender: {
             male: document.getElementById('gender_male').value,
             female: document.getElementById('gender_female').value
         },
+        email: document.getElementById('email').value,
+        email_confirmation: document.getElementById('email_confirmation').value,
         accept_terms: document.getElementById('accept_terms').checked
     };
 
     let rules = {
         name: 'required',
-        email: 'required|email',
-        email_confirmation: 'required|email_confirmation',
         age: 'required|age_check:18',
         gender: 'required|required_radio',
+        email: 'required|email',
+        email_confirmation: 'required|email_confirmation',
         accept_terms: 'required|required_checkbox'
     };
 
@@ -61,10 +61,10 @@ function validateForm() {
     // フィールド名を日本語に変換
     validation.setAttributeNames({
         name: '名前',
-        email: 'メールアドレス',
-        email_confirmation: '確認用メールアドレス',
         age: '年齢',
         gender: '性別',
+        email: 'メールアドレス',
+        email_confirmation: '確認用メールアドレス',
         accept_terms: '注意事項・利用規約への同意'
     });
 
@@ -88,15 +88,4 @@ function validateForm() {
         }
         alert(errorMessage);
     }
-}
-
-// ラジオボタンの値を取得する関数
-function getSelectedRadioValue(name) {
-    let radios = document.querySelectorAll('input[name="' + name + '"]');
-    for (let i = 0; i < radios.length; i++) {
-        if (radios[i].checked) {
-            return radios[i].value;
-        }
-    }
-    return null; // ラジオボタンが選択されていない場合はnullを返す
 }
