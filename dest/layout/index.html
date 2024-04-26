@@ -301,24 +301,24 @@
                     <div id="errorMyForm" class="sample-form-error"></div>
                     <form id="myForm" class="sample-form" action="../" method="get">
                         <fieldset class="sample-form__fieldset">
-                            <legend class="sample-form__legend">
-                                <label for="name">名前</label>
+                            <legend class="sample-form-legend">
+                                <label for="name">氏名</label>
                             </legend>
                             <div class="sample-form__body">
                                 <input class="c-input sample-form-w200" type="text" id="name" name="name" placeholder="例：山田太郎">
                             </div>
                         </fieldset>
                         <fieldset class="sample-form__fieldset">
-                            <legend class="sample-form__legend">
+                            <legend class="sample-form-legend">
                                 <label for="age">年齢</label>
                             </legend>
                             <div class="sample-form__body">
-                                <input class="c-input sample-form-w100" type="number" id="age" name="age">
-                                <span class="sample-form-note">18歳以上で入力してください</span>
+                                <input class="c-input sample-form-w100" type="number" id="age" name="age" min="1" max="150">
+                                <span class="sample-form-note">※18歳以上で入力してください</span>
                             </div>
                         </fieldset>
                         <fieldset class="sample-form__fieldset">
-                            <legend class="sample-form__legend">性別</legend>
+                            <legend class="sample-form-legend sample-form-legend--pt0">性別</legend>
                             <div class="sample-form__body sample-form-radio">
                                 <label class="sample-form-radio__label" for="gender_male">
                                     <input class="sample-form-radio__input" type="radio" id="gender_male" name="gender" value="male"> 男性 </label>
@@ -327,19 +327,20 @@
                             </div>
                         </fieldset>
                         <fieldset class="sample-form__fieldset">
-                            <legend class="sample-form__legend">
-                                <label for="email">メールドレス</label>
+                            <legend class="sample-form-legend">
+                                <label for="email">メールアドレス</label>
                             </legend>
                             <div class="sample-form__body">
                                 <input class="c-input sample-form-w500" type="email" id="email" name="email" placeholder="例：hoge@mentaiko.co.jp">
                             </div>
                         </fieldset>
                         <fieldset class="sample-form__fieldset">
-                            <legend class="sample-form__legend">
-                                <label for="email_confirmation">メールドレス(確認)</label>
+                            <legend class="sample-form-legend">
+                                <label for="email_confirmation">メールアドレス(確認)</label>
                             </legend>
                             <div class="sample-form__body">
-                                <input class="c-input sample-form-w500" type="email" id="email_confirmation" name="email_confirmation" placeholder="例：hoge@mentaiko.co.jp">
+                                <input class="c-input sample-form-w500" type="email" id="email_confirmation" name="email_confirmation">
+                                <span class="sample-form-note">※確認の為もう一度同じメールアドレスを入力してください</span>
                             </div>
                         </fieldset>
                         <fieldset class="sample-form-accept-terms">

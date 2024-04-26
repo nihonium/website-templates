@@ -563,10 +563,10 @@
 }
 
 .sample-form__fieldset {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
-.sample-form__legend {
+.sample-form-legend {
   font-weight: bold;
 }
 
@@ -725,7 +725,7 @@
 }
 
 .sample-form-btn {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .sample-form-btn__content {
@@ -992,17 +992,21 @@
     flex-wrap: wrap;
   }
 
-  .sample-form__legend {
+  .sample-form-legend {
     display: inline-block;
     float: left;
-    width: 160px;
+    width: 180px;
     padding-top: .8em;
+  }
+
+  .sample-form-legend--pt0 {
+    padding-top: 0;
   }
 
   .sample-form__body {
     float: left;
-    width: calc(100% - 160px);
-    padding-left: 20px;
+    width: calc(100% - 180px);
+    padding-left: 10px;
   }
 
   .sample-form-accept-terms {

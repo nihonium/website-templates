@@ -54,7 +54,7 @@
 
   &-form {
     &__fieldset {
-      margin-top: 20px;
+      margin-top: 30px;
 
       @include mixin.view-at("pc") {
         display: flex;
@@ -62,22 +62,26 @@
       }
     }
 
-    &__legend {
+    &-legend {
       font-weight: bold;
 
       @include mixin.view-at("pc") {
         display: inline-block;
         float: left;
-        width: 160px;
+        width: 180px;
         padding-top: .8em;
+
+        &--pt0 {
+          padding-top: 0;
+        }
       }
     }
 
     &__body {
       @include mixin.view-at("pc") {
         float: left;
-        width: calc(100% - 160px);
-        padding-left: 20px;
+        width: calc(100% - 180px);
+        padding-left: 10px;
       }
 
       @include mixin.view-at("sp") {
@@ -216,7 +220,7 @@
     }
 
     &-btn {
-      margin-top: 30px;
+      margin-top: 40px;
 
       &__content {
         width: 200px;

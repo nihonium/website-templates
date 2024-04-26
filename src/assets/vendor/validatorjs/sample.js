@@ -9,7 +9,7 @@ function validateForm() {
 
     // カスタムルール：年齢
     Validator.register('age_check', function(value, requirement, attribute) {
-        return value >= requirement;
+        return value >= 18;
     }, '【年齢は18歳以上である必要があります。】');
 
     // カスタムルール：メールアドレスの確認
@@ -49,7 +49,7 @@ function validateForm() {
 
     let rules = {
         name: 'required',
-        age: 'required|age_check:18',
+        age: 'required|age_check',
         gender: 'required|required_radio',
         email: 'required|email',
         email_confirmation: 'required|email_confirmation',
