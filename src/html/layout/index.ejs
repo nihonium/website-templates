@@ -173,19 +173,31 @@
                     <span class="c-highlight c-color-rd">すべて必須項目です。</span>
                     <!-- inputタグにautocomplete属性を設定することで、フォームへの自動入力を有効にしています。 -->
                     <!-- 値：<a class="c-link c-nowrap" href="https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete#%E5%80%A4" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTML/Attributes/autocomplete#%E5%80%A4</a> -->
+                    <!-- <fieldset>: フィールドセット要素 -->
+                    <!-- https://developer.mozilla.org/ja/docs/Web/HTML/Element/fieldset -->
                 </p>
                 <div id="errorMyForm" class="sample-form-error"></div>
-                <form id="myForm" action="../" method="get">
-                    <dl class="sample-form">
-                        <dt><label for="name">名前</label></dt>
-                        <dd><input class="c-input sample-form-w200" type="text" id="name" name="name" placeholder="例：山田太郎"></dd>
-                        <dt><label for="age">年齢</label></dt>
-                        <dd>
+                <form id="myForm" class="sample-form" action="../" method="get">
+                    <fieldset class="sample-form__fieldset">
+                        <legend class="sample-form__legend">
+                            <label for="name">名前</label>
+                        </legend>
+                        <div class="sample-form__body">
+                            <input class="c-input sample-form-w200" type="text" id="name" name="name" placeholder="例：山田太郎">
+                        </div>
+                    </fieldset>
+                    <fieldset class="sample-form__fieldset">
+                        <legend class="sample-form__legend">
+                            <label for="age">年齢</label>
+                        </legend>
+                        <div class="sample-form__body">
                             <input class="c-input sample-form-w100" type="number" id="age" name="age">
                             <span class="sample-form-note">18歳以上で入力してください</span>
-                        </dd>
-                        <dt>性別</dt>
-                        <dd class="sample-form-radio">
+                        </div>
+                    </fieldset>
+                    <fieldset class="sample-form__fieldset">
+                        <legend class="sample-form__legend">性別</legend>
+                        <div class="sample-form__body sample-form-radio">
                             <label class="sample-form-radio__label" for="gender_male">
                                 <input class="sample-form-radio__input" type="radio" id="gender_male" name="gender" value="male">
                                 男性
@@ -194,21 +206,33 @@
                                 <input class="sample-form-radio__input" type="radio" id="gender_female" name="gender" value="female">
                                 女性
                             </label>
-                        </dd>
-                        <dt><label for="email">メールドレス</label></dt>
-                        <dd><input class="c-input sample-form-w500" type="email" id="email" name="email" placeholder="例：hoge@mentaiko.co.jp"></dd>
-                        <dt><label for="email_confirmation">メールドレス(確認)</label></dt>
-                        <dd><input class="c-input sample-form-w500" type="email" id="email_confirmation" name="email_confirmation" placeholder="例：hoge@mentaiko.co.jp"></dd>
-                    </dl>
-                    <div class="sample-form-accept-terms">
+                        </div>
+                    </fieldset>
+                    <fieldset class="sample-form__fieldset">
+                        <legend class="sample-form__legend">
+                            <label for="email">メールドレス</label>
+                        </legend>
+                        <div class="sample-form__body">
+                            <input class="c-input sample-form-w500" type="email" id="email" name="email" placeholder="例：hoge@mentaiko.co.jp">
+                        </div>
+                    </fieldset>
+                    <fieldset class="sample-form__fieldset">
+                        <legend class="sample-form__legend">
+                            <label for="email_confirmation">メールドレス(確認)</label>
+                        </legend>
+                        <div class="sample-form__body">
+                            <input class="c-input sample-form-w500" type="email" id="email_confirmation" name="email_confirmation" placeholder="例：hoge@mentaiko.co.jp">
+                        </div>
+                    </fieldset>
+                    <fieldset class="sample-form-accept-terms">
                         <label class="sample-form-accept-terms__label" for="accept_terms">
                             注意事項・利用規約に同意します。
                             <input class="sample-form-accept-terms__input" type="checkbox" id="accept_terms" name="accept_terms">
                         </label>
-                    </div>
-                    <div class="sample-form-btn">
+                    </fieldset>
+                    <fieldset class="sample-form-btn">
                         <button class="sample-form-btn__content" type="button" onclick="validateForm()">送信する</button>
-                    </div>
+                    </fieldset>
                 </form>
             </div>
         </section>

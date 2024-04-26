@@ -53,27 +53,31 @@
   }
 
   &-form {
-    padding-top: 10px;
-
-    @include mixin.view-at("pc") {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    dt {
+    &__fieldset {
       margin-top: 20px;
 
       @include mixin.view-at("pc") {
-        width: 160px;
-        padding-top: .5em;
+        display: flex;
+        flex-wrap: wrap;
       }
     }
 
-    dd {
+    &__legend {
+      font-weight: bold;
+
       @include mixin.view-at("pc") {
+        display: inline-block;
+        float: left;
+        width: 160px;
+        padding-top: .8em;
+      }
+    }
+
+    &__body {
+      @include mixin.view-at("pc") {
+        float: left;
         width: calc(100% - 160px);
         padding-left: 20px;
-        margin-top: 20px;
       }
 
       @include mixin.view-at("sp") {
