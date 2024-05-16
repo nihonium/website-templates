@@ -10,5 +10,9 @@
 <link rel="icon" href="<%- root %>assets/img/common/favicon.ico">
 <link rel="apple-touch-icon" href="<%- root %>assets/img/common/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="<%- root %>assets/img/common/android-chrome-192x192.png">
+<!-- 読み込み優先リソース -->
+<link rel="preload" href="<%- root %>assets/css/common.css" as="style">
+<link rel="preload" href="<%- root %>assets/vendor/jquery-3.6.0.min.js" as="script">
+<link rel="preload" href="<%- root %>assets/js/common.js" as="script">
 <!-- 共通CSS -->
 <link rel="stylesheet" type="text/css" href="<%- root %>assets/css/common.css">
