@@ -612,6 +612,13 @@
   gap: 0 .5em;
 }
 
+.sample-form-radio__label:has(:focus-visible) {
+  outline: auto;
+  outline-offset: 4px;
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+
 .sample-form-radio__label::before,
 .sample-form-radio__label::after {
   border-radius: 50%;
@@ -676,7 +683,9 @@
 }
 
 .sample-form-radio__input {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .sample-form-accept-terms__label {
@@ -720,8 +729,17 @@
   transform: rotate(45deg);
 }
 
+.sample-form-accept-terms__label:has(:focus-visible) {
+  outline: auto;
+  outline-offset: 4px;
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+
 .sample-form-accept-terms__input {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .sample-form-btn {

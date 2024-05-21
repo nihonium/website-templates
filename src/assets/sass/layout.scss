@@ -122,6 +122,13 @@
         position: relative;
         cursor: pointer;
 
+        &:has(:focus-visible) {
+          outline: auto;
+          outline-offset: 4px;
+          text-decoration: underline;
+          text-underline-offset: 0.25em;
+        }
+
         &::before, &::after {
           border-radius: 50%;
           content: '';
@@ -163,7 +170,9 @@
       }
 
       &__input {
-        display: none;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
       }
     }
 
@@ -212,10 +221,19 @@
             border-width: 0 2px 2px 0;
           }
         }
+
+        &:has(:focus-visible) {
+          outline: auto;
+          outline-offset: 4px;
+          text-decoration: underline;
+          text-underline-offset: 0.25em;
+        }
       }
 
       &__input {
-        display: none;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
       }
     }
 
