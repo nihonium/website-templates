@@ -48,7 +48,7 @@ gulp.task('default', function (callback) {
 
 // * 複製タスクを実行
 gulp.task('copy', function (callback) {
-    return runSequence(['vendor', 'pdf'], callback);
+    return runSequence(['vendor', 'pdf', 'wp'], callback);
 });
 
 // * .pdfの複製
@@ -66,6 +66,15 @@ gulp.task('vendor', function () {
         gulp.src(['src/assets/vendor/**/', '!src/assets/vendor/_archives/', '!src/assets/vendor/_archives/**/']))
         // フォルダ以下に保存
         .pipe(gulp.dest('dest/assets/vendor/')
+    );
+});
+
+// * wpの複製
+gulp.task('wp', function () {
+    return (
+        gulp.src(['src/assets/wp/**/', '!src/assets/wp/__archives/', '!src/assets/wp/__archives/**/']))
+        // フォルダ以下に保存
+        .pipe(gulp.dest('dest/assets/wp/')
     );
 });
 
