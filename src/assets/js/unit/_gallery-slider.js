@@ -54,7 +54,7 @@ const sliderSetting = () => {
 }
 
 const sliderThumbnailSetting = () => {
-    // 画像枚数ごとの処理
+    // * 画像枚数ごとの処理
     windowWidth = window.innerWidth;
     const slideCount = $('[data-gallery-slider]').find('.p-gallery-slider__item').length;
     const widthSet = ((slideCount * 106) + 6) + 'px';
@@ -76,20 +76,20 @@ const sliderThumbnailSetting = () => {
         $('[data-gallery-slider-dots]').removeAttr('style');
     }
 
-    // スロットリング
+    // Throttle関数の定義
     function throttle(func, delay) {
-    let timerId;
-    return function(...args) {
-        if (!timerId) {
-        timerId = setTimeout(() => {
-            func(...args);
-            timerId = null;
-        }, delay);
-        }
-    };
+        let timerId;
+        return function(...args) {
+            if (!timerId) {
+            timerId = setTimeout(() => {
+                func(...args);
+                timerId = null;
+            }, delay);
+            }
+        };
     }
 
-    // 設定
+    // throttledFunctionで使用する変数
     const sliderWidth = document.querySelector('[data-gallery-slider]').offsetWidth;
     const dotsAreaWidth = document.querySelector('[data-gallery-slider-dots]').offsetWidth;
     const transformX = sliderWidth - dotsAreaWidth;
@@ -98,7 +98,7 @@ const sliderThumbnailSetting = () => {
     const lists = Array.from(document.querySelectorAll('.p-gallery-slider-dots-list li'));
     windowWidth = window.innerWidth;
 
-    // スロットリングされた処理
+    // Throttleされた処理
     const throttledFunction = throttle(() => {
         // DOMの変更があった場合の処理をここに記述
 
@@ -136,7 +136,7 @@ const sliderThumbnailSetting = () => {
         } else if (windowWidth < breakPoint) {
             $('[data-gallery-slider-dots]').css({'transform': 'translateX(0)'});
         }
-    }, 1000); // 1秒間隔で処理を実行
+    }, 1000);
 
     // MutationObserverの初期化
     const observer = new MutationObserver(mutationsList => {
