@@ -1,45 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D76Z8EEBZL"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag()
-            {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'G-D76Z8EEBZL');
-        </script>
-        <!-- Google Tag Manager -->
-        <script>
-            (function(w, d, s, l, i)
-            {
-                w[l] = w[l] || [];
-                w[l].push(
-                {
-                    'gtm.start': new Date().getTime(),
-                    event: 'gtm.js'
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-N9NP7H7');
-        </script>
-        <!-- End Google Tag Manager -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>レイアウトページ | hoge</title>
-        <meta name="description" content="レイアウトページのディスクプリクション | hoge">
-        <meta name="keywords" content="hoge">
+        <title>ギャラリーページsample</title>
+        <meta name="description" content="ギャラリーページsample">
         <meta name="format-detection" content="telephone=no">
-        <link rel="canonical" href="https://www.hoge.jp/"><!-- favicon -->
+        <link rel="canonical" href="https://www.hoge.jp/hoge/"><!-- favicon -->
         <link rel="icon" href="../assets/img/common/favicon.ico">
         <link rel="apple-touch-icon" href="../assets/img/common/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="../assets/img/common/android-chrome-192x192.png">
@@ -50,16 +18,25 @@
         <!-- 共通CSS -->
         <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
         <!-- ページ独自CSS -->
-        <link rel="stylesheet" type="text/css" href="../assets/vendor/popup/magnific-popup.css">
-        <link rel="stylesheet" type="text/css" href="../assets/css/layout.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700%7CNoto+Sans:300,400&amp;subset=latin" media="all">
+        <link rel="stylesheet" type="text/css" href="../assets/vendor/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="../assets/vendor/slick/slick-theme.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/gallery.css">
         <meta property="og:type" content="article">
         <meta property="og:locale" content="ja_JP">
-        <meta property="og:title" content="レイアウトページ | hoge">
-        <meta property="og:description" content="レイアウトページのディスクプリクション | hoge">
-        <meta property="og:url" content="https://www.hoge.jp/">
+        <meta property="og:title" content="ギャラリーページsample">
+        <meta property="og:description" content="ギャラリーページsample">
+        <meta property="og:url" content="https://www.hoge.jp/hoge/">
         <meta property="og:image" content="https://www.hoge.jp/hoge/assets/img/common/ogp.png">
         <meta property="og:site_name" content="hoge">
         <meta name="twitter:card" content="summary_large_image">
+        <style>
+            body
+            {
+                font-family: 'Noto Sans JP', sans-serif;
+                background: #f8f8f8;
+            }
+        </style>
     </head>
     <body>
         <!-- Google Tag Manager (noscript) -->
@@ -172,80 +149,54 @@
             </nav>
         </header>
         <!-- /header -->
-        <div class="c-breadcrumb">
-            <h1>hoge</h1>
-        </div>
         <main class="c-main">
-            <section class="c-section">
-                <div class="c-section__content">
-                    <h2 class="c-strong">目次</h2>
-                    <div class="c-mt20">
-                        <ul class="sample-anchor">
-                            <li><a class="c-link" href="#1" data-scroll>カスタム投稿・カスタムタクソノミー(カスタム分類)の設定</a></li>
-                            <li><a class="c-link" href="#2" data-scroll>カスタムフィールドの設定</a></li>
-                            <li><a class="c-link" href="#3" data-scroll>お問い合わせフォーム設定</a></li>
-                            <li><a class="c-link" href="#4" data-scroll>セキュリティ対策について</a></li>
-                            <li><a class="c-link" href="#5" data-scroll>バックアップについて</a></li>
-                            <li><a class="c-link" href="#6" data-scroll>サイト内検索について</a></li>
-                            <li><a class="c-link" href="#7" data-scroll>WordPressインストールについて</a></li>
-                        </ul>
+            <div class="sample-section">
+                <div class="p-gallery-category-sp" data-gallery-accordion>Categories &#9662;</div>
+                <div class="p-gallery-category">
+                    <ul class="p-gallery-category-menu">
+                        <li><a href="">Sample1</a></li>
+                        <li><a href="">Sample2</a></li>
+                        <li><a href="">Sample3</a></li>
+                        <li><a href="">Others</a></li>
+                    </ul>
+                </div>
+                <div class="p-gallery-section" data-loading>
+                    <!-- スライダー -->
+                    <div class="p-gallery-slider" data-gallery-slider>
+                        <div class="p-gallery-slider__item">
+                            <img src="../assets/img/gallery/gallery_sample01.jpg" alt="" width="1200" height="640">
+                            <div class="p-gallery-slider__box">
+                                <div class="p-gallery-slider__caption">Abcdefg</div>
+                                <div class="p-gallery-slider__sub-caption">ダミーてきすと。このテキストはダミーです。</div>
+                            </div>
+                        </div>
+                        <div class="p-gallery-slider__item">
+                            <img src="../assets/img/gallery/gallery_sample02.jpg" alt="" width="1200" height="640" data-gallery-slider-image>
+                            <div class="p-gallery-slider__box">
+                                <div class="p-gallery-slider__caption">AbcdefgAbcdefgTEST</div>
+                                <div class="p-gallery-slider__sub-caption">ダミーてきすと。このテキストはダミーです。ダミーてきすと。このテキストはダミーです。ダミーてきすと。このテキストはダミーです。ダミーてきすと。このテキストはダミーです。</div>
+                            </div>
+                        </div>
+                        <div class="p-gallery-slider__item"><img src="../assets/img/gallery/gallery_sample03.jpg" alt="" width="1200" height="640"></div>
+                        <div class="p-gallery-slider__item"><img src="../assets/img/gallery/gallery_sample05.jpg" alt="" width="1200" height="640"></div>
+                        <div class="p-gallery-slider__item"><img src="../assets/img/gallery/gallery_sample06.jpg" alt="" width="1200" height="640"></div>
+                        <div class="p-gallery-slider__item"><img src="../assets/img/gallery/gallery_sample07.jpg" alt="" width="1200" height="640"></div>
+                        <div class="p-gallery-slider__item"><img src="../assets/img/gallery/gallery_sample08.jpg" alt="" width="1200" height="640"></div>
+                        <div class="p-gallery-slider__item"><img src="../assets/img/gallery/gallery_sample09.jpg" alt="" width="1200" height="640"></div>
+                        <div class="p-gallery-slider__item"><img src="../assets/img/gallery/gallery_sample10.jpg" alt="" width="1200" height="640"></div>
+                    </div>
+                    <!-- <div class="p-gallery-slider-loading" data-gallery-slider-loading>
+<img src="https://placehold.jp/1200x640.png" alt="" width="1200" height="640">
+</div> -->
+                    <div id="gallerySliderDots" class="p-gallery-slider-dots" data-gallery-slider-dots></div>
+                    <div id="dotsPrev" class="p-gallery-slider-dots-btn p-gallery-slider-dots-btn--prev" data-gallery-slider-dots-prev>
+                        <img src="../assets/img/gallery/arrows_small_prev.png" alt="" width="26" height="26">
+                    </div>
+                    <div id="dotsNext" class="p-gallery-slider-dots-btn p-gallery-slider-dots-btn--next is-active" data-gallery-slider-dots-next>
+                        <img src="../assets/img/gallery/arrows_small_next.png" alt="" width="26" height="26">
                     </div>
                 </div>
-            </section>
-            <section id="1" class="c-section">
-                <div class="c-section__content">
-                    <h2 class="c-strong">カスタム投稿・カスタムタクソノミー(カスタム分類)の設定</h2>
-                    <div class="c-mt20"> 【使用プラグイン】：Custom Post Type UI<br> 【実装した主な内容】：<br> ・4つの投稿タイプを登録しています(お知らせ、製品情報、サービス、採用情報)。<br> ・「お知らせ」には3つのカテゴリを設定しています(その他、トピックス、プレスリリース)。<br> ・「採用情報」には4つのカテゴリを設定しています(中途採用、契約社員採用、新卒採用、障がい者採用)。<br> ・「archive-***.php」「taxonomy-***.php」側で、カスタム投稿やカスタムタクソノミーごとに一覧で出力されるよう実装しています。<br> 【参考URL】<a class="c-link" href="https://webst8.com/blog/wordpress-custom-post-type-ui/" target="_blank" rel="noopener noreferrer">https://webst8.com/blog/wordpress-custom-post-type-ui/</a>
-                    </div>
-                </div>
-            </section>
-            <!-- /カスタム投稿・カスタムタクソノミー(カスタム分類)の設定 -->
-            <section id="2" class="c-section">
-                <div class="c-section__content">
-                    <h2 class="c-strong">カスタムフィールドの設定</h2>
-                    <div class="c-mt20"> 【使用プラグイン】：Advanced Custom Fields<br> 【実装した主な内容】：<br> ・「TOPページ___MVスライダー」「カスタム投稿ページ___キービジュアル」「カスタム投稿ページ___リード」の3つのフィールドグループを実装しています。<br> ・画像は「functions.php」で指定したサイズから、「single.php」側でリサイズして出力されます。<br> 【参考URL】<a class="c-link" href="http://galileo-venus.com/2020/05/14/20200507_wp_acf01/" target="_blank" rel="noopener noreferrer">http://galileo-venus.com/2020/05/14/20200507_wp_acf01/</a>
-                    </div>
-                </div>
-            </section>
-            <!-- /カスタムフィールドの設定 -->
-            <section id="3" class="c-section">
-                <div class="c-section__content">
-                    <h2 class="c-strong">お問い合わせフォーム設定</h2>
-                    <div class="c-mt20"> 【使用プラグイン】：Contact Form 7、Contact Form 7 Multi-Step Forms<br> 【実装した主な内容】：<br> ・「Contact Form 7」の拡張プラグインである「Contact Form 7 Multi-Step Forms」を使って、お問い合わせの確認ページと完了ページを実装しています。<br> ・「function.php」側で、reCAPTCHA v3をお問い合わせページのみで表示される様に設定しています。<br> 【参考URL】<a class="c-link" href="https://wpmake.jp/contents/plugin/contact-form7/add-confirm/" target="_blank" rel="noopener noreferrer">https://wpmake.jp/contents/plugin/contact-form7/add-confirm/</a>
-                    </div>
-                </div>
-            </section>
-            <!-- /お問い合わせフォーム設定 -->
-            <section id="4" class="c-section">
-                <div class="c-section__content">
-                    <h2 class="c-strong">セキュリティ対策について</h2>
-                    <div class="c-mt20"> 【使用プラグイン】：SiteGuard WP Plugin<br> 【実装した主な内容】：<br> ・ログインページに画像認証を追加しています。<br> ・WordPressの管理画面(ダッシュボード)に入る度メールで通知でされ、SiteGuard WP Pluginのダッシュボードからログイン履歴が参照できます。<br> ・「function.php」側で、クリックジャキング対策を行っています(X-FRAME-OPTIONS)。<br> 【参考URL】<a class="c-link" href="https://www.jp-secure.com/siteguard_wp_plugin/" target="_blank" rel="noopener noreferrer">https://www.jp-secure.com/siteguard_wp_plugin/</a>
-                    </div>
-                </div>
-            </section>
-            <!-- /セキュリティ対策について -->
-            <section id="5" class="c-section">
-                <div class="c-section__content">
-                    <h2 class="c-strong">バックアップについて</h2>
-                    <div class="c-mt20"> 【使用プラグイン】：BackWPup<br> 【参考URL】<a class="c-link" href="https://webst8.com/blog/wordpress-backup-plugin/" target="_blank" rel="noopener noreferrer">https://webst8.com/blog/wordpress-backup-plugin/</a>
-                    </div>
-                </div>
-            </section>
-            <!-- /バックアップについて -->
-            <section id="6" class="c-section">
-                <div class="c-section__content">
-                    <h2 class="c-strong">サイト内検索について</h2>
-                    <div class="c-mt20"> googleカスタム検索を使用しています。 </div>
-                </div>
-            </section>
-            <!-- /サイト内検索について -->
-            <section id="7" class="c-section">
-                <div class="c-section__content">
-                    <h2 class="c-strong">WordPressインストールについて</h2>
-                    <div class="c-mt20"> ロリポップのWordPress簡単インストール機能を使用しています。 </div>
-                </div>
-            </section>
-            <!-- /WordPressインストールについて -->
+            </div>
         </main>
         <!-- /main --><a href="#page_top" class="c-footer-page-top" data-scroll aria-label="ページの先頭へ戻る">ページの先頭へ戻る</a>
         <footer id="footer" class="c-footer">
@@ -264,10 +215,8 @@
         <!-- 共通JS -->
         <script src="../assets/vendor/jquery-3.6.0.min.js"></script>
         <script src="../assets/js/common.js"></script>
-        <script src="../assets/vendor/popup/jquery.magnific-popup.min.js"></script>
-        <!-- YouTube IFrame Player API  -->
-        <script src="https://www.youtube.com/iframe_api"></script>
-        <script src="../assets/vendor/youtube-iframe-api/script.js"></script>
-        <script src="../assets/js/layout.js"></script>
+        <script src="../assets/vendor/jquery-3.6.0.min.js"></script>
+        <script src="../assets/vendor/slick/slick.min.js"></script>
+        <script src="../assets/js/gallery.js"></script>
     </body>
 </html>

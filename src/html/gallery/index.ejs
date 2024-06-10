@@ -1,0 +1,102 @@
+<%# ejsRootは都度変更する %>
+<% const ejsRoot = '../'; %>
+<%
+    const pageTitle = "ギャラリーページsample";
+    const pageDescription = "ギャラリーページsample";
+    const pageCanonical = "https://www.hoge.jp/hoge/";
+%>
+
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- pageTitle %></title>
+    <meta name="description" content="<%- pageDescription %>">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="<%= pageCanonical %>">
+    <%# 共通CSS %>
+    <%- include(ejsRoot + '_component/_common/_css', {root: ejsRoot}); %>
+    <!-- ページ独自CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700%7CNoto+Sans:300,400&amp;subset=latin" media="all">
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/gallery.css">
+    <%# OGP %>
+    <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'article', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f8f8f8;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include(ejsRoot + '_component/_common/_header', {root: ejsRoot, page: 'gallery'}) %>
+    <!-- /header -->
+
+    <main class="c-main">
+        <div class="sample-section">
+            <div class="p-gallery-category-sp" data-gallery-accordion>Categories &#9662;</div>
+            <div class="p-gallery-category">
+                <ul class="p-gallery-category-menu">
+                    <li><a href="">Sample1</a></li>
+                    <li><a href="">Sample2</a></li>
+                    <li><a href="">Sample3</a></li>
+                    <li><a href="">Others</a></li>
+                </ul>
+            </div>
+            <div class="p-gallery-section" data-loading>
+                <!-- スライダー -->
+                <div class="p-gallery-slider" data-gallery-slider>
+                    <div class="p-gallery-slider__item">
+                        <img src="<%- ejsRoot %>assets/img/gallery/gallery_sample01.jpg" alt="" width="1200" height="640">
+                        <div class="p-gallery-slider__box">
+                            <div class="p-gallery-slider__caption">Abcdefg</div>
+                            <div class="p-gallery-slider__sub-caption">ダミーてきすと。このテキストはダミーです。</div>
+                        </div>
+                    </div>
+                    <div class="p-gallery-slider__item">
+                        <img src="<%- ejsRoot %>assets/img/gallery/gallery_sample02.jpg" alt="" width="1200" height="640" data-gallery-slider-image>
+                        <div class="p-gallery-slider__box">
+                            <div class="p-gallery-slider__caption">AbcdefgAbcdefgTEST</div>
+                            <div class="p-gallery-slider__sub-caption">ダミーてきすと。このテキストはダミーです。ダミーてきすと。このテキストはダミーです。ダミーてきすと。このテキストはダミーです。ダミーてきすと。このテキストはダミーです。</div>
+                        </div>
+                    </div>
+                    <div class="p-gallery-slider__item"><img src="<%- ejsRoot %>assets/img/gallery/gallery_sample03.jpg" alt="" width="1200" height="640"></div>
+                    <div class="p-gallery-slider__item"><img src="<%- ejsRoot %>assets/img/gallery/gallery_sample05.jpg" alt="" width="1200" height="640"></div>
+                    <div class="p-gallery-slider__item"><img src="<%- ejsRoot %>assets/img/gallery/gallery_sample06.jpg" alt="" width="1200" height="640"></div>
+                    <div class="p-gallery-slider__item"><img src="<%- ejsRoot %>assets/img/gallery/gallery_sample07.jpg" alt="" width="1200" height="640"></div>
+                    <div class="p-gallery-slider__item"><img src="<%- ejsRoot %>assets/img/gallery/gallery_sample08.jpg" alt="" width="1200" height="640"></div>
+                    <div class="p-gallery-slider__item"><img src="<%- ejsRoot %>assets/img/gallery/gallery_sample09.jpg" alt="" width="1200" height="640"></div>
+                    <div class="p-gallery-slider__item"><img src="<%- ejsRoot %>assets/img/gallery/gallery_sample10.jpg" alt="" width="1200" height="640"></div>
+                </div>
+                <!-- <div class="p-gallery-slider-loading" data-gallery-slider-loading>
+                    <img src="https://placehold.jp/1200x640.png" alt="" width="1200" height="640">
+                </div> -->
+                <div id="gallerySliderDots" class="p-gallery-slider-dots" data-gallery-slider-dots></div>
+                <div id="dotsPrev" class="p-gallery-slider-dots-btn p-gallery-slider-dots-btn--prev" data-gallery-slider-dots-prev>
+                    <img src="<%- ejsRoot %>assets/img/gallery/arrows_small_prev.png" alt="" width="26" height="26">
+                </div>
+                <div id="dotsNext" class="p-gallery-slider-dots-btn p-gallery-slider-dots-btn--next is-active" data-gallery-slider-dots-next>
+                    <img src="<%- ejsRoot %>assets/img/gallery/arrows_small_next.png" alt="" width="26" height="26">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- /main -->
+
+    <%- include(ejsRoot + '_component/_common/_footer', {root: ejsRoot, page: 'gallery'}); %>
+    <!-- /footer -->
+    <%# 共通JS %>
+    <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
+    <%# ページ独自JSがある場合は、下記に記述 %>
+    <script src="<%- ejsRoot %>assets/vendor/jquery-3.6.0.min.js"></script>
+    <script src="<%- ejsRoot %>assets/vendor/slick/slick.min.js"></script>
+    <script src="<%- ejsRoot %>assets/js/gallery.js"></script>
+</body>
+
+</html>

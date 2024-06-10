@@ -37,7 +37,7 @@ module.exports = {
                 source: [
                     'src/assets/js/unit/_gallery-slider.js'
                 ],
-                publish: 'top.js'
+                publish: 'gallery.js'
             },
             {
                 source: [
