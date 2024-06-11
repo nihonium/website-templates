@@ -1,9 +1,11 @@
 {
-    /*
-    * 時間ごとの要素の出し分け
-    * * * * * * * */
+    /**
+    * * 時間ごとの要素の出し分け
+    * @param {number} start 開始時刻を設定
+    * @param {number} end 終了時刻を設定
+    **/
 
-    const displayTimeBasedElements = () => {
+    const displayTimeBasedElements = (start, end) => {
         //時・分取得する
         let nowTime = new Date();
         let nowHour = nowTime.getHours();
@@ -22,7 +24,7 @@
         }
 
         // 就業時間を判定
-        if ((setTime > 900) && (setTime < 1801)) {
+        if ((setTime > start) && (setTime < end)) {
             $('#business_hours').show();
             $('#off_hours').hide();
         } else {
@@ -32,5 +34,5 @@
     }
 
     // 1秒毎に処理を実行
-    setInterval(displayTimeBasedElements, 1000);
+    setInterval(displayTimeBasedElements(900, 1801), 1000);
 }
