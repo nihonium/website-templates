@@ -1,10 +1,11 @@
 {
-    /*
-    * タブ切り替え
-    * * * * * * * */
-
+    /**
+     * * URLから指定されたパラメータの取得
+     * @param {string} name 取得したいパラメータ名。
+     * @param {string} url URL文字列。指定されない場合は現在のページのURLを使用します。
+     * @returns {string|null} エンコードされた統一資源識別子(URI)の構成要素をデコードしたもの。パラメータが存在しない場合はnullを返します。
+     */
     const getParam = (name, url) => {
-        // URLからパラメータを取得
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, "\\$&");
 
@@ -16,6 +17,11 @@
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
+    /**
+     * * タブの切り替え
+     * 初回アクティブ表示、ページ読み込み時のタブ切り替え、
+     * 及びユーザーがタブをクリックした際のタブ切り替えを行います。
+     */
     const tabsContent = () => {
         // 'data-tab-active'の入ったタブを初回アクティブ表示
         $('[data-tab-active]').addClass('is-active');
