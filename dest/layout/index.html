@@ -49,7 +49,7 @@
         <!-- 共通CSS -->
         <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
         <!-- ページ独自CSS -->
-        <link rel="stylesheet" type="text/css" href="../assets/vendor/popup/magnific-popup.css">
+        <link rel="stylesheet" type="text/css" href="../assets/vendor/micromodal/style.css">
         <link rel="stylesheet" type="text/css" href="../assets/css/layout.css">
         <meta property="og:type" content="article">
         <meta property="og:locale" content="ja_JP">
@@ -184,7 +184,7 @@
                             <li><a class="c-link" href="#2" data-scroll="100">validatorjsを使ったバリデーション</a></li>
                             <li><a class="c-link" href="#3" data-scroll="100">タブ切り替え</a></li>
                             <li><a class="c-link" href="#4" data-scroll="100">Google Maps埋め込み</a></li>
-                            <li><a class="c-link" href="#5" data-scroll="100">モーダルウィンドウ(YouTube埋め込み)</a></li>
+                            <li><a class="c-link" href="#5" data-scroll="100">モーダルウィンドウ(Micromodal.js)</a></li>
                             <li><a class="c-link" href="#6" data-scroll="100">テキスト</a></li>
                             <li><a class="c-link" href="#7" data-scroll="100">汎用アコーディオン</a></li>
                             <li><a class="c-link" href="#8" data-scroll="100">要素内の高さ揃え</a></li>
@@ -401,15 +401,30 @@
             <!-- /Google Maps埋め込み -->
             <section id="5" class="c-section">
                 <div class="c-section__content">
-                    <h2 class="c-strong">モーダルウィンドウ(YouTube埋め込み)</h2>
-                    <div class="c-mt20 sample-btn">
-                        <a class="modal-video-link" href="https://www.youtube.com/watch?v=FTWH1Fdkjow" data-popup-video aria-label="開く" aria-haspopup="true">
-                            <img src="https://placehold.jp/24/000000/ffffff/250x50.png?text=sample" width="250" height="50">
-                        </a>
+                    <h2 class="c-strong">モーダルウィンドウ(Micromodal.js)</h2>
+                    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                                <header class="modal__header">
+                                    <h2 class="modal__title" id="modal-1-title"> Micromodal </h2>
+                                    <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+                                </header>
+                                <main class="modal__content" id="modal-1-content">
+                                    <p> Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself. Also, <code>esc</code> to close modal. </p>
+                                </main>
+                                <footer class="modal__footer">
+                                    <button class="modal__btn modal__btn-primary">Continue</button>
+                                    <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="btn" data-micromodal-trigger="modal-1">トリガー</button>
                     </div>
                 </div>
             </section>
-            <!-- /モーダルウィンドウ(YouTube埋め込み) -->
+            <!-- /モーダルウィンドウ(Micromodal.js) -->
             <section id="6" class="c-section">
                 <div class="c-section__content">
                     <h2 class="c-strong">テキスト</h2>
@@ -615,14 +630,14 @@
         <!-- 共通JS -->
         <script src="../assets/vendor/jquery-3.6.0.min.js"></script>
         <script src="../assets/js/common.js"></script>
-        <script src="../assets/vendor/popup/jquery.magnific-popup.min.js"></script>
+        <!-- Micromodal.js -->
+        <script src="../assets/vendor/micromodal/script.js"></script>
         <!-- YouTube IFrame Player API  -->
         <script src="https://www.youtube.com/iframe_api"></script>
         <script src="../assets/vendor/youtube-iframe-api/script.js"></script>
         <!-- GSAP -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
         <!-- validatorjs -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/validatorjs@3.7.0/dist/validator.js"></script> -->
         <script src="../assets/vendor/validatorjs/validator.js"></script>
         <script src="../assets/vendor/validatorjs/lang/ja.js"></script>
         <script src="../assets/vendor/validatorjs/sample.js"></script>

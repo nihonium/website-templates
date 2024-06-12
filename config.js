@@ -42,12 +42,12 @@ module.exports = {
             {
                 source: [
                     'src/assets/js/unit/_tabs-content.js',
-                    'src/assets/js/unit/_modal_video.js',
                     'src/assets/js/unit/_accordion_basic.js',
                     'src/assets/js/unit/_auto_height.js',
                     'src/assets/js/unit/_display-time-based-elements.js',
                     'src/assets/js/unit/_floating-bnr.js',
-                    'src/assets/js/unit/_gsap-sample.js'
+                    'src/assets/js/unit/_gsap-sample.js',
+                    'src/assets/js/unit/_micromodal-init.js'
                 ],
                 publish: 'layout.js'
             }
