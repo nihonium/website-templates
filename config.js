@@ -47,8 +47,7 @@ module.exports = {
                     'src/assets/js/unit/_display-time-based-elements.js',
                     'src/assets/js/unit/_floating-bnr.js',
                     'src/assets/js/unit/_gsap-sample.js',
-                    'src/assets/js/unit/_micromodal-init.js',
-                    'src/assets/js/unit/_svg_animation.js'
+                    'src/assets/js/unit/_micromodal-init.js'
                 ],
                 publish: 'layout.js'
             }
