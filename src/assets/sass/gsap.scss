@@ -1,0 +1,50 @@
+/*
+ * 【GSAP練習用】
+ */
+
+// * base
+@use "_base/variables";
+@use "_base/mixin";
+
+// * component(必要なstyleのみ読み込む)
+// @include mixin.view-at("pc") {}
+// @include mixin.view-at("sp") {}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(105,105,105);
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // * JS無効環境では非表示
+  @media (scripting: none) {
+    display: none;
+  }
+
+  &__content {
+    @include mixin.view-at("pc") {
+      font-style: 18px;
+    }
+
+    @include mixin.view-at("sp") {
+      font-style: 16px;
+    }
+
+  }
+}
+
+.motion {
+  position: relative;
+
+  &__item {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

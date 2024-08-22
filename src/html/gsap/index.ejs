@@ -1,0 +1,95 @@
+<%# ejsRootは都度変更する %>
+<% const ejsRoot = '../'; %>
+<%
+    const pageTitle = "GASP練習ページ";
+    const pageDescription = "GASP練習ページのディスクプリクション | hoge";
+    const pageCanonical = "https://www.hoge.jp/";
+%>
+
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<head>
+    <%# Googleタグマネージャー %>
+    <%- include(ejsRoot + '_component/_common/_gtm') %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- pageTitle %></title>
+    <meta name="description" content="<%- pageDescription %>">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="<%= pageCanonical %>">
+    <%# 共通CSS %>
+    <%- include(ejsRoot + '_component/_common/_css', {root: ejsRoot}); %>
+    <!-- ページ独自CSS -->
+    <link rel="stylesheet" type="text/css" href="<%- ejsRoot %>assets/css/gsap.css">
+    <%# OGP %>
+    <%- include(ejsRoot + '_component/_common/_ogp', {root: ejsRoot, ogType: 'article', ogTitle: pageTitle, ogDescription: pageDescription, ogUrl: pageCanonical}); %>
+</head>
+
+<body>
+    <%- include(ejsRoot + '_component/_common/_header', {root: ejsRoot, page: 'single'}) %>
+    <!-- /header -->
+
+    <main class="c-main">
+        <div class="loader" data-js-loader>
+            <div class="loader__content" data-js-loader-content>Loading...</div>
+        </div>
+        <section id="section1" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong">見出し1</h2>
+                <div class="motion">
+                    <div class="motion__item" data-js-motion-item-1><img src="<%- ejsRoot %>assets/img/gsap/150x150.png" alt="ダミー画像"></div>
+                    <img src="<%- ejsRoot %>assets/img/gsap/1280x900.png" alt="ダミー画像">
+                </div>
+            </div>
+        </section>
+        <section id="section2" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong">見出し2</h2>
+                <div class="motion">
+                    <div class="motion__item" data-js-motion-item-2><img src="<%- ejsRoot %>assets/img/gsap/150x150.png" alt="ダミー画像"></div>
+                    <img src="<%- ejsRoot %>assets/img/gsap/1280x900.png" alt="ダミー画像">
+                </div>
+            </div>
+        </section>
+        <section id="section3" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong">見出し3</h2>
+                <div class="motion">
+                    <div class="motion__item" data-js-motion-item-3><img src="<%- ejsRoot %>assets/img/gsap/150x150.png" alt="ダミー画像"></div>
+                    <img src="<%- ejsRoot %>assets/img/gsap/1280x900.png" alt="ダミー画像">
+                </div>
+            </div>
+        </section>
+        <section id="section4" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong">見出し4</h2>
+                <div class="motion">
+                    <div class="motion__item" data-js-motion-item-4><img src="<%- ejsRoot %>assets/img/gsap/150x150.png" alt="ダミー画像"></div>
+                    <img src="<%- ejsRoot %>assets/img/gsap/1280x900.png" alt="ダミー画像">
+                </div>
+            </div>
+        </section>
+        <section id="section5" class="c-section">
+            <div class="c-section__content">
+                <h2 class="c-strong">見出し5</h2>
+                <div class="motion">
+                    <div class="motion__item" data-js-motion-item-5><img src="<%- ejsRoot %>assets/img/gsap/150x150.png" alt="ダミー画像"></div>
+                    <img src="<%- ejsRoot %>assets/img/gsap/1280x900.png" alt="ダミー画像">
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include(ejsRoot + '_component/_common/_footer', {root: ejsRoot, page: 'single'}); %>
+    <!-- /footer -->
+    <%# 共通JS %>
+    <%- include(ejsRoot + '_component/_common/_js', {root: ejsRoot}); %>
+    <%# ページ独自JSがある場合は、下記に記述 %>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- ページ独自 -->
+    <script src="<%- ejsRoot %>assets/js/gsap.js"></script>
+</body>
+</html>

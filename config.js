@@ -50,6 +50,12 @@ module.exports = {
                     'src/assets/js/unit/_micromodal-init.js'
                 ],
                 publish: 'layout.js'
+            },
+            {
+                source: [
+                    'src/assets/js/target/gsap.js'
+                ],
+                publish: 'gsap.js'
             }
         ]
     }
