@@ -476,7 +476,7 @@ body {
 }
 
 body.is-active {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 img {
@@ -1052,6 +1052,10 @@ img {
     display: none;
   }
 
+  .c-link {
+    cursor: pointer;
+  }
+
   .c-link:hover {
     text-decoration: none;
   }
@@ -1379,7 +1383,7 @@ img {
 
   .c-header-box {
     visibility: hidden;
-    overflow-y: scroll;
+    overflow: scroll;
     position: fixed;
     z-index: 1000;
     top: 0;

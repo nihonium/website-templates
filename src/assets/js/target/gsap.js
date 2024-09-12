@@ -10,8 +10,8 @@
         // ローディングアニメーションが非表示になったらclass削除
         const target = document.querySelector('[data-js-loader]');
         const observer = new MutationObserver(mutations => {
-            mutations.forEach(({target, oldValue}) => {
-                if (/translate *: */.test(oldValue) && target.style.translate === 'none') {
+            mutations.forEach(({target}) => {
+                if (target.style.opacity === '0' && target.style.visibility === 'hidden') {
                 $('body').removeClass('is-active');
                 observer.disconnect();
                 }
