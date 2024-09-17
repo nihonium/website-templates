@@ -1,22 +1,70 @@
 /** グローバルメニュー */
 {
     const globalMenu = () => {
+        const eleNav = document.querySelector('[data-header-nav]');
+        const eleBtnInner = document.querySelector('[data-menu-btn-inner]');
+        const eleBody = document.querySelector('body');
+
         $(window).on('load resize', function () {
             windowWidth = window.innerWidth;
 
             if (windowWidth >= breakPoint) {
-                $('[data-header-nav]').removeClass('is-show is-animate');
-                $('[data-menu-btn-inner]').removeClass('is-open');
-                $('body').removeClass('is-active');
+                eleNav.classList.remove('is-show', 'is-animate');
+                eleBtnInner.classList.remove('is-open');
+                eleBody.classList.remove('is-active');
             } else {
-                $('[data-header-nav]').addClass('is-animate');
+                eleNav.classList.add('is-animate');
             }
         });
 
         $('[data-menu-btn]').on('click', function () {
-            $(this).children('[data-menu-btn-inner]').toggleClass('is-open');
-            $('[data-header-nav]').toggleClass('is-show');
-            $('body').toggleClass('is-active');
+            if (eleBtnInner.classList.contains('is-open')) {
+                eleBtnInner.classList.remove('is-open');
+            } else {
+                eleBtnInner.classList.add('is-open');
+            }
+
+            if (eleNav.classList.contains('is-show')) {
+                eleNav.classList.remove('is-show');
+            } else {
+                eleNav.classList.add('is-show');
+            }
+
+            if (eleBody.classList.contains('is-active')) {
+                eleBody.classList.remove('is-active');
+            } else {
+                eleBody.classList.add('is-active');
+            }
+        });
+
+        $('[data-header-nav]').find('[data-scroll]').on('click', function () {
+            windowWidth = window.innerWidth;
+
+            if (windowWidth >= breakPoint) {
+                eleNav.classList.remove('is-show', 'is-animate');
+                eleBtnInner.classList.remove('is-open');
+                eleBody.classList.remove('is-active');
+            } else {
+                eleNav.classList.add('is-animate');
+
+                if (eleBtnInner.classList.contains('is-open')) {
+                    eleBtnInner.classList.remove('is-open');
+                } else {
+                    eleBtnInner.classList.add('is-open');
+                }
+
+                if (eleNav.classList.contains('is-show')) {
+                    eleNav.classList.remove('is-show');
+                } else {
+                    eleNav.classList.add('is-show');
+                }
+
+                if (eleBody.classList.contains('is-active')) {
+                    eleBody.classList.remove('is-active');
+                } else {
+                    eleBody.classList.add('is-active');
+                }
+            }
         });
     }
 
