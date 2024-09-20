@@ -1,8 +1,4 @@
 {
-  "volta": {
-    "node": "8.9.4",
-    "npm": "5.6.0"
-  },
   "name": "00__project",
   "version": "1.0.0",
   "description": "",
@@ -48,5 +44,9 @@
     "run-sequence": "^2.2.1",
     "sass": "^1.42.0",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "volta": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
   }
 }
