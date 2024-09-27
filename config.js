@@ -47,9 +47,16 @@ module.exports = {
                     'src/assets/js/unit/_display-time-based-elements.js',
                     'src/assets/js/unit/_floating-bnr.js',
                     'src/assets/js/unit/_gsap-sample.js',
-                    'src/assets/js/unit/_micromodal-init.js'
+                    'src/assets/js/unit/_micromodal-init.js',
+                    'src/assets/js/unit/_svg_animation.js'
                 ],
                 publish: 'layout.js'
+            },
+            {
+                source: [
+                    'src/assets/js/unit/_svg_animation.js'
+                ],
+                publish: 'line-animation.js'
             },
             {
                 source: [
