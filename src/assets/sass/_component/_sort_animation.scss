@@ -1,0 +1,87 @@
+/*
+ * 並び替えのアニメーション
+ * 引用：https://ics.media/entry/240902/#%E4%B8%A6%E3%81%B3%E6%9B%BF%E3%81%88%E3%81%AE%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3
+ */
+
+@use "../_base/mixin";
+
+:root {
+  --color-red: #ff4a12;
+  --color-yellow: #ffc902;
+  --color-blue: #0a008a;
+}
+
+.c-sort {
+  &-container {
+    border: 2px solid #333;
+    padding: 16px;
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+
+    @include mixin.view-at("pc") {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    @include mixin.view-at("sp") {
+      grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    }
+
+    .box {
+      width: 100%;
+      aspect-ratio: 1;
+
+      &.hidden {
+        display: none;
+      }
+
+      &[data-color="red"]{
+        background: var(--color-red);
+      }
+
+      &[data-color="blue"]{
+        background: var(--color-blue);
+      }
+
+      &[data-color="yellow"]{
+        background: var(--color-yellow);
+      }
+    }
+  }
+
+  &-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+
+    input {
+      display: none;
+    }
+
+    label {
+      opacity: 0.5;
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: #fff;
+
+      &:has(input:checked){
+        opacity: 1;
+      }
+
+      &:has(input[value=red]){
+        background: var(--color-red);
+      }
+
+      &:has(input[value=yellow]){
+        background: var(--color-yellow);
+      }
+
+      &:has(input[value=blue]){
+        background: var(--color-blue);
+      }
+    }
+  }
+}
+

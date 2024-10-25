@@ -530,6 +530,85 @@
 }
 
 /*
+ * 並び替えのアニメーション
+ * 引用：https://ics.media/entry/240902/#%E4%B8%A6%E3%81%B3%E6%9B%BF%E3%81%88%E3%81%AE%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3
+ */
+
+:root {
+  --color-blue: #0a008a;
+  --color-red: #ff4a12;
+  --color-yellow: #ffc902;
+}
+
+.c-sort-container {
+  display: grid;
+  padding: 16px;
+  border: 2px solid #333;
+  gap: 16px;
+  justify-items: center;
+}
+
+.c-sort-container .box {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.c-sort-container .box.hidden {
+  display: none;
+}
+
+.c-sort-container .box[data-color=red] {
+  background: var(--color-red);
+}
+
+.c-sort-container .box[data-color=blue] {
+  background: var(--color-blue);
+}
+
+.c-sort-container .box[data-color=yellow] {
+  background: var(--color-yellow);
+}
+
+.c-sort-toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.c-sort-toolbar input {
+  display: none;
+}
+
+.c-sort-toolbar label {
+  padding: 5px 10px;
+  border-radius: 4px;
+  opacity: .5;
+  color: #fff;
+}
+
+.c-sort-toolbar label:has(input:checked) {
+  opacity: 1;
+}
+
+.c-sort-toolbar label:has(input[value=red]) {
+  background: var(--color-red);
+}
+
+.c-sort-toolbar label:has(input[value=yellow]) {
+  background: var(--color-yellow);
+}
+
+.c-sort-toolbar label:has(input[value=blue]) {
+  background: var(--color-blue);
+}
+
+/*
  * レイアウト
  */
 
@@ -1109,6 +1188,10 @@
     opacity: .7;
   }
 
+  .c-sort-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
   .sample-anchor li {
     width: 33.3333333333%;
   }
@@ -1210,6 +1293,10 @@
 
   .c-floating-bnr {
     width: 33.3333333333%;
+  }
+
+  .c-sort-container {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
   }
 
   .sample-anchor li {
