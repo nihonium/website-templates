@@ -3,12 +3,14 @@
  * 引用：https://ics.media/entry/240902/#%E4%B8%A6%E3%81%B3%E6%9B%BF%E3%81%88%E3%81%AE%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3
  * * * * * * * */
 
-const colorCheckBoxes = document.querySelectorAll("input[name=color]")
-const boxes = document.querySelectorAll(".box")
+const colorCheckBoxes = document.querySelectorAll("input[name=color]");
+const colorCheckAlert = document.querySelector("[data-sort-alert]").style.display = "none";
+const boxes = document.querySelectorAll(".box");
 
 colorCheckBoxes.forEach(input => {
     input.addEventListener("change", () => {
-        flip()
+        flip();
+        console.log($('input[name=color]:checked').length);
     })
 })
 
