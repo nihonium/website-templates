@@ -54,12 +54,6 @@ module.exports = {
             },
             {
                 source: [
-                    'src/assets/js/unit/_svg_animation.js'
-                ],
-                publish: 'line-animation.js'
-            },
-            {
-                source: [
                     'src/assets/js/target/gsap.js'
                 ],
                 publish: 'gsap.js'
