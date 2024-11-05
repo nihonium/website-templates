@@ -18,6 +18,7 @@
 @use "_component/floating-bnr";
 @use "_component/_gsap/sample";
 @use "_component/sort_animation";
+@use "_component/mask-composite";
 
 .sample {
   &-anchor {

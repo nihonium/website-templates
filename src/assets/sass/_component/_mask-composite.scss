@@ -1,0 +1,32 @@
+/*
+ * mask-composite を使ったマスクの合成
+ * 引用：https://ics.media/entry/241025/
+ */
+
+.centerHole {
+  position: relative;
+  overflow: hidden;
+  resize: both;
+  border: 1px solid #ddd;
+}
+
+.centerHoleBg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.centerHoleMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #01a69b;
+  mask-image: linear-gradient(#000, #000), url("../img/layout/mask_circle.svg");
+  mask-repeat: no-repeat;
+  mask-position: 0 0, center center;
+  mask-size: 100% 100%, 480px 320px;
+  mask-composite: exclude;
+}
