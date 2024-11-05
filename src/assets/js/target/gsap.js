@@ -39,12 +39,14 @@
 
         gsap.set(jsMotionItem1, {
             opacity: 0,
+            x: -50,
             y: -100
         });
 
         gsap.set([jsMotionItem2, jsMotionItem3, jsMotionItem4, jsMotionItem5], {
             opacity: 0,
-            x: -100
+            x: -50,
+            y: -100
         });
 
         // timelineを作成
@@ -60,7 +62,8 @@
         ).to(
             jsMotionItem1, {
                 opacity: 1,
-                y: 0,
+                x: 2000,
+                y: 50,
                 duration: 1,
                 ease: 'power4.inOut'
             },
@@ -76,6 +79,7 @@
                 // markers: true
             },
             x: 0,
+            y: 0,
             opacity: 1,
             duration: 1,
             ease: 'power4.inOut'
@@ -84,10 +88,10 @@
             scrollTrigger: {
                 trigger: jsMotionItem3,
                 start: "top 60%",
-                end: "bottom 80px",
-                // markers: true
+                end: "bottom 80px"
             },
             x: 0,
+            y: 0,
             opacity: 1,
             duration: 1.5,
             ease: 'power4.inOut'
@@ -96,10 +100,10 @@
             scrollTrigger: {
                 trigger: jsMotionItem4,
                 start: "top 60%",
-                end: "bottom 80px",
-                // markers: true
+                end: "bottom 80px"
             },
             x: 0,
+            y: 0,
             opacity: 1,
             duration: 1,
             ease: 'power1.inOut'
@@ -108,10 +112,10 @@
             scrollTrigger: {
                 trigger: jsMotionItem5,
                 start: "top 60%",
-                end: "bottom 80px",
-                // markers: true
+                end: "bottom 80px"
             },
             x: 0,
+            y: 0,
             opacity: 1,
             duration: 1.5,
             ease: 'power1.inOut'
