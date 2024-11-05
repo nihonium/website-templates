@@ -58,6 +58,12 @@ module.exports = {
                     'src/assets/js/target/gsap.js'
                 ],
                 publish: 'gsap.js'
+            },
+            {
+                source: [
+                    'src/assets/js/target/test-video.js'
+                ],
+                publish: 'test-video.js'
             }
         ]
     }

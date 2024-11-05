@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+/*
+ * 動画埋め込みテストページ
+ */
+
+video {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}

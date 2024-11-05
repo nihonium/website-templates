@@ -48,7 +48,7 @@ gulp.task('default', function (callback) {
 
 // * 複製タスクを実行
 gulp.task('copy', function (callback) {
-    return runSequence(['vendor', 'pdf', 'wp'], callback);
+    return runSequence(['vendor', 'pdf', 'wp', 'video'], callback);
 });
 
 // * .pdfの複製
@@ -76,6 +76,15 @@ gulp.task('wp', function () {
         // フォルダ以下に保存
         .pipe(gulp.dest('dest/assets/wp/')
     );
+});
+
+// * 動画ファイルの複製
+gulp.task('video', function () {
+    return (
+        gulp.src(['src/assets/video/**/', '!src/assets/video/__archives/', '!src/assets/video/__archives/**/']))
+        // フォルダ以下に保存
+        .pipe(gulp.dest('dest/assets/video/')
+        );
 });
 
 // * dest配下のファイルを削除
