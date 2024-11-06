@@ -16,6 +16,7 @@ video {
 
 .video-box-item {
   visibility: visible;
+  background-color: #fff;
   opacity: 1;
   -webkit-transition: opacity .3s, visibility 0s ease .3s;
   transition: opacity .3s, visibility 0s ease .3s;

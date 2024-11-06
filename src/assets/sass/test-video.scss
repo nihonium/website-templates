@@ -15,6 +15,7 @@ video {
     opacity: 1;
     visibility: visible;
     transition: opacity .3s, visibility 0s ease .3s;
+    background-color: #fff;
 
     &--first {
       top: 0;
