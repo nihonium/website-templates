@@ -9,3 +9,31 @@ video {
   width: 100%;
   height: auto;
 }
+
+.video-box {
+  position: relative;
+}
+
+.video-box-item {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity .3s, visibility 0s ease .3s;
+  transition: opacity .3s, visibility 0s ease .3s;
+}
+
+.video-box-item--first {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.video-box-item--second {
+  position: relative;
+  z-index: 1;
+}
+
+.video-box-item.is-hide {
+  visibility: hidden;
+  opacity: 0;
+}

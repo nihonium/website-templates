@@ -7,3 +7,31 @@ video {
   max-width: 100%;
   height: auto;
 }
+
+.video-box {
+  position: relative;
+
+  &-item {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s, visibility 0s ease .3s;
+
+    &--first {
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 2;
+
+    }
+
+    &--second {
+      position: relative;
+      z-index: 1;
+    }
+
+    &.is-hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

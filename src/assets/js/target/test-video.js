@@ -22,4 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
     v.addEventListener('playing', function () {
         state.textContent = '再生中です';
     })
+    //再生終了
+    v.addEventListener('ended', function () {
+        window.alert("再生終了");
+        v.parentNode.classList.add("is-hide");
+    })
 });
