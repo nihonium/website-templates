@@ -5,7 +5,8 @@
 video {
   width: 100%;
   max-width: 100%;
-  height: auto;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .video-box {
@@ -19,11 +20,11 @@ video {
     background-color: #fff;
 
     &--first {
+      width: 100%;
       top: 0;
       left: 0;
       position: absolute;
       z-index: 2;
-
     }
 
     &--second {
@@ -63,7 +64,6 @@ video {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  background: url('https://blog.8bit.co.jp/wp-content/uploads/2022/05/mainvisual.jpg') no-repeat center center / cover;
 }
 #mainTitle {
   min-height: 100vh;
