@@ -43,12 +43,6 @@ video {
   opacity: 0;
 }
 
-.video-box-text {
-  text-shadow: 2px 3px 3px rgba(0, 0, 0, .4);
-  color: #fff;
-  font-size: 24px;
-}
-
 .test-header {
   position: fixed;
   width: 100%;
