@@ -23,7 +23,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <%# GAタグは必ず消す %>
 
-<header id="header" class="c-header">
+<header id="header" class="c-header<% if (page === 'hoge') { %> test-header<% } %>">
     <nav class="c-header__content">
         <div class="c-header-logo">
             <a class="c-header-logo__item" href="<% if (page === 'top') { %>./<% } else { %><%- root %><% } %>">

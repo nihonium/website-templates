@@ -64,7 +64,7 @@
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9NP7H7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-        <header id="header" class="c-header">
+        <header id="header" class="c-header test-header">
             <nav class="c-header__content">
                 <div class="c-header-logo">
                     <a class="c-header-logo__item" href="../">
@@ -135,27 +135,25 @@
             </nav>
         </header>
         <!-- /header -->
-        <main class="c-main">
-            <div class="c-section">
-                <div class="c-section__content">
-                    <div class="video-box">
-                        <div class="video-box-item video-box-item--first">
-                            <video id="kv" autoplay muted playsinline>
-                                <source src="../assets/video/mov_sample_autoplay.mp4" type="video/mp4">
-                                <p>ご使用のブラウザでは動画再生に対応していません</p>
-                            </video>
-                            <p id="kv-state"></p>
-                        </div>
-                        <div class="video-box-item video-box-item--second">
-                            <video id="kv-loop" muted playsinline>
-                                <!-- <video autoplay loop muted playsinline> -->
-                                <source src="../assets/video/mov_sample_loop.mp4" type="video/mp4">
-                                <p>ご使用のブラウザでは動画再生に対応していません</p>
-                            </video>
-                            <p id="kv-loop-state"></p>
-                        </div>
-                    </div>
+        <main>
+            <div class="video-box">
+                <div class="video-box-item video-box-item--first">
+                    <video id="kv" autoplay muted playsinline>
+                        <source src="../assets/video/mov_sample_autoplay.mp4" type="video/mp4">
+                        <p>ご使用のブラウザでは動画再生に対応していません</p>
+                    </video>
+                    <p class="video-box-text" id="kv-state"></p>
                 </div>
+                <div class="video-box-item video-box-item--second">
+                    <video id="kv-loop" muted playsinline>
+                        <source src="../assets/video/mov_sample_loop.mp4" type="video/mp4">
+                        <p>ご使用のブラウザでは動画再生に対応していません</p>
+                    </video>
+                    <p class="video-box-text" id="kv-loop-state"></p>
+                </div>
+            </div>
+            <div class="sample-box">
+                <p>途中から表示される要素</p>
             </div>
         </main>
         <!-- /main --><a href="#page_top" class="c-footer-page-top" data-scroll aria-label="ページの先頭へ戻る">ページの先頭へ戻る</a>
