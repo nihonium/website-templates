@@ -136,25 +136,38 @@
         </header>
         <!-- /header -->
         <main>
-            <div class="video-box">
-                <div class="video-box-item video-box-item--first">
-                    <video id="kv" autoplay muted playsinline>
-                        <source src="../assets/video/mov_sample_autoplay.mp4" type="video/mp4">
-                        <p>ご使用のブラウザでは動画再生に対応していません</p>
-                    </video>
-                    <p class="video-box-text" id="kv-state"></p>
+            <section id="wrapper">
+                <div class="mainVisual">
+                    <div class="video-box">
+                        <div class="video-box-item video-box-item--first">
+                            <video id="kv" autoplay muted playsinline>
+                                <source src="../assets/video/mov_sample_autoplay.mp4" type="video/mp4">
+                                <p>ご使用のブラウザでは動画再生に対応していません</p>
+                            </video>
+                            <p class="video-box-text" id="kv-state"></p>
+                        </div>
+                        <div class="video-box-item video-box-item--second">
+                            <video id="kv-loop" muted playsinline>
+                                <source src="../assets/video/mov_sample_loop.mp4" type="video/mp4">
+                                <p>ご使用のブラウザでは動画再生に対応していません</p>
+                            </video>
+                            <p class="video-box-text" id="kv-loop-state"></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="video-box-item video-box-item--second">
-                    <video id="kv-loop" muted playsinline>
-                        <source src="../assets/video/mov_sample_loop.mp4" type="video/mp4">
-                        <p>ご使用のブラウザでは動画再生に対応していません</p>
-                    </video>
-                    <p class="video-box-text" id="kv-loop-state"></p>
+                <div id="mainTitle" class="items">
+                    <h1>メインビジュアル</h1>
                 </div>
-            </div>
-            <div class="sample-box">
-                <p>途中から表示される要素</p>
-            </div>
+                <div id="c01" class="items">
+                    <p>コンテンツ1</p>
+                </div>
+                <div id="c02" class="items">
+                    <p>コンテンツ2</p>
+                </div>
+                <div id="c03" class="items">
+                    <p>コンテンツ3</p>
+                </div>
+            </section>
         </main>
         <!-- /main --><a href="#page_top" class="c-footer-page-top" data-scroll aria-label="ページの先頭へ戻る">ページの先頭へ戻る</a>
         <footer id="footer" class="c-footer">
