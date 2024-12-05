@@ -28,16 +28,41 @@
             <div v-text="message"></div>
             <div>{{ message }}</div>
         </div>
+        <div id="app-102">
+            <div v-text="message"></div>
+            <div v-html="message"></div>
+        </div>
+        <div id="app-103">
+            <input type="checkbox" @click="change" checked>
+            <span v-show="seen">Hello!</span>
+        </div>
+        <div id="app-104">
+            <input type="checkbox" @click="change" checked>
+            <span v-if="seen2">Hello!</span>
+        </div>
+        <div id="app-105">
+            <input type="checkbox" @click="change" checked>
+            <span v-if="seen">Hello!</span>
+            <span v-else>Bey!</span>
+        </div>
+        <div id="app-106">
+            <input type="radio" name="app106-type" onclick="app106.type='A'" checked>
+            <input type="radio" name="app106-type" onclick="app106.type='B'">
+            <input type="radio" name="app106-type" onclick="app106.type='C'">
+            <span v-if="type == 'A'">おはよう</span>
+            <span v-else-if="type == 'B'">こんにちは</span>
+            <span v-else>さようなら</span>
+        </div>
         <script>
             var app1 = new Vue(
             {
                 el: '#app-1',
                 watch:
                 {
-                    message: function(newVal, oldVal)
+                    message: function(v, oldVal)
                     {
-                        this.error.require = (newVal.length < 1) ? true : false;
-                        this.error.tooLong = (newVal.length > 5) ? true : false;
+                        this.error.require = (v.length < 1) ? true : false;
+                        this.error.tooLong = (v.length > 5) ? true : false;
                     }
                 },
                 data:
@@ -56,6 +81,67 @@
                 data:
                 {
                     message: 'Hello'
+                }
+            });
+            var app102 = new Vue(
+            {
+                el: '#app-102',
+                data:
+                {
+                    message: '<p>Hello!</p>'
+                }
+            });
+            var app103 = new Vue(
+            {
+                el: '#app-103',
+                data:
+                {
+                    seen: true
+                },
+                methods:
+                {
+                    change: function(e)
+                    {
+                        this.seen = e.target.checked;
+                    }
+                }
+            });
+            var app104 = new Vue(
+            {
+                el: '#app-104',
+                data:
+                {
+                    seen2: true
+                },
+                methods:
+                {
+                    change: function(e)
+                    {
+                        this.seen2 = e.target.checked;
+                    }
+                }
+            });
+            var app105 = new Vue(
+            {
+                el: '#app-105',
+                data:
+                {
+                    seen: true
+                },
+                methods:
+                {
+                    change: function(e)
+                    {
+                        this.seen = e.target.checked;
+                    }
+                }
+            });
+            var app106 = new Vue(
+            {
+                el: '#app-106',
+                data:
+                {
+                    type: 'A'
                 }
             });
         </script>
