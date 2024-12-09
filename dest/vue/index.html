@@ -53,6 +53,134 @@
             <span v-else-if="type == 'B'">こんにちは</span>
             <span v-else>さようなら</span>
         </div>
+        <div id="app-107">
+            <ul>
+                <li v-for="color in colorList">{{color}}</li>
+            </ul>
+        </div>
+        <div id="app-108">
+            <button type="button" v-on:click="hello">Hello</button>
+            <button type="button" @click="hello">Hello</button>
+        </div>
+        <div id="app-109">
+            <input type="button" v-bind:value="message">
+            <input type="button" :value="message">
+        </div>
+        <div id="app-120" data-app-120>
+            <input type="text" v-model="message">
+            <div>message: {{message}}</div>
+        </div>
+        <script>
+            var app120 = new Vue(
+            {
+                el: '[data-app-120]',
+                data:
+                {
+                    message: 'Hello!'
+                }
+            })
+        </script>
+        <div id="app-121">
+            <div v-pre>Message: {{message}}</div>
+            <div>Message: {{message}}</div>
+        </div>
+        <script>
+            var app121 = new Vue(
+            {
+                el: '#app-121',
+                data:
+                {
+                    message: 'Hello'
+                }
+            })
+        </script>
+        <style>
+            [v-cloak]
+            {
+                display: none;
+            }
+        </style>
+        <div id="app-122">
+            <button onclick="location.reload()">再表示</button>
+            <div>Message: <span v-cloak>{{message}}</span></div>
+            <div>Message: <span>{{message}}</span></div>
+        </div>
+        <script>
+            window.setTimeout(function()
+            {
+                var app122 = new Vue(
+                {
+                    el: '#app-122',
+                    data:
+                    {
+                        message: 'Hello'
+                    }
+                })
+            }, 1000)
+        </script>
+        <div id="app-123">
+            <input type="text" name="text1" v-model:value="message">
+            <div>Message: <span v-once>{{message}}</span></div>
+            <div>Message: <span>{{message}}</span></div>
+        </div>
+        <script>
+            var app123 = new Vue(
+            {
+                el: '#app-123',
+                data:
+                {
+                    message: 'Hello'
+                }
+            })
+        </script>
+        <div id="app-140">
+            <my-element-140></my-element-140>
+        </div>
+        <script>
+            Vue.component('my-element-140',
+            {
+                template: '<strong>hoge</strong>'
+            })
+            var app140 = new Vue(
+            {
+                el: '#app-140'
+            })
+        </script>
+        <div id="app-141">
+            <my-component-141></my-component-141>
+        </div>
+        <script>
+            var MyComponent141 = Vue.extend(
+            {
+                template: '<strong>Hello!</strong>'
+            })
+            Vue.component('my-component-141', MyComponent141)
+            var app141 = new Vue(
+            {
+                el: '#app-141',
+            })
+        </script>
+        <div id="app-142">
+            <div>{{msg2}}</div>
+        </div>
+        <script>
+            var app142 = new Vue(
+            {
+                el: '#app-142',
+                data:
+                {
+                    message: 'Hello!',
+                    msg1: '',
+                    msg2: '上海蟹食べたい',
+                }
+            })
+            app142.msg2 = 'Bey!'
+            console.log(app142.$el.textContent);
+            Vue.nextTick(function()
+            {
+                console.log(app142.$el.textContent);
+            })
+        </script>
         <script>
             var app1 = new Vue(
             {
@@ -142,6 +270,33 @@
                 data:
                 {
                     type: 'A'
+                }
+            });
+            var app107 = new Vue(
+            {
+                el: '#app-107',
+                data:
+                {
+                    colorList: ['Red', 'Green', 'Blue']
+                }
+            });
+            var app108 = new Vue(
+            {
+                el: '#app-108',
+                methods:
+                {
+                    hello: function()
+                    {
+                        alert("Hello");
+                    }
+                }
+            });
+            var app109 = new Vue(
+            {
+                el: '#app-109',
+                data:
+                {
+                    message: 'Hello!'
                 }
             });
         </script>
