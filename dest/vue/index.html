@@ -181,6 +181,60 @@
                 console.log(app142.$el.textContent);
             })
         </script>
+        <div id="app-143">
+            <input type="button" @click="addBlue" value="Add">
+            <input type="button" @click="deleteBlue" value="Delete">
+            <ul>
+                <li v-for="(value, key) in colorList">{{key}} = {{value}}</li>
+            </ul>
+        </div>
+        <script>
+            var app143 = new Vue(
+            {
+                el: "#app-143",
+                data:
+                {
+                    colorList:
+                    {
+                        red: '#f00',
+                        green: '#0f0'
+                    }
+                },
+                methods:
+                {
+                    addBlue: function()
+                    {
+                        Vue.set(this, 'colorList',
+                        {
+                            ...this.colorList,
+                            blue: '#00f',
+                            bk: '#000'
+                        })
+                    },
+                    deleteBlue: function()
+                    {
+                        Vue.delete(this.colorList, 'blue')
+                        Vue.delete(this.colorList, 'bk')
+                    }
+                }
+            })
+        </script>
+        <div id="app-144">
+            <div v-font40>こんにちは</div>
+        </div>
+        <script>
+            Vue.directive('font40',
+            {
+                inserted: function(el)
+                {
+                    el.style.fontSize = '40px'
+                }
+            })
+            var app144 = new Vue(
+            {
+                el: '#app-144'
+            })
+        </script>
         <script>
             var app1 = new Vue(
             {
