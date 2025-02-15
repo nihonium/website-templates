@@ -8,12 +8,14 @@
  */
 
 // <body>タグにTOPページと下層ページでクラスを付与
+$metaOgURL = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
 if (is_home() || is_front_page()) {
-	$bodyClass = "top";
-	$bodyData = "data-page-index";
+    $bodyClass = "top";
+    $bodyData = "data-page-index";
 } else {
-	$bodyClass = "lower";
-	$bodyData = "data-page-lower";
+    $bodyClass = "lower";
+    $bodyData = "data-page-lower";
 }
 
 ?>
@@ -37,6 +39,7 @@ if (is_home() || is_front_page()) {
     <?php wp_head(); ?>
 </head>
 
+<!-- <?php echo $metaOgURL; ?> -->
 <body class="<?php echo $bodyClass; ?>" <?php echo $bodyData; ?>>
     <header id="header" class="c-header">
         <nav class="c-header__content">
@@ -59,7 +62,9 @@ if (is_home() || is_front_page()) {
                     </a>
                     <ul class="c-header-list">
                         <li class="c-header-dropdown" data-dropdown>
-                            <a class="c-header-list-item<?php if (is_page('info')) { echo ' is-current'; } ?>" href="<?php echo esc_url(home_url('/')); ?>info/">新着情報</a>
+                            <a class="c-header-list-item<?php if (is_page('info')) {
+                                                            echo ' is-current';
+                                                        } ?>" href="<?php echo esc_url(home_url('/')); ?>info/">新着情報</a>
                             <button class="c-header-dropdown__btn" data-dropdown-btn></button>
                             <ul class="c-header-dropdown-list" data-dropdown-list>
                                 <li>
@@ -74,13 +79,19 @@ if (is_home() || is_front_page()) {
                             </ul>
                         </li>
                         <li>
-                            <a class="c-header-list-item<?php if (is_page('service')) { echo ' is-current'; } ?>" href="<?php echo esc_url(home_url('/')); ?>service/">サービス</a>
+                            <a class="c-header-list-item<?php if (is_page('service')) {
+                                                            echo ' is-current';
+                                                        } ?>" href="<?php echo esc_url(home_url('/')); ?>service/">サービス</a>
                         </li>
                         <li>
-                            <a class="c-header-list-item<?php if (is_page('product')) { echo ' is-current'; } ?>" href="<?php echo esc_url(home_url('/')); ?>product/">製品情報</a>
+                            <a class="c-header-list-item<?php if (is_page('product')) {
+                                                            echo ' is-current';
+                                                        } ?>" href="<?php echo esc_url(home_url('/')); ?>product/">製品情報</a>
                         </li>
                         <li class="c-header-dropdown" data-dropdown>
-                            <a class="c-header-list-item<?php if (is_page('recruit')) { echo ' is-current'; } ?>" href="<?php echo esc_url(home_url('/')); ?>recruit/">採用情報</a>
+                            <a class="c-header-list-item<?php if (is_page('recruit')) {
+                                                            echo ' is-current';
+                                                        } ?>" href="<?php echo esc_url(home_url('/')); ?>recruit/">採用情報</a>
                             <button class="c-header-dropdown__btn" data-dropdown-btn></button>
                             <ul class="c-header-dropdown-list" data-dropdown-list>
                                 <li>
@@ -98,7 +109,9 @@ if (is_home() || is_front_page()) {
                             </ul>
                         </li>
                         <li>
-                            <a class="c-header-list-item<?php if (is_page('contact')) { echo ' is-current'; } ?>" href="<?php echo esc_url(home_url('/')); ?>contact/">お問い合わせ</a>
+                            <a class="c-header-list-item<?php if (is_page('contact')) {
+                                                            echo ' is-current';
+                                                        } ?>" href="<?php echo esc_url(home_url('/')); ?>contact/">お問い合わせ</a>
                         </li>
                     </ul>
                     <ul class="c-header-sns">
