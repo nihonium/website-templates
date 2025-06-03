@@ -48,5 +48,8 @@
   "volta": {
     "node": "8.9.4",
     "npm": "5.6.0"
+  },
+  "dependencies": {
+    "gulp-install": "^1.1.0"
   }
 }
